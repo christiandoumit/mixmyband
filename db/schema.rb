@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_195418) do
+ActiveRecord::Schema.define(version: 2019_11_26_214510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audio_urls", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_audio_urls_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.date "booking_date"
+    t.string "status", default: "Pending"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "image_src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -44,4 +70,16 @@ ActiveRecord::Schema.define(version: 2019_11_26_195418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "youtube_urls", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_youtube_urls_on_user_id"
+  end
+
+  add_foreign_key "audio_urls", "users"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "images", "users"
+  add_foreign_key "youtube_urls", "users"
 end
