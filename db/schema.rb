@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_195418) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "type_of_user"
+    t.string "type_of_user", default: "passionate"
     t.string "artist_name"
     t.string "eventer_name"
     t.string "music_type"

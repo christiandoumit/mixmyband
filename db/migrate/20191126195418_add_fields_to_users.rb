@@ -2,7 +2,7 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
   def change
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
-    add_column :users, :type_of_user, :string
+    add_column :users, :type_of_user, :string, default: 'passionate'
     add_column :users, :artist_name, :string
     add_column :users, :eventer_name, :string
     add_column :users, :music_type, :string
