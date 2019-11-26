@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_194507) do
+ActiveRecord::Schema.define(version: 2019_11_26_195418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 2019_11_26_194507) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "type_of_user"
+    t.string "artist_name"
+    t.string "eventer_name"
+    t.string "music_type"
+    t.string "artist_type"
+    t.string "event_type"
+    t.integer "price"
+    t.string "fb_url"
+    t.string "twitter_url"
+    t.string "insta_url"
+    t.string "youtube_url"
+    t.string "avatar"
+    t.string "venue_address"
+    t.string "venue_type"
+    t.string "crowd_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
