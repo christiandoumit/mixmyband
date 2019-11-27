@@ -1,0 +1,26 @@
+<h1>Artists</h1>
+<p>find the artist that fits your style</p>
+
+<div class="Search-Bar">
+  <input class="form-control" type="text" placeholder="Search for an artist by name..." aria-label="Search">
+</div>
+
+<ul>
+<% @pop_artists.each do |artist| %>
+  <li><%= artist %></li>
+<% end %>
+</ul>
+
+<ul>
+<% @jazz_artists.each do |artist| %>
+  <li><%= artist %></li>
+<% end %>
+</ul>
+
+<ul>
+<% @rock_artists.each do |artist| %>
+  <li><%= artist %></li>
+<% end %>
+</ul>
+
+
