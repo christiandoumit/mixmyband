@@ -5,10 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 puts "Deleting previous database"
 User.destroy_all
-puts "Previous database cleared"
+puts 'Database Cleaned'
+puts 'Creating seeds'
+
+brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", email: "flower@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+daft_punk = User.create!(first_name: "Vi", last_name: "Panne", type_of_user: "eventer", description: "blabla", venue_type: "bar", crowd_type: "LGBTQ+",eventer_name: "Daft Punk", music_type: "Electro", artist_type: "DJ", price: "350$", email: "vi@mixmyband.com", password: "123456", venue_address: "5353 rue Casgrain, Montreal",fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+
+# brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 
 puts "Creating faker database"
 40.times do
@@ -28,3 +35,4 @@ puts "Creating faker database"
 end
 
 puts "Done!"
+
