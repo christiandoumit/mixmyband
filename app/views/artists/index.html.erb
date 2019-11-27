@@ -6,21 +6,23 @@
 </div>
 
 <ul>
-<% @pop_artists.each do |artist| %>
-  <li><%= artist %></li>
+<% @pop_artists.each do |a| %>
+ <li><%= a.artist_name %></li>
+ <li><%= a.type_of_user %></li>
+<% end %>
+
+<% @jazz_artists.each do |a| %>
+  <li><%= a.artist_name %></li>
+  <li><%= a.type_of_user %></li>
+<% end %>
+
+<% @rock_artists.each do |a| %>
+  <li><%= a.artist_name %></li>
+  <li><%= a.type_of_user %></li>
 <% end %>
 </ul>
 
-<ul>
-<% @jazz_artists.each do |artist| %>
-  <li><%= artist %></li>
-<% end %>
-</ul>
 
-<ul>
-<% @rock_artists.each do |artist| %>
-  <li><%= artist %></li>
-<% end %>
-</ul>
+
 
 
