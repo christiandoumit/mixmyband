@@ -1,0 +1,5 @@
+<% if @user.type_of_user == "artist"  %>
+  <%= render "users/artist_show" %>
+<% else %>
+  <%= render "users/eventer_show" %>
+<% end %>

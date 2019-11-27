@@ -1,0 +1,7 @@
+<!-- <h1>Eventers#index</h1> -->
+<!-- <p>Find me in app/views/eventers/index.html.erb</p> -->
+
+<% @eventers.each do |e| %>
+  <%= link_to e.eventer_name, eventer_path(e) %>
+<% end %>
+

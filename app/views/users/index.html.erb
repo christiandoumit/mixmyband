@@ -1,0 +1,5 @@
+<% if current_user.type_of_user == "artist"  %>
+  <%= render "users/eventers_index" %>
+<% else %>
+  <%= render "users/artists_index" %>
+<% end %>
