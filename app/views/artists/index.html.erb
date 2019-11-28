@@ -6,7 +6,7 @@
 </div>
 
 <ul>
-<% @pop_artists.each do |a| %>
+<% @artist.filter{ |artist| artist.music_type == 'pop'}.sample(5).each do |a| %>
  <li><%= a.artist_name %></li>
  <li><%= a.type_of_user %></li>
 <% end %>

@@ -24,7 +24,7 @@ puts "Creating faker database"
     last_name: Faker::Name.last_name,
     type_of_user: ["artist", "eventer"].sample,
     artist_name: Faker::Music.band,
-    music_type: Faker::Music.genre,
+    music_type:  ["pop", "rock", "jazz"].sample,
     price: Faker::Number.positive,
     fb_url: Faker::Internet.url,
     youtube_url: Faker::Internet.url,

@@ -1,5 +1,6 @@
 <h1>List of Eventers</h1>
 
+
 <% @eventers.each do |e| %>
-  <%= link_to e.eventer_name, user_path(e) %>
+ <p><%=link_to e.eventer_name, user_path(e)%></p> 
 <% end %>

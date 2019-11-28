@@ -1,5 +1,25 @@
-<h1>List of Artist</h1>
+<h1>Artists</h1>
+<p>find the artist that fits your style</p>
 
-<% @artists.each do |e| %>
-  <%= link_to e.artist_name, user_path(e) %>
+<div class="Search-Bar">
+  <input class="form-control" type="text" placeholder="Search for an artist by name..." aria-label="Search">
+</div>
+
+<ul>
+
+  <h1>Pop</h1>
+<% @pop_artists.each do |a| %>
+ <li><%= a.artist_name %></li>
+
 <% end %>
+
+<h1>Jazz</h1>
+<% @jazz_artists.each do |a| %>
+  <li><%= a.artist_name %></li>
+<% end %>
+
+<h1>Rock</h1>
+<% @rock_artists.each do |a| %>
+  <li><%= a.artist_name %></li>
+<% end %>
+</ul>
