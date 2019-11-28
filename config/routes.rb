@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "/dashboard", to: "pages#dashboard", as: "dashboard"
+  get "/categories", to: "pages#categories_index", as: "categories"
   # resources :artists, only:[:index, :show]
   # resources :categories, only:[:show]
   # resources :eventers, only:[:index, :show]

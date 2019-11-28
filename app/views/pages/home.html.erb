@@ -1,6 +1,15 @@
 <h1>Mixmyband</h1>
-<% if user_signed_in? %>
-<li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+
+<ul>
+  <p><%= link_to "I Am an Artist", users_path%></p>
+  <p><%= link_to "I Am an Eventer", users_path %></p>
+  <p><%= link_to "I Am an Passionate", users_path %></p>
+</ul>
+
+
+<% if user_signed_in? && user.type_of_user == 'eventer' %>
+<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+<%#= redirect_to %>
 <% else %>
-<li><%= link_to('Login', new_user_session_path) %></li>
+<%= link_to('Login', new_user_session_path) %>
 <% end %>

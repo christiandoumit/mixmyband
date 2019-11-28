@@ -1,5 +1,7 @@
 <% if current_user.type_of_user == "artist"  %>
   <%= render "users/eventers_index" %>
-<% else %>
+<% elsif current_user.type_of_user == "eventer" %>
   <%= render "users/artists_index" %>
+  <% else %>
+
 <% end %>
