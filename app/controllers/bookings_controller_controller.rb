@@ -15,7 +15,6 @@ class BookingsControllerController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
-    @booking.celineversion = @celineversion
     @booking.user = @user
     if @booking.save
       redirect_to dashboard_path
