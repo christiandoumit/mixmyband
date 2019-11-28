@@ -5,21 +5,13 @@
   <input class="form-control" type="text" placeholder="Search for an artist by name..." aria-label="Search">
 </div>
 
-<ul>
-
-  <h1><%= link_to "Pop", categories_path(music_type: "pop") %></h1>
-<% @pop_artists.each do |a| %>
- <li><%= a.artist_name %></li>
-
+<% User::CATEGORIES.each do |category| %>
+  <ul>
+    <h1><%= link_to category.capitalize, categories_path(music_type: category) %></h1>
+      <% @category_artists = @artists.filter { |artist| artist.music_type == category }.sample(5) %>
+    <% @category_artists.each do |a| %>
+      <li><%= a.artist_name %></li>
+   <% end %>
+  </ul>
 <% end %>
 
-<h1><%= link_to "Jazz", users_path%></h1>
-<% @jazz_artists.each do |a| %>
-  <li><%= a.artist_name %></li>
-<% end %>
-
-<h1><%= link_to "Rock", users_path%></h1>
-<% @rock_artists.each do |a| %>
-  <li><%= a.artist_name %></li>
-<% end %>
-</ul>

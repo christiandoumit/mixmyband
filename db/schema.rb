@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_210346) do
+
+ActiveRecord::Schema.define(version: 2019_11_28_212722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_210346) do
     t.string "music_type"
     t.string "artist_type"
     t.string "event_type"
-    t.integer "price"
+    t.string "price"
     t.string "fb_url"
     t.string "twitter_url"
     t.string "insta_url"
