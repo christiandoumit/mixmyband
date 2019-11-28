@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'geocoder'
 gem 'faker'
-
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'pundit'

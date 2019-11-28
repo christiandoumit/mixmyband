@@ -1,5 +1,20 @@
-<h1>List of Eventers</h1>
+<h1>eventers</h1>
 
+<!-- eventer cards -->
+
+<h3>listed eventers</h3>
+<div>
 <% @eventers.each do |e| %>
- <p><%=link_to e.eventer_name, user_path(e)%></p>
+ <h4><%=link_to e.eventer_name, user_path(e)%></h4>
+ <p><%= e.venue_address %></p>
+ <p><%= e.venue_type %></p>
 <% end %>
+</div>
+
+<!-- filters -->
+<div>
+  
+</div>
+
+
+
