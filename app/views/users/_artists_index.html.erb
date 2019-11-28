@@ -7,18 +7,18 @@
 
 <ul>
 
-  <h1>Pop</h1>
+  <h1><%= link_to "Pop", categories_path(music_type: "pop") %></h1>
 <% @pop_artists.each do |a| %>
  <li><%= a.artist_name %></li>
 
 <% end %>
 
-<h1>Jazz</h1>
+<h1><%= link_to "Jazz", users_path%></h1>
 <% @jazz_artists.each do |a| %>
   <li><%= a.artist_name %></li>
 <% end %>
 
-<h1>Rock</h1>
+<h1><%= link_to "Rock", users_path%></h1>
 <% @rock_artists.each do |a| %>
   <li><%= a.artist_name %></li>
 <% end %>
