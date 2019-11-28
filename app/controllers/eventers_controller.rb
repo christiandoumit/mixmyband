@@ -6,7 +6,4 @@ class EventersController < ApplicationController
   def show
     @eventer = User.find(params[:id])
   end
-
-
-
 end
