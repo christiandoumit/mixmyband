@@ -1,0 +1,147 @@
+.card-display {
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.card-display h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0;
+  color: white;
+}
+
+.card-display h4 {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+  color: white;
+}
+
+.card-display h5 {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.card-display p {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+  color: white;
+  padding-top: 10px;
+}
+
+.card-display .card-display-intermediate {
+  width: 100%;
+  padding-right: 12px;
+  padding-bottom: 1px;
+  text-align: right;
+}
+
+.card-display .card-display-footer {
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  text-align: right;
+
+  &.general {
+    padding: 8px 12px 8px;
+  }
+
+  &.carrousel {
+    padding: 8px 12px 30px;
+  }
+}
+
+.card-scroll-container {
+  overflow-y: scroll;
+
+  &.cal-book {
+    height: 120px;
+  }
+
+  &.reviews {
+    height: 350px;
+  }
+}
+
+.card-a-row {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5px 1px 5px;
+  margin: 0;
+
+  &.calendar {
+    border-bottom: 1px solid #83B594;
+  }
+
+  &.booking {
+    border-bottom: 1px solid #1D73A5;
+  }
+}
+
+.card-calendar-row-time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-a-row h5 {
+  font-size: 16px;
+  margin: 0;
+  color: #151515;
+
+  &.date {
+    font-weight: 700;
+  }
+
+  &.name {
+    font-weight: 400;
+  }
+
+  &.time {
+    padding-left: 6px;
+    font-weight: 700;
+  }
+}
+
+.card-a-row .booking-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-a-row .booking-icons-item {
+  padding-right: 6px;
+
+}
+
+.card-review-row {
+  align-items : center;
+  border-bottom: 1px solid #83B594;
+  padding: 10px;
+  margin: 0;
+}
+
+.card-review-row-from {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.card-review-row h5 {
+  font-size: 16px;
+  margin: 0;
+  color: #151515;
+}
+
+.card-review-row p {
+  font-size: 12px;
+  margin: 0;
+  color: #151515;
+  text-align: justify;
+}

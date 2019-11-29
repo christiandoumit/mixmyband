@@ -1,0 +1,69 @@
+.user-circle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 15px;
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.artist {
+    border: 15px solid #DC5F2F;
+    background-image: asset-url('artist-t.png');
+  }
+
+  &.eventer {
+    border: 15px solid #83B594;
+    background-image: asset-url('eventer-t.png');
+  }
+
+  &.passionate {
+    border: 15px solid #545E7E;
+    background-image: asset-url('passionate-t.png');
+  }
+}
+
+.user-circle h2 {
+  font-weight: 800;
+  font-size: 24px;
+  opacity: 1;
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
+  }
+
+  &.passionate {
+    color: #545E7E;
+  }
+}
+
+.user-circle h3 {
+  font-weight: 800;
+  font-size: 20px;
+  opacity: 1;
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
+  }
+
+  &.passionate {
+    color: #545E7E;
+  }
+}
+
+.user-circle .user-category {
+  margin: 0;
+  text-align: center;
+  opacity: 1;
+}

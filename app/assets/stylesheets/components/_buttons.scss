@@ -1,0 +1,67 @@
+.button-submit {
+  background-color: white;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 8px 24px;
+  text-align: center;
+  cursor: pointer;
+
+  &.signup {
+  color: #1D73A5;
+  border-color: #1D73A5;
+  font-weight: 900;
+  font-size: 12px;
+  }
+
+  &.form {
+  color: #1D73A5;
+  border-color: #1D73A5;
+  font-weight: 400;
+  }
+
+  &.review {
+  color: #83B594;
+  border-color: #83B594;
+  font-weight: 900;
+  }
+}
+
+.button-plain {
+  padding: 12px 24px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+
+  &.artist {
+    background-color: #DC5F2F;
+  }
+
+  &.eventer {
+    background-color: #83B594;
+  }
+}
+
+.button-empty-bordered {
+  background-color: white;
+  border: 1px solid;
+  padding: 12px 24px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  &.artist {
+  color: #DC5F2F;
+  border-color: #DC5F2F;
+  }
+
+  &.eventer {
+  color: #83B594;
+  border-color: #83B594;
+  }
+
+  &.general {
+  color: #1D73A5;
+  border-color: #1D73A5;
+  }
+}
