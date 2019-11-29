@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_212722) do
+
+ActiveRecord::Schema.define(version: 2019_11_29_155331) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +32,10 @@ ActiveRecord::Schema.define(version: 2019_11_28_212722) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "eventer_id"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_bookings_on_artist_id"
+    t.index ["eventer_id"], name: "index_bookings_on_eventer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -62,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_212722) do
     t.string "twitter_url"
     t.string "insta_url"
     t.string "youtube_url"
-    t.string "avatar"
+    t.string "avatar", default: "http://caillouetland.com/wp-content/uploads/2017/07/avatar-blank.png"
     t.string "venue_address"
     t.string "venue_type"
     t.string "crowd_type"
@@ -83,6 +89,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_212722) do
 
   add_foreign_key "audio_urls", "users"
   add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "users", column: "artist_id"
+  add_foreign_key "bookings", "users", column: "eventer_id"
   add_foreign_key "images", "users"
   add_foreign_key "youtube_urls", "users"
 end
