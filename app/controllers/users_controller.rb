@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+
     # all_users = User.all
     @users = User.geocoded
     @eventers = @users.filter { |user| user.type_of_user == 'eventer' }

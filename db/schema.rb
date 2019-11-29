@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_195006) do
+ActiveRecord::Schema.define(version: 2019_11_28_212722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_195006) do
     t.string "music_type"
     t.string "artist_type"
     t.string "event_type"
-    t.integer "price"
+    t.string "price"
     t.string "fb_url"
     t.string "twitter_url"
     t.string "insta_url"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_11_27_195006) do
     t.string "venue_type"
     t.string "crowd_type"
     t.text "description"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

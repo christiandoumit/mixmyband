@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   end
 
   def categories_index
-    if params[:music_type] == 'pop'
-      @users = User.where(music_type: "pop")
-    end
+    all_users = User.all
+    @eventers = all_users.filter { |user| user.type_of_user == 'eventer' }
+    @artists = all_users.filter { |user| user.type_of_user == 'artist' }
   end
 
   def user_name

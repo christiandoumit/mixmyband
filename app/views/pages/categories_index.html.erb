@@ -1,1 +1,13 @@
-<h1>hello</h1>
+<h1>artists > <%= params[:music_type] %></h1>
+<p>displaying all the artists in this category</p>
+
+<!-- Display the artist's name in the category inside a card -->
+<!-- Display the artist's price in the category inside a card -->
+
+<% @category_artists = @artists.filter { |artist| artist.music_type == params[:music_type] }%>
+<% @category_artists.each do |a| %>
+  <li><%= a.artist_name %></li>
+  <li><%= a.artist_type %></li>
+  <li><%= a.artist_price %></li>
+  <li><%= a.description %></li>
+<% end %>
