@@ -10,16 +10,6 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<!-- 
-<div id='map' style='width: 400px; height: 300px;'></div>
-<script>
-mapboxgl.accessToken = '<%= ENV['MAPBOX_API_KEY'] %>';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-});
-</script>
- -->
 
 <!-- eventer cards -->
 
@@ -33,9 +23,27 @@ var map = new mapboxgl.Map({
 </div>
 
 <!-- filters -->
-<div>
-  
-</div>
+<!-- <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#about">About</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
+  </div>
+</div> -->
+
+<%= form_tag(users_path, method: :get) do %>
+  <%= select_tag "Type_of_venue", options_for_select(User::TYPEOFVENUE, params[:Type_of_venue]), include_blank: true, prompt: "Venue" %>
+  <%= select_tag "Type_of_crowd", options_for_select(User::TYPEOFCROWD, params[:Type_of_crowd]), include_blank: true,  prompt: "Crowd" %>
+  <%= submit_tag "", id: "search-submit", style: "display: none;" %>
+<% end %>
+
+
 
 
 
