@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
 
     # raise
-    # all_users = User.all
+    # @all_users = User.all
     @users = User.geocoded
     if params[:Type_of_crowd].present?
       @users = @users.where(crowd_type: params[:Type_of_crowd] )
@@ -12,10 +12,8 @@ class UsersController < ApplicationController
     end
     @eventers = @users.filter { |user| user.type_of_user == 'eventer' }
     @artists = @users.filter { |user| user.type_of_user == 'artist' }
-    @pop_artists = @artists.filter { |artist| artist.music_type == 'pop' }.sample(5)
-    @rock_artists = @artists.filter { |artist| artist.music_type == 'rock' }.sample(5)
-    @jazz_artists = @artists.filter { |artist| artist.music_type == 'jazz' }.sample(5)
-    
+
+
     @markers = @eventers.map  do |user|
       {
         lat: user.latitude,

@@ -1,4 +1,4 @@
-<h1>Artists > <%= params[:music_type] %></h1>
+<h1>Artists > <%= params[:music_type].capitalize %></h1>
 <p>Displaying all the artists in this category</p>
 
 <body>
@@ -22,10 +22,9 @@
 
   <% @category_artists = @artists.filter { |artist| artist.music_type == params[:music_type] }%>
   <% @category_artists.each do |a| %>
-    <li><%= a.artist_name %></li>
-    <li><%= a.artist_type %></li>
-    <li><%= a.artist_price %></li>
-    <li><%= a.description %></li>
-    <%= link_to "Go to show_category... test", user_path(a) %>
+    <p><%= link_to a.artist_name, user_path(a) %></p>
+    <p><%= a.artist_type %></p>
+    <p><%= a.price %></p>
+    <p><%= a.description %></p>
   <% end %>
 </body>
