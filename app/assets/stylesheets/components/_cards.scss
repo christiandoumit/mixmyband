@@ -1,3 +1,8 @@
+// bootstrap
+a:hover {
+  text-decoration: none !important;
+}
+
 .card-display {
   display: flex;
   align-items: flex-end;
@@ -24,6 +29,9 @@
   font-weight: 700;
   margin: 0;
   color: white;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .card-display p {
