@@ -1,14 +1,60 @@
-<h1>Mixmyband</h1>
-
-<ul>
-  <p><%= link_to "I Am an Artist", users_path%></p>
-  <p><%= link_to "I Am an Eventer", users_path %></p>
-  <p><%= link_to "I Am an Passionate", users_path %></p>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
+      <%= image_tag 'mixmyband-land.svg' %>
 
 
-<% if user_signed_in? %>
-<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-<% else %>
-<%= link_to('Login', new_user_session_path) %>
-<% end %>
+      <div class="row mt-3">
+
+        <div class="user-circle artist">
+          <div>
+            <div class="user-category">
+              <h3 class="artist">i am an</h3>
+            </div>
+            <div class="user-category">
+              <h2 class="artist">artist</h2>
+            </div>
+          </div>
+        </div>
+        <p><%= link_to "I Am an Artist", users_path%></p>
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="user-circle eventer">
+          <div>
+            <div class="user-category">
+              <h3 class="eventer">i am an</h3>
+            </div>
+            <div class="user-category">
+              <h2 class="eventer">eventer</h2>
+            </div>
+          </div>
+        </div>
+        <p><%= link_to "I Am an Eventer", users_path %></p>
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="user-circle passionate">
+          <div>
+            <div class="user-category">
+              <h3 class="passionate">i am a</h3>
+            </div>
+            <div class="user-category">
+              <h2 class="passionate">passionate</h2>
+            </div>
+          </div>
+        </div>
+        <p><%= link_to "I Am an Passionate", users_path %></p>
+      </div>
+
+      <% if user_signed_in? %>
+        <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
