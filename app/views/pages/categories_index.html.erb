@@ -3,11 +3,30 @@
 
 <!-- Display the artist's name in the category inside a card -->
 <!-- Display the artist's price in the category inside a card -->
+<body>
+  <div style="display:flex;">
+    <div class="form-group col-md-4">
+      <label for="inputartist">Filter by type of artist</label>
+        <select id="inputartist" class="form-control">
+          <option>test 1</option>
+          <option>test 2</option>
+        </select>
+    </div>
 
-<% @category_artists = @artists.filter { |artist| artist.music_type == params[:music_type] }%>
-<% @category_artists.each do |a| %>
-  <li><%= a.artist_name %></li>
-  <li><%= a.artist_type %></li>
-  <li><%= a.artist_price %></li>
-  <li><%= a.description %></li>
-<% end %>
+    <div class="form-group col-md-4">
+      <label for="inputartist">Filter by price</label>
+        <select id="inputartist" class="form-control">
+          <option>test 1</option>
+          <option>test 2</option>
+        </select>
+    </div>
+  </div>
+
+  <% @category_artists = @artists.filter { |artist| artist.music_type == params[:music_type] }%>
+  <% @category_artists.each do |a| %>
+    <li><%= a.artist_name %></li>
+    <li><%= a.artist_type %></li>
+    <li><%= a.artist_price %></li>
+    <li><%= a.description %></li>
+  <% end %>
+</body>
