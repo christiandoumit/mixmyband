@@ -1,7 +1,36 @@
-<!-- <h1>I am an eventer</h1> -->
 
-<h1><%= @user.eventer_name %></h1>
+
+<!-- map -->
+
+<!-- eventer infos -->
+<div>
+<h1><strong><%= @user.eventer_name %></strong></h1>
 <p><%= @user.venue_address%></p>
-<p><%= @user.venue_type%></p>
+<p><strong><%= @user.venue_type%></strong></p>
 <p><%= @user.crowd_type%></p>
 <p><%= @user.description%></p>
+</div>
+
+<!-- button VIEW REVIEWS -->
+<a href="#reviews">VIEW REVIEWS</a> 
+
+
+<!-- buttons BOOK THIS VENUE SEND A MESSAGE -->
+<%#= link_to "BOOK THIS VENUE", _path(e), { class: "" } %>
+<%#= link_to "SEND A MESSAGE", _path(e), { class: "" } %>
+
+<!-- map -->
+<h3>find us</h3>
+<div
+  id="map"
+  style="width: 100%;
+  height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<!-- calendar -->
+<h3>our next performances</h3>
+
+<!-- reviews -->
+<h3 id="reviews">reviews</h3>
