@@ -1,0 +1,60 @@
+.artist-profile-img {
+  width: 140px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-avatar {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1)
+}
+
+.eventer-cover-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-size: cover;
+  height: 270px;
+  width: 100%;
+  text-align: right;
+}
+
+.eventer-cover-img h1 {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  color: white;
+}
+
+.eventer-cover-img h5 {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+  color: white;
+}
+
+.eventer-cover-img p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  color: white;
+  padding-top: 10px;
+}
+
+.eventer-cover-img .eventer-cover-row {
+  width: 100%;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  text-align: right;
+}
+
+.eventer-cover-img .eventer-cover-footer {
+  width: 100%;
+  padding: 8px 8px 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
