@@ -17,5 +17,8 @@ class User < ApplicationRecord
   has_many :images
   has_many :youtube_urls
 
-  validates :music_type, inclusion: { in: CATEGORIES }
+  validates :music_type, inclusion: { in: CATEGORIES + [nil] }
+  validates :artist_type, inclusion: { in: ARTISTTYPE + [nil] }
+  validates :event_type, inclusion: { in: TYPEOFEVENT + [nil] }
+  validates :crowd_type, inclusion: { in: TYPEOFCROWD + [nil] }
 end

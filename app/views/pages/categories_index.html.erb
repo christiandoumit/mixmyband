@@ -1,8 +1,6 @@
-<h1>artists > <%= params[:music_type] %></h1>
-<p>displaying all the artists in this category</p>
+<h1>Artists > <%= params[:music_type] %></h1>
+<p>Displaying all the artists in this category</p>
 
-<!-- Display the artist's name in the category inside a card -->
-<!-- Display the artist's price in the category inside a card -->
 <body>
   <div style="display:flex;">
     <div class="form-group col-md-4">
@@ -28,5 +26,6 @@
     <li><%= a.artist_type %></li>
     <li><%= a.artist_price %></li>
     <li><%= a.description %></li>
+    <%= link_to "Go to show_category... test", user_path(a) %>
   <% end %>
 </body>
