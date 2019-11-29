@@ -12,10 +12,11 @@ User.destroy_all
 puts 'Database Cleaned'
 puts 'Creating seeds'
 
-brain_flower = User.create!(first_name: "Chris", last_name: "Doum", type_of_user: "artist", artist_name: "Brain Flower", music_type: "Rock", artist_type: "Band", price: "350$", email: "flower@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-daft_punk = User.create!(first_name: "Costin", last_name: "Domi", type_of_user: "artist", artist_name: "Daft Punk", music_type: "Electro", artist_type: "DJ", price: "350$", email: "daftpunk@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/daftpunk", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-daome = User.create!(first_name: "Vi", last_name: "Panne", type_of_user: "eventer", description: "blabla", venue_type: "Bar", crowd_type: "Young",eventer_name: "Salon Daome", music_type: "Electro", email: "daome@mixmyband.com", password: "123456", venue_address: "5333 Av Casgrain, Montreal",fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-datcha = User.create!(first_name: "Quan", last_name: "nguy", type_of_user: "eventer", description: "blibli", venue_type: "Club", crowd_type: "Elders",eventer_name: "La Datcha", music_type: "Electro", email: "datcha@mixmyband.com", password: "123456", venue_address: "98 Avenue Laurier O, Montréal",fb_url: "https://www.facebook.com/ladatcha", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+brain_flower = User.create!(first_name: "Chris", last_name: "Doum", type_of_user: "artist", artist_name: "Brain Flower", music_type: "rock", artist_type: "Band", price: "350$", email: "flower@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+daft_punk = User.create!(first_name: "Costin", last_name: "Domi", type_of_user: "artist", artist_name: "Daft Punk", music_type: "electro", artist_type: "DJ", price: "350$", email: "daftpunk@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/daftpunk", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+daome = User.create!(first_name: "Vi", last_name: "Panne", type_of_user: "eventer", description: "blabla", venue_type: "Bar", crowd_type: "Young",eventer_name: "Salon Daome", music_type: "electro", email: "daome@mixmyband.com", password: "123456", venue_address: "5333 Av Casgrain, Montreal",fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+datcha = User.create!(first_name: "Quan", last_name: "nguy", type_of_user: "eventer", description: "blibli", venue_type: "Club", crowd_type: "Elders",eventer_name: "La Datcha", music_type: "electro", email: "datcha@mixmyband.com", password: "123456", venue_address: "98 Avenue Laurier O, Montréal",fb_url: "https://www.facebook.com/ladatcha", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+
 
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 
@@ -30,39 +31,32 @@ bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user:
 
 bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_user: "eventer", description: "Cosy and great to grab a cocktail after a day of work.", venue_type: "club", crowd_type: "teens",eventer_name: "Oranges", music_type: "folk", email: "barorange@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis 2e étage, Montreal", avatar:"", event_type: "concert")
 
-salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "cover artist", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Blvd, Montreal", avatar:"",event_type: "birthday")
+
+salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Blvd, Montreal", avatar:"",event_type: "birthday")
 
 live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Shoppers", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis St A, Montreal", avatar:"")
 
-bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "young",eventer_name: "Shoppers", music_type: "folk", artist_type: "singer/songwriter", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis 2e étage, Montreal", avatar:"")
+bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "young",eventer_name: "Shoppers", music_type: "folk", artist_type: "singer/songwriter", email: "barla@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis 2e étage, Montreal", avatar:"")
 
-
-
-
-new_booking = Booking.create!( artist: brain_flower, eventer:live_jazz, message: "play at my bar")
-
-
+# new_booking = Booking.create!( artist: brain_flower, eventer:live_jazz, message: "play at my bar")
 
 #Seeds for testing purpouses !!!!!////
 
-puts "Creating faker database"
-40.times do
-  User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    type_of_user: ["artist", "eventer"].sample,
-    artist_name: Faker::Music.band,
-    music_type:  ["pop", "rock", "jazz"].sample,
-    price: Faker::Number.positive,
-    fb_url: Faker::Internet.url,
-    youtube_url: Faker::Internet.url,
-    crowd_type: ["young", "teen", "elders", "professionals", "hipsters", "connoisseurs", "family", "other"].sample,
-    email: Faker::Internet.email,
-    password: "123456"
-    )
-end
-
-
+# puts "Creating faker database"
+# 40.times do
+#   User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     type_of_user: ["artist", "eventer"].sample,
+#     artist_name: Faker::Music.band,
+#     music_type:  ["pop", "rock", "jazz"].sample,
+#     price: Faker::Number.positive,
+#     fb_url: Faker::Internet.url,
+#     youtube_url: Faker::Internet.url,
+#     crowd_type: ["young", "teen", "elders", "professionals", "hipsters", "connoisseurs", "family", "other"].sample,
+#     email: Faker::Internet.email,
+#     password: "123456"
+#     )
+# end
 
 puts "Done!"
-

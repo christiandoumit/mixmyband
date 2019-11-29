@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  CATEGORIES = ["Pop", "Rock", "Jazz", "Folk", "Blues", "Electro", "RnB", "Metal", "Funk", "Indie"]
-  ARTISTTYPE = ["DJ", "Solo Musician", "Band", "Big Band", "Singer-Songwriter", "Quatuor"]
-  TYPEOFEVENT = ["Birthday", "DJ Set", "Private Event", "Corporate Event", "Concert", "Clubbing", "Wedding", "Religious Event", "All Type of Event", "Other"]
-  TYPEOFVENUE = ["Bar", "Restaurant", "Club", "Themed Bar", "General Venue", "Private Place", "Other"]
-  PRICE = ["Free", "To be discussed", "50", "100", "150", "200", "250", "300"]
-  TYPEOFCROWD = ["Young", "Teens", "Elders", "Professionals", "Hipsters", "Connoisseurs", "Family", "Other"]
+  CATEGORIES = ["pop", "rock", "jazz", "folk", "blues", "electro", "rnb", "metal", "funk", "indie"]
+  ARTISTTYPE = ["dj", "solo musician", "band", "big band", "singer-songwriter", "quatuor"]
+  TYPEOFEVENT = ["birthday", "dj set", "private event", "corporate event", "concert", "clubbing", "wedding", "religious event", "all type of event", "other"]
+  TYPEOFVENUE = ["bar", "restaurant", "club", "themed bar", "general venue", "private place", "other"]
+  PRICE = ["free", "to be discussed", "50", "100", "150", "200", "250", "300"]
+  TYPEOFCROWD = ["young", "teens", "elders", "professionals", "hipsters", "connoisseurs", "family", "other"]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
