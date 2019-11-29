@@ -16,7 +16,7 @@ class BookingsControllerController < ApplicationController
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     @booking.user = @user
-    if @booking.save
+    if @booking.save!
       redirect_to dashboard_path
     else
       render 'new'
