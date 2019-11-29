@@ -1,0 +1,17 @@
+<h1>Artists</h1>
+<p>find the artist that fits your style</p>
+
+<div class="Search-Bar">
+  <input class="form-control" type="text" placeholder="Search for an artist by name..." aria-label="Search">
+</div>
+
+<% User::CATEGORIES.each do |category| %>
+  <ul>
+    <h1><%= link_to category.capitalize, categories_path(music_type: category) %></h1>
+      <% @category_artists = @artists.filter { |artist| artist.music_type == category }.sample(5) %>
+    <% @category_artists.each do |a| %>
+      <li><%= a.artist_name %></li>
+   <% end %>
+  </ul>
+<% end %>
+
