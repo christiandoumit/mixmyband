@@ -1,6 +1,10 @@
 class BookingsControllerController < ApplicationController
   def index
-    @booking = current_user.bookings
+
+    # @booking = current_user.bookings
+    ##### Vi added an s to @booking
+    # @bookings = current_user.bookings
+    @bookings = Booking.all
   end
 
   def show
@@ -32,6 +36,7 @@ class BookingsControllerController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_date, :status, :message)
+    # params.require(:booking).permit(:booking_date, :status, :message)
+    params.require(:booking).permit(:booking_date, :status, :message, :user_id )
   end
 end

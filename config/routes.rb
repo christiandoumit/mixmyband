@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # resources :categories, only:[:show]
   # resources :eventers, only:[:index, :show]
   resources :users, only:[:edit, :update, :show, :index] do
-    resources :bookings, only:[:new, :create]
+    # resources :bookings, only:[:new, :create]
+    ##### Vi added routes to bookings
+    resources :bookings, only:[:index, :show, :new, :create, :update ]
   end
 end
