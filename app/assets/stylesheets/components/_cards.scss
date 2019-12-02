@@ -134,6 +134,8 @@ a:hover {
 .card-a-row .booking-icons {
   display: flex;
   justify-content: space-between;
+  // added by Vi and Benjamin to make all the icons aligned even using the simple_form
+  align-items: baseline;
 }
 
 .card-a-row .booking-icons-item {
