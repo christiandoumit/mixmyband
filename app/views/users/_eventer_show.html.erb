@@ -18,8 +18,8 @@
         </div>
         <div class="eventer-cover-footer">
           <div>
-            <a href="#" class="fas fa-heart fa-lg" style="color: #83B594"></a>
-            <a href="#" class="fas fa-share-alt fa-lg" style="color: #83B594"></a>
+            <%= link_to "", favorites_path(other_user_id: @user.id), method: :post, class: "fas fa-heart fa-lg" %>
+            <a href="#" class="fas fa-share-alt fa-lg" style="color: #83B594"></a> -->
           </div>
           <div>
             <!-- changed the p for a to have the link allowed -->

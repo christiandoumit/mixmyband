@@ -1,4 +1,4 @@
-class BookingsControllerController < ApplicationController
+class BookingsController < ApplicationController
   def index
     @booking = current_user.bookings
   end
