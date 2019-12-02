@@ -14,15 +14,18 @@
 <%= link_to "EDIT YOUR PROFILE", nil, {class: "button-empty-bordered general"} %>
 </div>
 
+<!-- manage booking title -->
+<h3 style="font-weight: 700;">manage bookings</h3>
+
 <!-- booking title 1/2 -->
-<h3 style="font-weight: 700;">
+<h4  style="font-weight: 700;">
 <% if current_user.type_of_user == "artist" %>
-  <%= "Eventers' " %>
+  <%= "eventers' " %>
   <% else %>
-  <%= "Artists' " %>
+  <%= "artists' " %>
 <% end %>
 requests
-</h3>
+</h4>
 
 <!-- booking list RECEIVED-->
 <!-- pending received -->
@@ -37,19 +40,19 @@ requests
           <h5 class="name"><%= booking.sender.name %></h5>
           <div class="booking-icons">
             <!-- message icon -->
-            <button type="button" class="btn-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
 
             <!-- confirm icon -->
             <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
-              <button type="submit" class="btn-invisible">
+              <button type="submit" class="button-invisible">
                 <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
             <!-- decline icon -->
             <%= simple_form_for(booking)  do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="btn-invisible">
+              <button type="submit" class="button-invisible">
                 <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
@@ -73,13 +76,13 @@ requests
           <h5 class="name"><%= booking.sender.name %></h5>
           <div class="booking-icons">
             <!-- message icon -->
-            <button type="button" class="btn-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
 
             <!-- decline icon -->
             <%= simple_form_for(booking)  do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="btn-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+              <button type="submit" class="button-invisible">
+                <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
           </div>
@@ -90,7 +93,7 @@ requests
 </div>
 
 <!-- booking title 2/2 -->
-<h3 style="font-weight: 700;">My booking requests</h3>
+<h4 style="font-weight: 700;">My booking requests</h4>
 
 <!-- booking list SENT-->
 <!-- pending sent -->
@@ -105,13 +108,13 @@ requests
           <h5 class="name"><%= booking.receiver.name %></h5>
           <div class="booking-icons">
             <!-- message icon -->
-            <button type="button" class="btn-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
 
             <!-- decline icon -->
             <%= simple_form_for(booking)  do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="btn-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+              <button type="submit" class="button-invisible">
+                <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
           </div>
@@ -133,13 +136,13 @@ requests
           <h5 class="name"><%= booking.receiver.name %></h5>
           <div class="booking-icons">
             <!-- message icon -->
-            <button type="button" class="btn-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
 
             <!-- decline icon -->
             <%= simple_form_for(booking)  do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="btn-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+              <button type="submit" class="button-invisible">
+                <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
           </div>

@@ -32,13 +32,9 @@
 
 
 <!-- buttons BOOK THIS VENUE SEND A MESSAGE -->
-  <div class="row mt-3">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
-      <div class="list-group">
-        <%= link_to "BOOK THIS VENUE", new_user_booking_path(params[:id]), { class: "button-plain eventer" } %>
-        <%= link_to "SEND A MESSAGE", "#", { class: "button-empty-bordered artist" } %>
-      </div>
-    </div>
+  <div class="d-flex justify-content-center" style="width: 100vw">
+        <div><%= link_to "BOOK THIS VENUE", new_user_booking_path(params[:id]), { class: "button-plain eventer" } %></div>
+        <div class="pl-1"><%= link_to "SEND A MESSAGE", "#", { class: "button-empty-bordered artist" } %></div>
   </div>
 
 <!-- map -->
@@ -119,4 +115,10 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<!-- button add review -->
+<div>
+<%= link_to "+ Add a Review", "#", class: "button-submit review" %>
 </div>
