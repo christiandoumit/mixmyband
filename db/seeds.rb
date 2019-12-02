@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 puts "Deleting previous database"
+AudioUrl.destroy_all
+Image.destroy_all
+YoutubeUrl.destroy_all
 User.destroy_all
 puts 'Database Cleaned'
 puts 'Creating seeds'
@@ -20,7 +23,7 @@ bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of
 foufoune_electrique = User.create!(first_name: "Mikael", last_name: "Bisson", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Rock It", music_type: "rock", email: "foufsele@gmail.com", password: "123456", venue_address: "87 St Catherine St E, Montreal", avatar:"", event_type: "concert")
 bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user: "eventer", description: "Sleek nightclub featuring DJs, dancing & a high-end sound system, with frequent events.", venue_type: "club", crowd_type: "teens",eventer_name: "Stereos", music_type: "electro", email: "barstereo@gmail.com", password: "123456", venue_address: "858 St Catherine St E, Montreal", avatar:"",event_type: "dj set")
 bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_user: "eventer", description: "Cosy and great to grab a cocktail after a day of work.", venue_type: "club", crowd_type: "teens",eventer_name: "Oranges", music_type: "folk", email: "barorange@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis 2e étage, Montreal", avatar:"", event_type: "concert")
-salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 bd St Laurent, Montreal", avatar:"",event_type: "birthday")
+salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Blvd, Montreal", avatar:"",event_type: "birthday")
 live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Shoppers", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis St A, Montreal", avatar:"")
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "young",eventer_name: "Shoppers", music_type: "folk", artist_type: "singer-songwriter", email: "barla@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis 2e étage, Montreal", avatar:"")
 
@@ -103,7 +106,7 @@ paty_withclass = User.create!(first_name: "Cristian", last_name: "Margineanu", t
 
 virginia_tangvald = User.create!(first_name: "Virginia", last_name: "Tangvald", type_of_user: "artist", artist_name: "Virginia", music_type: "pop", artist_type: "solo musician", price: "100", email: "vitang@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Virginia-Tangvald-349882821691630/?eid=ARBNxAx4Ou4Erf0GGkmzlV0NEII_tYp5XpKjHjrJnox5zVd8KbrujcGByH60rA9uagiuxRPi6B4mUfS4", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-last_assassins = User.create!(first_name: "Maria", last_name: "Anastoov", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "brooker@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thelastassassins/?eid=ARAPzZ5HvHFhIhwJysN0gfEzXT5Y0Z4msKmzRjuJrIXIMCh4U30456N5b31qtIEXZyWXxfIMUKqQ599H", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+last_assassins = User.create!(first_name: "Maria", last_name: "Anastoov", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "brokeee@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thelastassassins/?eid=ARAPzZ5HvHFhIhwJysN0gfEzXT5Y0Z4msKmzRjuJrIXIMCh4U30456N5b31qtIEXZyWXxfIMUKqQ599H", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 renard_blanc = User.create!(first_name: "Renaud", last_name: "Vespignani", type_of_user: "artist", artist_name: "Renard Blanc", music_type: "jazz", artist_type: "band", price: "150", email: "renard@mixmyband.com", password: "123456", fb_url: "hhttps://www.facebook.com/lacollectivitedurenardblanc/?eid=ARAeN9vmq0-pG_5IjcSTiGQlyuN2nVjZP0Eezq9eCydV8YWwfZEr8342St7j_gwtp-Sch0epzNCcvPyu", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
@@ -122,11 +125,11 @@ mooch = User.create!(first_name: "Benji", last_name: "Tremblay", type_of_user: "
 dj_robertino= User.create!(first_name: "Roberto", last_name: "Melasco", type_of_user: "artist", artist_name: "Dj Robertino", music_type: "electro", artist_type: "dj", price: "350", email: "djrobertino@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/DjRobertinoCosentini/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 
-guster = User.create!(first_name: "Valeria", last_name: "Moreno", type_of_user: "artist", artist_name: "Guster", music_type: "pop", artist_type: "solo musician", price: "free", email: "vitange@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/gutserdepmetal/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+ guster = User.create!(first_name: "Valeria", last_name: "Moreno", type_of_user: "artist", artist_name: "Guster", music_type: "pop", artist_type: "solo musician", price: "free", email: "vitanga@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/gutserdepmetal/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 sunset_drip = User.create!(first_name: "Janique", last_name: "Alexandre", type_of_user: "artist", artist_name: "The Sunset Drip", music_type: "rnb", artist_type: "band", price: "150", email: "drip@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/TheSunsetDrip/?eid=ARAiGkUsJC0Z7D7yLnFUqWBbbgxNOwc53zsy9lKGJCti2NmNs47PSXxXTbH-sLjYdXrsxjuyqfNgqjmP", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-the_fats = User.create!(first_name: "Rene", last_name: "Vilanueva", type_of_user: "artist", artist_name: "The Fats", music_type: "jazz", artist_type: "band", price: "150", email: "renardo@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fatsMTL/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+the_fats = User.create!(first_name: "Rene", last_name: "Vilanueva", type_of_user: "artist", artist_name: "The Fats", music_type: "jazz", artist_type: "band", price: "150", email: "renarrrrd@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fatsMTL/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 brie_face = User.create!(first_name: "Mark", last_name: "Johnson", type_of_user: "artist", artist_name: "The Brie Face", music_type: "indie", artist_type: "band", price: "150", email: "brieface@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebrieface/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 
@@ -139,16 +142,16 @@ leftovers = User.create!(first_name: "Mark", last_name: "Marino", type_of_user: 
 
 screaming_deamons = User.create!(first_name: "Dany", last_name: "Reer", type_of_user: "artist", artist_name: "Screaming Deamons", music_type: "metal", artist_type: "band", price: "250", email: "dizastra@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/screamingdemons666/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-to_the_bone = User.create!(first_name: "Janique", last_name: "Bedard", type_of_user: "artist", artist_name: "To The Bone", music_type: "funk", artist_type: "band", price: "250", email: "cormieri@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/tothebonegang/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+to_the_bone = User.create!(first_name: "Janique", last_name: "Bedard", type_of_user: "artist", artist_name: "To The Bone", music_type: "funk", artist_type: "band", price: "250", email: "cormierdsad@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/tothebonegang/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-paty_withclass = User.create!(first_name: "Cristian", last_name: "Margineanu", type_of_user: "artist", artist_name: "Party With Class", music_type: "electro", artist_type: "dj", price: "350", email: "partywithclassy@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/partywithclass/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+paty_withclass = User.create!(first_name: "Cristian", last_name: "Margineanu", type_of_user: "artist", artist_name: "Party With Class", music_type: "electro", artist_type: "dj", price: "350", email: "partywiiiithclass@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/partywithclass/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 
 banista = User.create!(first_name: "Veronique", last_name: "Kimpo", type_of_user: "artist", artist_name: "Virginia", music_type: "pop", artist_type: "band", price: "150", email: "kimpo@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/banitsa.musique/?ref=py_c", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 scrap_matou = User.create!(first_name: "Marianne", last_name: "Martin", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "scrap@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/ScrapMatou/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-el_balcon = User.create!(first_name: "Ramsey", last_name: "Allah", type_of_user: "artist", artist_name: "El Balcon", music_type: "jazz", artist_type: "band", price: "150", email: "renardur@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/elsondelbalcon/?eid=ARDZWoukB8i8asA_N0keqyDwvAHWQfwLjaysAkvCPznuAUawaAigg_D5Mzp2cFTvur5pNc4EqzKH2Dzg", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+el_balcon = User.create!(first_name: "Ramsey", last_name: "Allah", type_of_user: "artist", artist_name: "El Balcon", music_type: "jazz", artist_type: "band", price: "150", email: "ressnard@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/elsondelbalcon/?eid=ARDZWoukB8i8asA_N0keqyDwvAHWQfwLjaysAkvCPznuAUawaAigg_D5Mzp2cFTvur5pNc4EqzKH2Dzg", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 son = User.create!(first_name: "Mike", last_name: "Johnson", type_of_user: "artist", artist_name: "Son Jarocho Montréal", music_type: "indie", artist_type: "band", price: "100", email: "son@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/sonjarochomtl/?eid=ARBAqj_Kr73v0EPHEWB5VPoTQ9_igKRq-Kj8eR103wZG35jJbsIYyToHWEI38A5J4sS0MaoFSHmxv3yl", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
@@ -179,14 +182,14 @@ night_snack = User.create!(first_name: "Jim", last_name: "Morrison", type_of_use
 
 nuage = User.create!(first_name: "Michelle", last_name: "Marino", type_of_user: "artist", artist_name: "Nuage", music_type: "blues", artist_type: "band", price: "free", email: "nuage@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Nuagegroupe/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
-barber_queen = User.create!(first_name: "Dan", last_name: "Keer", type_of_user: "artist", artist_name: "Barber For The Queen", music_type: "metal", artist_type: "band", price: "150", email: "pstentchi@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/barberforthequeen/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+barber_queen = User.create!(first_name: "Dan", last_name: "Keer", type_of_user: "artist", artist_name: "Barber For The Queen", music_type: "metal", artist_type: "band", price: "150", email: "pstendddtch@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/barberforthequeen/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 efy_hecks = User.create!(first_name: "Mark", last_name: "Alexandre", type_of_user: "artist", artist_name: "Efy Hecks", music_type: "funk", artist_type: "band", price: "250", email: "efy@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/efyhecks/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 dj_shane = User.create!(first_name: "Shane", last_name: "Oliveira", type_of_user: "artist", artist_name: "DJ Shane Oliveira", music_type: "electro", artist_type: "dj", price: "250", email: "djshane@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/DJShaneOliveira/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 
-blood = User.create!(first_name: "Viki", last_name: "Tangerine", type_of_user: "artist", artist_name: "Blood Skin Atopic", music_type: "pop", artist_type: "solo musician", price: "150", email: "vitanguy@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Bloodskinatopic/?eid=ARA3kNz-5RecYLWLL60v5qThNZz2yBvd-2qOetll5-U5ZJ3-fDuN1TTtexolitiBxKY1i_Sk5dgh5-fM", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
+blood = User.create!(first_name: "Viki", last_name: "Tangerine", type_of_user: "artist", artist_name: "Blood Skin Atopic", music_type: "pop", artist_type: "solo musician", price: "150", email: "vitawdng@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Bloodskinatopic/?eid=ARA3kNz-5RecYLWLL60v5qThNZz2yBvd-2qOetll5-U5ZJ3-fDuN1TTtexolitiBxKY1i_Sk5dgh5-fM", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
 distorstion = User.create!(first_name: "Bob", last_name: "Aurier", type_of_user: "artist", artist_name: "Distorsion", music_type: "rnb", artist_type: "band", price: "100", email: "distorstion@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/distorsionpsychfest/?ref=py_c&eid=ARB5IKs7J7zbDTC3WD4ynJhVub-Uz9fF8HnO-3ANNHsfGZvyzaziuiIhOtDZtk4lQ0FZiIxeqoX2_Fin", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar:"")
 
@@ -220,9 +223,6 @@ the_bog = User.create!(first_name: "John", last_name: "Mayer", type_of_user: "ar
 #     password: "123456"
 #     )
 # end
-
-#Seeds Favorites
-
 puts "Done!"
 
 
