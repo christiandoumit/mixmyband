@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def new
     @user = User.find(params[:user_id])
     @booking = Booking.new
@@ -7,8 +8,10 @@ class BookingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
+<
     @booking.receiver = @user
     @booking.sender = current_user
+
     if @booking.save!
       redirect_to dashboard_path
     else

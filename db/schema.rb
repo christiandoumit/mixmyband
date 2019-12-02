@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_12_02_142412) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_12_02_142412) do
     t.bigint "sender_id"
     t.index ["receiver_id"], name: "index_bookings_on_receiver_id"
     t.index ["sender_id"], name: "index_bookings_on_sender_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "other_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["other_user_id"], name: "index_favorites_on_other_user_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -84,8 +95,11 @@ ActiveRecord::Schema.define(version: 2019_12_02_142412) do
   end
 
   add_foreign_key "audio_urls", "users"
+
   add_foreign_key "bookings", "users", column: "receiver_id"
-  add_foreign_key "bookings", "users", column: "sender_id"
+  add_foreign_key "bookings", "users", column: "sender_id
+  add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "users", column: "other_user_id"
   add_foreign_key "images", "users"
   add_foreign_key "youtube_urls", "users"
 end
