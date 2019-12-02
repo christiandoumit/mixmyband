@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :bookings, only:[:new, :create]
   end
 
-  resources :favorites, only: [:index, :create]
+  resources :favorites, only: [:index, :create, :destroy]
 end
