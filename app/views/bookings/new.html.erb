@@ -1,0 +1,7 @@
+
+<!-- order needs to match the url  -->
+<%= simple_form_for [@user, @booking] do |f| %>
+<%= f.input :booking_date, as: :date, html5: true %>
+<%= f.input :message, placeholder: "Write a message" %>
+<%= f.submit "BOOK" %>
+<% end %>

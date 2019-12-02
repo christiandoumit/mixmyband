@@ -1,11 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    @booking = current_user.bookings
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-  end
 
   def new
     @user = User.find(params[:user_id])
@@ -15,7 +8,10 @@ class BookingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+<
+    @booking.receiver = @user
+    @booking.sender = current_user
+
     if @booking.save!
       redirect_to dashboard_path
     else
@@ -26,7 +22,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to user_path
+    redirect_to dashboard_path
   end
 
   private
