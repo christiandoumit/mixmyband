@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :users, only:[:edit, :update, :show, :index] do
     resources :bookings, only:[:new, :create]
   end
+
+  resources :favorites, only: [:index, :create]
 end
