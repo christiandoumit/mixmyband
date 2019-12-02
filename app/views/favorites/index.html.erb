@@ -1,3 +1,36 @@
-<% @favorites.each do |f| %>
-<%= f.other_user.eventer_name %>
-<% end %>
+<div class="container">
+  <div class="d-flex justify-content-center" style="width: 100%">
+    <div>
+      <div class="contenant general all-left bottom-border-general">
+        <h1>hi, <strong><%= @current_user.first_name.capitalize %></strong></h1>
+      </div>
+    </div>
+    <div>
+      <div class="contenant all-left">
+        <%= image_tag current_user.avatar, class: 'dashboard-avatar' %>
+      </div>
+    </div>
+  </div>
+
+  <h1>your favorite artists</h1>
+  <% if @favorites.empty? %>
+    <h2>Nothing to display</h2>
+  <% else %>
+    <% @favorites.each do |f| %>
+      <div class="card-a-row-fav">
+        <i class="fas fa-heart fa-lg" style="color: #1D73A5"></i>
+        <div class="name"><h5 style="font-weight: 700"><%= f.other_user.eventer_name.capitalize %></h5></div>
+        <div><%= link_to "", favorite_path(f), method: :delete, class: "fas fa-trash fa-lg", style: "color: #D3D3D3" %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+

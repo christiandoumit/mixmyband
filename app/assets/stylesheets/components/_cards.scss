@@ -75,6 +75,20 @@ a:hover {
   }
 }
 
+.card-a-row-fav {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  margin: 0;
+  border-bottom: 1px solid #1D73A5;
+
+  .name {
+    flex-grow: 1;
+    padding: 0 15px;
+  }
+}
+
 .card-a-row {
   height: 40px;
   display: flex;
