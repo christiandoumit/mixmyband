@@ -1,4 +1,4 @@
-
+<div class="container">
 
 
 <!-- eventer infos -->
@@ -49,7 +49,20 @@
 </div>
 
 <!-- calendar -->
-<h3 style="font-weight: 700;">our next performances</h3>
+<%= month_calendar do |date| %>
+  <%= date.day %>
+  <% @bookings.each do |booking| %>
+    <div>
+      <%= booking.name %>
+    </div>
+  <% end %>
+<% end %>
+
+
+
 
 <!-- reviews -->
 <h3 style="font-weight: 700;" id="reviews">reviews</h3>
+
+
+</div>

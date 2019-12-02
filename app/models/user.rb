@@ -13,7 +13,9 @@ class User < ApplicationRecord
   geocoded_by :venue_address
   after_validation :geocode, if: :will_save_change_to_venue_address?
   has_many :audio_urls
-  has_many :bookings
+  has_many :sent_bookings, class_name: "Booking", foreign_key: :sender_id
+  has_many :received_bookings, class_name: "Booking", foreign_key: :receiver_id
+
   has_many :images
   has_many :youtube_urls
   has_many :favorites
@@ -22,4 +24,14 @@ class User < ApplicationRecord
   validates :artist_type, inclusion: { in: ARTISTTYPE + [nil] }
   validates :event_type, inclusion: { in: TYPEOFEVENT + [nil] }
   validates :crowd_type, inclusion: { in: TYPEOFCROWD + [nil] }
+
+  def name
+    if type_of_user == "artist"
+      artist_name
+    elsif type_of_user == "eventer"
+      eventer_name
+    else
+      first_name
+    end    
+  end
 end

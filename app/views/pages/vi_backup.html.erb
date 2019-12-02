@@ -28,10 +28,10 @@ requests
 <!-- pending received -->
 <p style="font-weight: 900;">Pending</p>
 
+<% @pending_received.each do |booking| %>
 <div class="row mt-3">
       <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
       <div class="card-scroll-container cal-book">
-<% @pending_received.each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
           <h5 class="name"><%= booking.sender.name %></h5>
@@ -46,20 +46,19 @@ requests
                 <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
-            <!-- simple_form_for Decline -->
+            <a href="#" class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></a>
             <%= simple_form_for(booking)  do |f|  %>
               <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
               <button type="submit" class="btn-invisible">
                 <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
               </button>
             <% end %>
-
           </div>
         </div>
-<% end %>
       </div>
       </div>
     </div>
+<% end %>
  
 
 <!-- confirmed received -->
@@ -82,6 +81,10 @@ requests
       </div>
     </div>
   </div>
+ <% end %>
+
+ <% @confirmed_received.each do |booking| %>
+  <p><%= booking.booking_date %> <%= booking.sender.name %></p>
  <% end %>
 
 
@@ -111,6 +114,11 @@ requests
   </div>
  <% end %>
 
+ <p>Pending sent</p>
+<% @pending_sent.each do |booking| %>
+  <p><%= booking.booking_date %> <%= booking.receiver.name %></p>
+ <% end %>
+
 <!-- confirmed sent -->
  <p style="font-weight: 900;">Confirmed sent</p>
 
@@ -131,6 +139,12 @@ requests
       </div>
     </div>
   </div>
+ <% end %>
+
+
+ <p>Confirmed sent</p>
+<% @confirmed_sent.each do |booking| %>
+  <p><%= booking.booking_date %> <%= booking.receiver.name %></p>
  <% end %>
 
 </div>
