@@ -1,0 +1,47 @@
+.navbar-mmb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #151515;
+
+  img {
+    height: 35px;
+    padding-left: 10px;
+  }
+}
+
+.navbar-mmb .mmb-container {
+  padding: 6px;
+  width: 100%;
+}
+
+.mmb-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-mmb .mmb-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-toggler {
+  color: white;
+  padding: 0;
+}
+
+.navbar-toggler-elements a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-toggler-elements li {
+  list-style-type: none;
+}
+

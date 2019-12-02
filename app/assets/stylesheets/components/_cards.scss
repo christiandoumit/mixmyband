@@ -1,3 +1,8 @@
+// bootstrap
+a:hover {
+  text-decoration: none !important;
+}
+
 .card-display {
   display: flex;
   align-items: flex-end;
@@ -24,6 +29,9 @@
   font-weight: 700;
   margin: 0;
   color: white;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .card-display p {
@@ -64,6 +72,20 @@
 
   &.reviews {
     height: 350px;
+  }
+}
+
+.card-a-row-fav {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  margin: 0;
+  border-bottom: 1px solid #1D73A5;
+
+  .name {
+    flex-grow: 1;
+    padding: 0 15px;
   }
 }
 
@@ -112,6 +134,8 @@
 .card-a-row .booking-icons {
   display: flex;
   justify-content: space-between;
+  // added by Vi and Benjamin to make all the icons aligned even using the simple_form
+  align-items: baseline;
 }
 
 .card-a-row .booking-icons-item {

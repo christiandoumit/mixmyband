@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1><strong>eventers</strong></h1>
 
 <!-- map -->
@@ -5,43 +7,53 @@
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 375px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 
-<!-- eventer cards -->
+<!-- filters -->
 
-<h3>listed eventers</h3>
-<div>
+
+<%= form_tag(users_path, method: :get) do %>
+  <div class="dropdown" style="width: 100%">
+    <div class="filter">
+      <p>filter by venue</p>
+      <%= select_tag "Type_of_venue", options_for_select(User::TYPEOFVENUE, params[:Type_of_venue]), include_blank: true, prompt: "All" %>
+    </div>
+    <div class="filter">
+      <p>filter by crowd</p>
+      <%= select_tag "Type_of_crowd", options_for_select(User::TYPEOFCROWD, params[:Type_of_crowd]), include_blank: true,  prompt: "All" %>
+    </div>
+  </div>
+  <%= submit_tag "", id: "search-submit", style: "display: none;" %>
+<% end %>
+
+<!-- eventer cards -->
+<h3 style="font-weight: 700;">listed eventers</h3>
+
 <% @eventers.each do |e| %>
- <h4><%=link_to e.eventer_name, user_path(e)%></h4>
- <p><%= e.venue_address %></p>
- <p><%= e.venue_type %></p>
+ <div class="row mt-3">
+      <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
+        <%=  link_to user_path(e) do %>
+          <div class="card-display" style="background-image: url(https:www.onholdinc.com/mohblog/wp-content/uploads/2018/03/restaurant.jpg); height: 265px;">
+            <div class="card-display-footer general">
+              <div>
+                <h4 style="text-decoration: none;"><%=e.eventer_name%></h4>
+                <h5><%= e.venue_address %></h5>
+              </div>
+              <div>
+                <p><%= e.venue_type.capitalize %></p>
+              </div>
+            </div>
+           </div>
+          <% end %>
+      </div>
+    </div>
 <% end %>
 </div>
 
-<!-- filters -->
-<!-- <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
-</div> -->
-
-<%= form_tag(users_path, method: :get) do %>
-  <%= select_tag "Type_of_venue", options_for_select(User::TYPEOFVENUE, params[:Type_of_venue]), include_blank: true, prompt: "Venue" %>
-  <%= select_tag "Type_of_crowd", options_for_select(User::TYPEOFCROWD, params[:Type_of_crowd]), include_blank: true,  prompt: "Crowd" %>
-  <%= submit_tag "", id: "search-submit", style: "display: none;" %>
-<% end %>
 
 
 

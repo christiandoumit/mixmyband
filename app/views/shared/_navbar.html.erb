@@ -1,0 +1,44 @@
+<% if user_signed_in? %>
+  <div class="navbar-mmb">
+    <div class="mmb-container">
+      <div class="collapse" id="navbarToggleExternalContent">
+         <div class="p-4">
+            <ul class="navbar-toggler-elements">
+              <% if current_user.type_of_user == "artist"  %>
+                <li><%= link_to 'Go to the Eventers Index', users_path %></li>
+              <% else current_user.type_of_user == "eventer" %>
+                <li><%= link_to 'Go to the Artists Index', users_path %></li>
+              <% end %>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div>
+      </div>
+
+      <div class="mmb-row">
+
+        <div class='mmb-column pl-2'>
+          <div>
+            <nav class="navbar">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-th fa-lg"></i>
+              </button>
+            </nav>
+          </div>
+          <div><%= image_tag 'mixmyband-logo.png' %></div>
+        </div>
+
+        <div class="mmb-column">
+          <div>
+            <%= link_to "", favorites_path, class: "far fa-heart fa-2x", style: "color: white" %>
+          </div>
+          <div>
+            <%= link_to "", dashboard_path, class: "fas fa-user-circle fa-2x px-3", style: "color: white" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% else %>
+  <h1>Nothing</h1>
+<% end %>
