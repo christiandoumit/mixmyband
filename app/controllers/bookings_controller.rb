@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
-<
     @booking.receiver = @user
     @booking.sender = current_user
 
