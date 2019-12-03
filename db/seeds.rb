@@ -11,9 +11,6 @@ AudioUrl.destroy_all
 Image.destroy_all
 YoutubeUrl.destroy_all
 User.destroy_all
-Image.destroy_all
-YoutubeUrl.destroy_all
-AudioUrl.destroy_all
 puts 'Database Cleaned'
 puts 'Creating seeds'
 
