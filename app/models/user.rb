@@ -12,13 +12,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   geocoded_by :venue_address
   after_validation :geocode, if: :will_save_change_to_venue_address?
-  has_many :audio_urls
+
+  has_many :audio_urls, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :images, dependent: :destroy
+  has_many :youtube_urls, dependent: :destroy
+  has_many :favorites
   has_many :sent_bookings, class_name: "Booking", foreign_key: :sender_id
   has_many :received_bookings, class_name: "Booking", foreign_key: :receiver_id
-
-  has_many :images
-  has_many :youtube_urls
-  has_many :favorites
+ 
 
   validates :music_type, inclusion: { in: CATEGORIES + [nil] }
   validates :artist_type, inclusion: { in: ARTISTTYPE + [nil] }
