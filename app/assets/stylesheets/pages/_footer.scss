@@ -1,0 +1,47 @@
+.footer-mmb {
+  // display: flex;
+  // justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #151515;
+  height: 180px;
+  padding: 20px 50px;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+
+
+  * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.footer-mmb p {
+  margin: 0;
+  color: white;
+  font-weight: 400;
+}
+
+.footer-mmb-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 100px;
+}
+
+.footer-mmb-links a {
+  color: white;
+  opacity: 0.6;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.footer-mmb-links a:hover {
+  opacity: 1;
+}
+
+.footer .fa-heart {
+  color: white;
+}

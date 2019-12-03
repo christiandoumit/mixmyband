@@ -24,6 +24,19 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 0;
+}
+
+.navbar-mmb .mmb-column h5 {
+  color: white;
+  font-weight: 700;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.navbar-mmb .mmb-column a {
+  text-decoration: none;
+  color: white;
 }
 
 .navbar {
@@ -33,4 +46,15 @@
 .navbar-toggler {
   color: white;
   padding: 0;
- }
+}
+
+.navbar-toggler-elements a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-toggler-elements li {
+  list-style-type: none;
+}
+
