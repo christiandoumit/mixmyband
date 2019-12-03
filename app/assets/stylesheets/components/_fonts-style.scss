@@ -1,0 +1,52 @@
+.section-title {
+  font-weight: 700;
+  margin: 0;
+  padding-left: 5px;
+
+  &.general {
+    color: #1D73A5;
+  }
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
+  }
+}
+
+.section-substitle {
+  font-weight: 300;
+  margin: 2px 0;
+
+  &.general {
+    color: #1D73A5;
+  }
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
+  }
+}
+
+.section-paragraph {
+  font-weight: 500;
+  margin: 0 0 5px 0;
+
+  &.general {
+    color: #1D73A5;
+  }
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
+  }
+
+}
