@@ -31,5 +31,6 @@ class UsersController < ApplicationController
         lng: @user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { user: @user })
       }]
+    @bookings = Booking.all
   end
 end

@@ -2,51 +2,59 @@
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: #E5E5E5;
+    border: 8px solid #ffffff;
     border-collapse: collapse;
     box-sizing: border-box;
     max-width: 100%;
     width: 100%;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 50%;
+    text-align: center;
   }
 
   tr {
-    border-collapse: collapse;
+    // border-collapse: collapse;
   }
 
   th {
     padding: 6px;
-    border-bottom: 2px solid rgb(221, 221, 221);
+    border: 3px solid #ffffff;
+
+    // border-bottom: 2px solid rgb(221, 221, 221);
     border-collapse: collapse;
-    border-left: 1px solid rgb(221, 221, 221);
-    border-right: 1px solid rgb(221, 221, 221);
-    border-top: 0px none rgb(51, 51, 51);
+    // border-left: 1px solid rgb(221, 221, 221);
+    // border-right: 1px solid rgb(221, 221, 221);
+    // border-top: 0px none rgb(51, 51, 51);
     box-sizing: border-box;
-    text-align: left;
+    text-align: center;
   }
 
   td {
     padding: 6px;
     vertical-align: top;
-    width: 14%;
-
-    border: 1px solid #ddd;
-    border-top-color: rgb(221, 221, 221);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-right-color: rgb(221, 221, 221);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-bottom-color: rgb(221, 221, 221);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgb(221, 221, 221);
-    border-left-style: solid;
-    border-left-width: 1px;
+    width: 10%;
+    border: 3px solid #ffffff;
+    background: #E5E5E5;
+    max-height: 45px;
+    height: 45px;
+    // border-top-color: #ffffff;
+    // border-top-style: solid;
+    // border-top-width: 1px;
+    // border-right-color: #ffffff;
+    // border-right-style: solid;
+    // border-right-width: 1px;
+    // border-bottom-color: #ffffff;
+    // border-bottom-style: solid;
+    // border-bottom-width: 1px;
+    // border-left-color: #ffffff;
+    // border-left-style: solid;
+    // border-left-width: 1px;
   }
 
   .day {
-    height: 80px;
+    height: 40px;
   }
 
   .wday-0 {}
@@ -67,12 +75,35 @@
   .start-date {}
 
   .prev-month {
-    background: #DDD;
+    background: #E5E5E5;
+    color: #91918f;
   }
   .next-month {
-    background: #DDD;
+    background: #E5E5E5;
+    color: #91918f;
   }
   .current-month {}
 
   .has-events {}
+
+
+}
+
+.calendar-title {
+  text-align: center;
+}
+
+.calendar-heading {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  // padding-bottom: 1px;
+  padding-top: 3px;
+  background: #ffffff;
+  a {
+    color: #91918f;
+    font-size: 24%;
+    margin: 0px 8px;
+  }
 }

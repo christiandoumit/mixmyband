@@ -50,14 +50,15 @@
 <!-- calendar -->
 <h3 style="font-weight: 700;">our next performances</h3>
 
-<%#= month_calendar do |date| %>
-  <%#= date.day %>
-  <%# @bookings.each do |booking| %>
+<%= month_calendar do |date| %>
+  <%= date.day %>
+  <% @bookings.where(booking_date: date).each do |booking| %>
     <div>
-      <%#= booking.name %>
+      <%= booking.sender.artist_name %>
+      <%= booking.sender.eventer_name %>
     </div>
-  <%# end %>
-<%# end %>
+  <%end %>
+<% end %>
 
 
 
