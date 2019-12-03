@@ -20,13 +20,42 @@ puts 'Creating seeds'
 # datcha = User.create!(first_name: "Quan", last_name: "nguy", type_of_user: "eventer", description: "blibli", venue_type: "club", crowd_type: "elders",eventer_name: "La Datcha", music_type: "electro", email: "datcha@mixmyband.com", password: "123456", venue_address: "98 Avenue Laurier O, Montréal",fb_url: "https://www.facebook.com/ladatcha", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", artist_type: "dj", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", avatar:"", event_type: "dj set")
+
+
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", avatar:"", event_type: "concert")
+
+
 foufoune_electrique = User.create!(first_name: "Mikael", last_name: "Bisson", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Rock It", music_type: "rock", email: "foufsele@gmail.com", password: "123456", venue_address: "87 Saintt Catherine Street East, Montreal", avatar:"", event_type: "concert")
+
+
 bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user: "eventer", description: "Sleek nightclub featuring DJs, dancing & a high-end sound system, with frequent events.", venue_type: "club", crowd_type: "teens",eventer_name: "Stereos", music_type: "electro", email: "barstereo@gmail.com", password: "123456", venue_address: "858 Saint Catherine Street East, Montreal", avatar:"",event_type: "dj set")
+
+
 bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_user: "eventer", description: "Cosy and great to grab a cocktail after a day of work.", venue_type: "club", crowd_type: "teens",eventer_name: "Oranges", music_type: "folk", email: "barorange@gmail.com", password: "123456", venue_address: "7387 Boulevard St Hubert, Montreal", avatar:"", event_type: "concert")
+
+
 salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Boulevard, Montreal", avatar:"",event_type: "birthday")
+
+
 live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Shoppers", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis, Montreal", avatar:"", event_type: "concert")
+
+
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "young",eventer_name: "Shoppers", music_type: "folk", artist_type: "singer-songwriter", email: "barla@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", avatar:"", event_type: "private event")
+
+
+helicoptere = User.create!(first_name: "Migue;", last_name: "Bisonette", type_of_user: "eventer", description: "Best place where you can enjoy food and music in the same time.", venue_type: "restaurant", crowd_type: "hipsters",eventer_name: "El Hipstero", music_type: "rnb", artist_type: "dj", email: "barheli@gmail.com", password: "123456", venue_address: "4255 Rue Ontario East, Montreal", avatar:"", event_type: "dj set")
+
+
+le_saint_urbain = User.create!(first_name: "Miguelle", last_name: "Banne", type_of_user: "eventer", description: "Great food, great music and great folk ambiance.", venue_type: "restaurant", crowd_type: "elers",eventer_name: "Folkers", music_type: "folk", artist_type: "band", email: "restostub@gmail.com", password: "123456", venue_address: "96 Rue Fleury Ouest, Montreal", event_type: "concert")
+
+
+hoogan_beaufort = User.create!(first_name: "Jacquline", last_name: "Bourette", type_of_user: "eventer", description: "Best local food and the best rock show you can ever see.", venue_type: "restaurant", crowd_type: "connoisseurs",eventer_name: "Rock it", music_type: "rock", artist_type: "band", email: "restaurantee@gmail.com", password: "123456", venue_address: "4095 Rue Molson, Montreal", event_type: "concert")
+
+
+moccione = User.create!(first_name: "Bob", last_name: "Robertson", type_of_user: "eventer", description: "Pizza and some pop hits everynight of the week.", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Pop Night Everynight", music_type: "pop", artist_type: "solo musician", email: "restaurantmocci@gmail.com", password: "123456", venue_address: "380 Rue Villeray, Montreal", event_type: "other")
+
+
+alep = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Electro and food, what is better than that?", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Electrosz", music_type: "electro", artist_type: "dj", email: "restauraneasf@gmail.com", password: "123456", venue_address: "199 Rue Jean-Talon Est, Montreal", avatar:"", event_type: "dj set")
 
 
 
@@ -45,17 +74,17 @@ youtube_url_2 = YoutubeUrl.create! url: "https://www.youtube.com/embed/APsnyyCyS
 youtube_url_3 = YoutubeUrl.create! url: "https://www.youtube.com/embed/uZ_fQjWrlc0", user: brain_flower
 youtube_url_4 = YoutubeUrl.create! url: "https://www.youtube.com/embed/IfFg_Xtp4kA", user: brain_flower
 image_1 = Image.create image_src:"/images/brain_flower_1.jpg", user: brain_flower
-image_2 = Image.create image_src:"/images/brain_flower_2.jpg", user: brain_flower
+image_2 = Image.create image_src:"/images/brain_flower_5.jpg", user: brain_flower
 image_3 = Image.create image_src:"/images/brain_flower_3.jpg", user: brain_flower
 image_4 = Image.create image_src:"/images/brain_flower_4.jpg", user: brain_flower
 
 
-tire_loup = User.create!(first_name: "Alex", last_name: "Tremblay", type_of_user: "artist", artist_name: "Tire Le Coyote", music_type: "rock", artist_type: "solo musician", price: "250", email: "coyote@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/tirelecoyote/", description:"Solo artist looking for a gig. I play rock and I would like to roll this Saturday night.", avatar:"https://voir.ca/voir-content/uploads/2018/12/benoit-pinette-2-header_credits-emilie-dumais;1920x768.jpg")
+tire_loup = User.create!(first_name: "Alex", last_name: "Tremblay", type_of_user: "artist", artist_name: "Tire Le Coyote", music_type: "rock", artist_type: "solo musician", price: "250", email: "coyote@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/tirelecoyote/", description:"Solo artist looking for a gig. I play rock and I would like to roll this Saturday night.", avatar:"http://mileexend.com/uploads/post_artistes/tire-le-coyote-scene-mile-end-15h30-portrait.jpg")
 audio_url_1 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596349843&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: tire_loup
 audio_url_2 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596346690&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: tire_loup
-audio_url_3 = AudioUrl.create! url: "hhttps://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596346837&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: tire_loup
+audio_url_3 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596346837&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: tire_loup
 audio_url_4 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596346762&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: tire_loup
-youtube_url_1 = YoutubeUrl.create! url: "hhttps://www.youtube.com/embed/7GrE2Mv3y4c", user: tire_loup
+youtube_url_1 = YoutubeUrl.create! url: "https://www.youtube.com/embed/7GrE2Mv3y4c", user: tire_loup
 youtube_url_2 = YoutubeUrl.create! url: "https://www.youtube.com/embed/Whb5JOkUNt4", user: tire_loup
 youtube_url_3 = YoutubeUrl.create! url: "https://www.youtube.com/embed/aj_1CM5URyg", user: tire_loup
 youtube_url_4 = YoutubeUrl.create! url: "https://www.youtube.com/embed/BDsTr0_yF50", user: tire_loup
@@ -97,29 +126,39 @@ image_4 = Image.create image_src:"/images/brooks_4.jpg", user: brooke
 
 
 jean_leloup = User.create!(first_name: "Jean", last_name: "Loup", type_of_user: "artist", artist_name: "Jean Le Loup", music_type: "folk", artist_type: "singer-songwriter", price: "to be discussed", email: "leloup@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/jeanleloupofficiel/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/artist_1.jpg", user: jean_leloup
 
 galaxie = User.create!(first_name: "Mark", last_name: "Marino", type_of_user: "artist", artist_name: "Galaxie", music_type: "blues", artist_type: "band", price: "100", email: "galaxie@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/GroupeGalaxie/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/artist_2.jpg", user: galaxie
 
 pussy_stentch = User.create!(first_name: "Devon", last_name: "Keer", type_of_user: "artist", artist_name: "Pussy Stentch", music_type: "metal", artist_type: "band", price: "150", email: "pstentch@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/pstenchmtl/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/pussy_stentch.jpg", user: pussy_stentch
 
 jean_cormier = User.create!(first_name: "Jean", last_name: "Cormier", type_of_user: "artist", artist_name: "Jean Cormier", music_type: "funk", artist_type: "band", price: "250", email: "cormier@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/LouisJeanCormierOfficiel/?eid=ARBxwMf66LbVbmnFZ3JJWVNi8Inr5r4KmoPFiwBTC8YqdEIX0v1D2IADOceC8DkfJ5NuSdB4_TgnML3Q", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 
 paty_withclass = User.create!(first_name: "Cristian", last_name: "Margineanu", type_of_user: "artist", artist_name: "Party With Class", music_type: "electro", artist_type: "dj", price: "350", email: "partywithclass@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/partywithclass/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/party_withc.jpg", user: partywithclass
 
 
 virginia_tangvald = User.create!(first_name: "Virginia", last_name: "Tangvald", type_of_user: "artist", artist_name: "Virginia", music_type: "pop", artist_type: "solo musician", price: "100", email: "vitang@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Virginia-Tangvald-349882821691630/?eid=ARBNxAx4Ou4Erf0GGkmzlV0NEII_tYp5XpKjHjrJnox5zVd8KbrujcGByH60rA9uagiuxRPi6B4mUfS4", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/girl_singer.jpg", user:virginia_tangvald
 
 last_assassins = User.create!(first_name: "Maria", last_name: "Anastoov", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "brokeee@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thelastassassins/?eid=ARAPzZ5HvHFhIhwJysN0gfEzXT5Y0Z4msKmzRjuJrIXIMCh4U30456N5b31qtIEXZyWXxfIMUKqQ599H", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/rnb.jpg", user: last_assassins
 
 renard_blanc = User.create!(first_name: "Renaud", last_name: "Vespignani", type_of_user: "artist", artist_name: "Renard Blanc", music_type: "jazz", artist_type: "band", price: "150", email: "renard@mixmyband.com", password: "123456", fb_url: "hhttps://www.facebook.com/lacollectivitedurenardblanc/?eid=ARAeN9vmq0-pG_5IjcSTiGQlyuN2nVjZP0Eezq9eCydV8YWwfZEr8342St7j_gwtp-Sch0epzNCcvPyu", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/jazz_band.jpg", user: renard_blanc
 
 fudge = User.create!(first_name: "Markus", last_name: "Johnson", type_of_user: "artist", artist_name: "Fuudge", music_type: "indie", artist_type: "band", price: "100", email: "fuudge@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fuudgeband/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/artist_7.jpg", user: fudge
 
 # Batch number 2 for all the genres
 
 klaus = User.create!(first_name: "Klaus", last_name: "Iohannis", type_of_user: "artist", artist_name: "Klaus", music_type: "folk", artist_type: "band", price: "to be discussed", email: "klaus@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/klausbandmtl/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/acoustic.jpg", user: klaus
 
 zouz = User.create!(first_name: "Martin", last_name: "Mariano", type_of_user: "artist", artist_name: "Zouz", music_type: "blues", artist_type: "band", price: "150", email: "zouz@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/GroupeGalaxie/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+
 
 bleu_nuit = User.create!(first_name: "Devan", last_name: "Mikael", type_of_user: "artist", artist_name: "Bleu Nuit", music_type: "metal", artist_type: "band", price: "150", email: "bleu_nuit@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/bleunuitmtl/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 
