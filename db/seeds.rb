@@ -16,33 +16,33 @@ puts 'Creating seeds'
 
 # EVENTERS SEEDS
 
-bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", artist_type: "dj", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", avatar:"", event_type: "dj set")
+bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", artist_type: "dj", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
 image = Image.create image_src:"/images/restos/datch.jpg", user: bar_datcha
 
-bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", avatar:"", event_type: "concert")
+bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/lashop.jpg", user: bar_lashop
 
-foufoune_electrique = User.create!(first_name: "Mikael", last_name: "Bisson", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Rock It", music_type: "rock", email: "foufsele@gmail.com", password: "123456", venue_address: "87 Saintt Catherine Street East, Montreal", avatar:"", event_type: "concert")
+foufoune_electrique = User.create!(first_name: "Mikael", last_name: "Bisson", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Rock It", music_type: "rock", email: "foufsele@gmail.com", password: "123456", venue_address: "87 Saintt Catherine Street East, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/fouf.jpg", user: foufoune_electrique
 
 
-bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user: "eventer", description: "Sleek nightclub featuring DJs, dancing & a high-end sound system, with frequent events.", venue_type: "club", crowd_type: "teens",eventer_name: "Bar Stereo", music_type: "electro", email: "barstereo@gmail.com", password: "123456", venue_address: "858 Saint Catherine Street East, Montreal", avatar:"",event_type: "dj set")
+bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user: "eventer", description: "Sleek nightclub featuring DJs, dancing & a high-end sound system, with frequent events.", venue_type: "club", crowd_type: "teens",eventer_name: "Bar Stereo", music_type: "electro", email: "barstereo@gmail.com", password: "123456", venue_address: "858 Saint Catherine Street East, Montreal",event_type: "dj set")
 image = Image.create image_src:"/images/restos/stereo.jpg", user: bar_stereo
 
 
-bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_user: "eventer", description: "Cosy and great to grab a cocktail after a day of work.", venue_type: "club", crowd_type: "teens",eventer_name: "Bar Orange", music_type: "folk", email: "barorange@gmail.com", password: "123456", venue_address: "7387 Boulevard St Hubert, Montreal", avatar:"", event_type: "concert")
+bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_user: "eventer", description: "Cosy and great to grab a cocktail after a day of work.", venue_type: "club", crowd_type: "teens",eventer_name: "Bar Orange", music_type: "folk", email: "barorange@gmail.com", password: "123456", venue_address: "7387 Boulevard St Hubert, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/orange.jpg", user: bar_orange
 
 
-salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Salon Daome", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Boulevard, Montreal", avatar:"",event_type: "birthday")
+salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Salon Daome", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Boulevard, Montreal", event_type: "birthday")
 image = Image.create image_src:"/images/restos/daome.jpg", user: salon_dorme
 
 
-live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Live Jazz", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis, Montreal", avatar:"", event_type: "concert")
+live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Live Jazz", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/live_jazz.jpg", user: live_jazz
 
 
-helicoptere = User.create!(first_name: "Migue;", last_name: "Bisonette", type_of_user: "eventer", description: "Best place where you can enjoy food and music in the same time.", venue_type: "restaurant", crowd_type: "hipsters",eventer_name: "Helicoptere", music_type: "rnb", artist_type: "dj", email: "barheli@gmail.com", password: "123456", venue_address: "4255 Rue Ontario East, Montreal", avatar:"", event_type: "dj set")
+helicoptere = User.create!(first_name: "Migue;", last_name: "Bisonette", type_of_user: "eventer", description: "Best place where you can enjoy food and music in the same time.", venue_type: "restaurant", crowd_type: "hipsters",eventer_name: "Helicoptere", music_type: "rnb", artist_type: "dj", email: "barheli@gmail.com", password: "123456", venue_address: "4255 Rue Ontario East, Montreal", event_type: "dj set")
 image = Image.create image_src:"/images/restos/helicoptere.jpg", user: helicoptere
 
 
@@ -57,7 +57,7 @@ image = Image.create image_src:"/images/restos/hoog.jpg", user: hoogan_beaufort
 moccione = User.create!(first_name: "Bob", last_name: "Robertson", type_of_user: "eventer", description: "Pizza and some pop hits everynight of the week.", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Moccione", music_type: "pop", artist_type: "solo musician", email: "restaurantmocci@gmail.com", password: "123456", venue_address: "380 Rue Villeray, Montreal", event_type: "other")
 image = Image.create image_src:"/images/restos/moccione.jpg", user: moccione
 
-alep = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Electro and food, what is better than that?", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Alep", music_type: "electro", artist_type: "dj", email: "restauraneasf@gmail.com", password: "123456", venue_address: "199 Rue Jean-Talon Est, Montreal", avatar:"", event_type: "dj set")
+alep = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Electro and food, what is better than that?", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Alep", music_type: "electro", artist_type: "dj", email: "restauraneasf@gmail.com", password: "123456", venue_address: "199 Rue Jean-Talon Est, Montreal", event_type: "dj set")
 image = Image.create image_src:"/images/restos/aleop.jpg", user: alep
 
 
