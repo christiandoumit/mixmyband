@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 puts "Deleting previous database"
 AudioUrl.destroy_all
 Image.destroy_all
@@ -15,10 +14,8 @@ puts 'Database Cleaned'
 puts 'Creating seeds'
 
 
-# daft_punk = User.create!(first_name: "Costin", last_name: "Domi", type_of_user: "artist", artist_name: "Daft Punk", music_type: "electro", artist_type: "dj", price: "350$", email: "daftpunk@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/daftpunk", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-# daome = User.create!(first_name: "Vi", last_name: "Panne", type_of_user: "eventer", description: "blabla", venue_type: "bar", crowd_type: "young",eventer_name: "Salon Daome", music_type: "electro", email: "daome@mixmyband.com", password: "123456", venue_address: "5333 Av Casgrain, Montreal",fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-# datcha = User.create!(first_name: "Quan", last_name: "nguy", type_of_user: "eventer", description: "blibli", venue_type: "club", crowd_type: "elders",eventer_name: "La Datcha", music_type: "electro", email: "datcha@mixmyband.com", password: "123456", venue_address: "98 Avenue Laurier O, Montréal",fb_url: "https://www.facebook.com/ladatcha", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
-# brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
+# EVENTERS SEEDS
+
 bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", artist_type: "dj", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", avatar:"", event_type: "dj set")
 image = Image.create image_src:"/images/restos/datch.jpg", user: bar_datcha
 
@@ -64,12 +61,8 @@ alep = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user:
 image = Image.create image_src:"/images/restos/aleop.jpg", user: alep
 
 
+# ARTISTS SEEDS
 
-
-
-
-
-#Artists
 brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "artist", artist_name: "Brain Flower", music_type: "rock", artist_type: "band", price: "300", email: "flower@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/BrainflowerBand", description: "Band looking to play live, enjoy a relaxed night with quality music. We love to offer the best quality possible.", avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpIIvTSXpHO9tJub1FXOghuDZHKvUKNCL9FnQuwuYY6VsuYjQY&s")
 audio_url_1 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/666186821&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: brain_flower
 audio_url_2 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/641549256&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: brain_flower
@@ -128,8 +121,7 @@ image_2 = Image.create image_src:"/images/brooks_2.jpg", user: brooke
 image_3 = Image.create image_src:"/images/brooks_3.jpg", user: brooke
 image_4 = Image.create image_src:"/images/brooks_4.jpg", user: brooke
 
-#Batch #1 of seeds for all types
-
+# ARTISTS : Batch #1 of seeds for all types
 
 jean_leloup = User.create!(first_name: "Jean", last_name: "Loup", type_of_user: "artist", artist_name: "Jean Le Loup", music_type: "folk", artist_type: "singer-songwriter", price: "to be discussed", email: "leloup@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/jeanleloupofficiel/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/artist_1.jpg", user: jean_leloup
@@ -159,7 +151,7 @@ image = Image.create image_src:"/images/jazz_band.jpg", user: renard_blanc
 fudge = User.create!(first_name: "Markus", last_name: "Johnson", type_of_user: "artist", artist_name: "Fuudge", music_type: "indie", artist_type: "band", price: "100", email: "fuudge@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fuudgeband/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/artist_7.jpg", user: fudge
 
-# Batch number 2 for all the genres
+# ARTISTS : Batch number 2 for all the genres
 
 klaus = User.create!(first_name: "Klaus", last_name: "Iohannis", type_of_user: "artist", artist_name: "Klaus", music_type: "folk", artist_type: "band", price: "to be discussed", email: "klaus@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/klausbandmtl/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/acoustic.jpg", user: klaus
@@ -189,7 +181,7 @@ brie_face = User.create!(first_name: "Mark", last_name: "Johnson", type_of_user:
 image = Image.create image_src:"/images/solo_indie.jpg", user: brie_face
 
 
-#Batch number 3 for all genres
+# ARTISTS : Batch number 3 for all genres
 
 
 big_vein = User.create!(first_name: "ALexandre", last_name: "Tulip", type_of_user: "artist", artist_name: "Big Vein", music_type: "folk", artist_type: "singer-songwriter", price: "100", email: "bigvein@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/bigvein/?eid=ARB3swHmH_pgL4nDdw14g7y95VdoLHZahChgIv076mhmaqDqGBtfXw0Wtye_glZ3-KTlTO0s6rbVndWb", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
@@ -226,7 +218,7 @@ image = Image.create image_src:"/images/after.jpg", user: el_balcon
 son = User.create!(first_name: "Mike", last_name: "Johnson", type_of_user: "artist", artist_name: "Son Jarocho Montréal", music_type: "indie", artist_type: "solo musician", price: "100", email: "son@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/sonjarochomtl/?eid=ARBAqj_Kr73v0EPHEWB5VPoTQ9_igKRq-Kj8eR103wZG35jJbsIYyToHWEI38A5J4sS0MaoFSHmxv3yl", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/solo_indie.jpg", user: son
 
-#Batch number 4 for all genres
+# ARTISTS : Batch number 4 for all genres
 
 primitive_blue = User.create!(first_name: "Pavel", last_name: "Markovic", type_of_user: "artist", artist_name: "Primitive Blue", music_type: "folk", artist_type: "band", price: "to be discussed", email: "primitive@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/primitiveblueband/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/solo_project.jpg", user: primitive_blue
@@ -258,7 +250,7 @@ image = Image.create!(image_src:"/images/jazz_band.jpg", user: pockethead)
 solarium = User.create!(first_name: "Alexey", last_name: "John", type_of_user: "artist", artist_name: "Solarium", music_type: "indie", artist_type: "band", price: "150", email: "fsolarium@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/solariummusique/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create!(image_src:"/images/solo_musician_2.jpg", user: solarium)
 
-#Batch number 5 for all genres
+# ARTISTS : Batch number 5 for all genres
 
 night_snack = User.create!(first_name: "Jim", last_name: "Morrison", type_of_user: "artist", artist_name: "Night Snack", music_type: "folk", artist_type: "singer-songwriter", price: "to be discussed", email: "snack@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/nightsnackfunk/")
 image = Image.create!(image_src:"/images/jean.jpg", user: night_snack)
@@ -288,13 +280,7 @@ image = Image.create!(image_src:"/images/jazz_band.jpg", user: mothland)
 the_bog = User.create!(first_name: "John", last_name: "Mayer", type_of_user: "artist", artist_name: "The Bog", music_type: "indie", artist_type: "band", price: "100", email: "thebog@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebogmtl/?eid=ARAgOASqf8_mdudYYLTYBqLvbHXobMsY_Ah9vHwAqkhOBo7_vJrBPclrK036xDEZLt6gbsyBgu5Nt3lp", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create!(image_src:"/images/solo_project.jpg", user: the_bog)
 
-
-
-
-
-
-
-
+# FAKER
 
 # new_booking = Booking.create!( artist: brain_flower, eventer:live_jazz, message: "play at my bar")
 #Seeds for testing purpouses !!!!!////
