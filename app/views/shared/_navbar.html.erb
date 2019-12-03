@@ -40,5 +40,19 @@
     </div>
   </div>
 <% else %>
-  <h1>Nothing</h1>
+  <div class="navbar-mmb">
+    <div class="mmb-container">
+      <div class="mmb-row">
+
+        <div class='mmb-column pl-2'>
+          <div><%= image_tag 'mixmyband-logo.png' %></div>
+        </div>
+
+        <div class="mmb-column">
+          <i class="fas fa-angle-left fa-lg pr-2" style="color: white"></i>
+          <h5><%= link_to "back", :back %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
