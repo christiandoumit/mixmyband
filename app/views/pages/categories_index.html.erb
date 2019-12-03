@@ -18,17 +18,29 @@
         <div class="dropdown" style="width: 100%">
           <div class="filter">
             <p class="mb-1">filter by type of artist</p>
-            <%= select_tag "Type_of_venue", options_for_select(User::ARTISTTYPE, params[:music_type]), class: "input-field-light", prompt: "Solo Artist" %>
+            <%= select_tag "Artist_type", options_for_select(User::ARTISTTYPE, params[:music_type]), class: "input-field-light", prompt: "Solo Artist" %>
           </div>
           <div class="filter pr-3">
             <p class="mb-1">filter by price</p>
-            <%= select_tag "Type_of_crowd", options_for_select(User::PRICE, params[:price]), class: "input-field-light", prompt: "50$/hour" %>
+            <%= select_tag "Price", options_for_select(User::PRICE, params[:price]), class: "input-field-light", prompt: "50$/hour" %>
           </div>
         </div>
-        <%= submit_tag "", id: "search-submit", style: "display: none;" %>
+        <%= submit_tag "submit", id: "search-submit", style: "display: none;" %>
       </div>
     <% end %>
   </div>
+<% @artists.each do |artist| %>
+    <div class="card-display" style="background-image: "<%= image_url(artist.images.first.image_src) %>"; height:265px;">
+      <div>
+      <h3 class="card-display-intermediate"><%= artist.artist_name %></h3>
+      <div class="card-display-footer general">
+        <h5>Band | <%= artist.price %>$</h5>
+        <p><%= artist.description %></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+
 </div>
 
 
