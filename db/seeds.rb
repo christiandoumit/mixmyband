@@ -176,6 +176,7 @@ sunset_drip = User.create!(first_name: "Janique", last_name: "Alexandre", type_o
 image = Image.create image_src:"/images/rnb_2.jpg", user: sunset_drip
 
 the_fats = User.create!(first_name: "Rene", last_name: "Vilanueva", type_of_user: "artist", artist_name: "The Fats", music_type: "jazz", artist_type: "band", price: "150", email: "fats@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fatsMTL/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+image = Image.create image_src:"/images/solo_indie.jpg", user: the_fats
 
 brie_face = User.create!(first_name: "Mark", last_name: "Johnson", type_of_user: "artist", artist_name: "The Brie Face", music_type: "indie", artist_type: "band", price: "150", email: "brieface@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebrieface/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/solo_indie.jpg", user: brie_face
@@ -256,7 +257,7 @@ night_snack = User.create!(first_name: "Jim", last_name: "Morrison", type_of_use
 image = Image.create!(image_src:"/images/jean.jpg", user: night_snack)
 
 nuage = User.create!(first_name: "Michelle", last_name: "Marino", type_of_user: "artist", artist_name: "Nuage", music_type: "blues", artist_type: "band", price: "free", email: "nuage@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Nuagegroupe/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/solo_artist.jpg", user: guster)
+image = Image.create!(image_src:"/images/solo_artist.jpg", user: nuage)
 
 barber_queen = User.create!(first_name: "Dan", last_name: "Keer", type_of_user: "artist", artist_name: "Barber For The Queen", music_type: "metal", artist_type: "band", price: "150", email: "psstendddtckh@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/barberforthequeen/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/blues_band.jpg", user: barber_queen
