@@ -34,7 +34,7 @@ requests
 <div class="row mt-3">
   <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
     <div class="card-scroll-container cal-book">
-      <% @pending_received.each do |booking| %>
+      <% @pending_received.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
           <h5 class="name"><%= booking.sender.name %></h5>
@@ -70,7 +70,7 @@ requests
 <div class="row mt-3">
   <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
     <div class="card-scroll-container cal-book">
-      <% @confirmed_received.each do |booking| %>
+      <% @confirmed_received.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
           <h5 class="name"><%= booking.sender.name %></h5>
@@ -102,7 +102,7 @@ requests
 <div class="row mt-3">
   <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
     <div class="card-scroll-container cal-book">
-      <% @pending_sent.each do |booking| %>
+      <% @pending_sent.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
           <h5 class="name"><%= booking.receiver.name %></h5>
@@ -130,7 +130,7 @@ requests
 <div class="row mt-3">
   <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
     <div class="card-scroll-container cal-book">
-      <% @confirmed_sent.each do |booking| %>
+      <% @confirmed_sent.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
           <h5 class="name"><%= booking.receiver.name %></h5>
