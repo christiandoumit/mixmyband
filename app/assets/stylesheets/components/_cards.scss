@@ -155,3 +155,18 @@ a:hover {
   color: #151515;
   text-align: justify;
 }
+
+.card-a-row-fav {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  margin: 0;
+  border-bottom: 1px solid #1D73A5;
+
+  .its-name {
+    flex-grow: 1;
+    padding: 0 15px;
+    align-items: flex-start;
+  }
+}

@@ -7,9 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 puts "Deleting previous database"
+AudioUrl.destroy_all
+Image.destroy_all
+YoutubeUrl.destroy_all
 User.destroy_all
 puts 'Database Cleaned'
 puts 'Creating seeds'
+
 
 # daft_punk = User.create!(first_name: "Costin", last_name: "Domi", type_of_user: "artist", artist_name: "Daft Punk", music_type: "electro", artist_type: "dj", price: "350$", email: "daftpunk@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/daftpunk", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 # daome = User.create!(first_name: "Vi", last_name: "Panne", type_of_user: "eventer", description: "blabla", venue_type: "bar", crowd_type: "young",eventer_name: "Salon Daome", music_type: "electro", email: "daome@mixmyband.com", password: "123456", venue_address: "5333 Av Casgrain, Montreal",fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
@@ -23,6 +27,8 @@ bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_use
 salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Party Time", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Boulevard, Montreal", avatar:"",event_type: "birthday")
 live_jazz= User.create!(first_name: "Richard", last_name: "King", type_of_user: "eventer", description: "In a snug, romantic basement, this jazz club boasts live music nightly, plus a bistro menu.", venue_type: "bar", crowd_type: "family",eventer_name: "Shoppers", music_type: "jazz", email: "jazzme@gmail.com", password: "123456", venue_address: "4115 St Denis, Montreal", avatar:"", event_type: "concert")
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "young",eventer_name: "Shoppers", music_type: "folk", artist_type: "singer-songwriter", email: "barla@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", avatar:"", event_type: "private event")
+
+
 
 
 
@@ -220,4 +226,5 @@ the_bog = User.create!(first_name: "John", last_name: "Mayer", type_of_user: "ar
 #     password: "123456"
 #     )
 # end
+
 puts "Done!"
