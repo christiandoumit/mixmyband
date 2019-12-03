@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     @users = User.geocoded
 
@@ -20,11 +21,9 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { user: user })
       }
     end
-  end
-
+    
   def show
     @user = User.find(params[:id])
-
     @markers = [
       {
         lat: @user.latitude,

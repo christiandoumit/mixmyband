@@ -41,6 +41,11 @@ bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of
 #     password: "123456"
 #     )
 # end
+
+#Seeds Favorites
+Favorite.create!(user: brain_flower, other_user: daome)
+Favorite.create!(user: brain_flower, other_user: bar_datcha)
+
 puts "Done!"
 
 

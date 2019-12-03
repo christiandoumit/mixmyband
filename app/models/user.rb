@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :youtube_urls, dependent: :destroy
+  has_many :favorites
 
   validates :music_type, inclusion: { in: CATEGORIES + [nil] }
   validates :artist_type, inclusion: { in: ARTISTTYPE + [nil] }
