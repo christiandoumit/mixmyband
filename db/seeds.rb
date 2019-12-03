@@ -8,9 +8,6 @@
 # brain_flower = User.create!(first_name: "Theo", last_name: "Poncet", type_of_user: "Artist", artist_name: "Brain Flower", music_type: "Alternative Rock", artist_type: "Professional Band", price: "350$", fb_url: "https://www.facebook.com/BrainflowerBand", youtube_url: "https://www.youtube.com/channel/UC8EpshxnqopvKFqoTFaPPzA")
 puts "Deleting previous database"
 User.destroy_all
-Image.destroy_all
-YoutubeUrl.destroy_all
-AudioUrl.destroy_all
 puts 'Database Cleaned'
 puts 'Creating seeds'
 
