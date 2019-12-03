@@ -1,30 +1,34 @@
-<h1>Artists > <%= params[:music_type].capitalize %></h1>
-<p>Displaying all the artists in this category</p>
-
-<body>
-  <div style="display:flex;">
-    <div class="form-group col-md-4">
-      <label for="inputartist">Filter by type of artist</label>
-        <select id="inputartist" class="form-control">
-          <option>test 1</option>
-          <option>test 2</option>
-        </select>
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputartist">Filter by price</label>
-        <select id="inputartist" class="form-control">
-          <option>test 1</option>
-          <option>test 2</option>
-        </select>
-    </div>
+<div class="container">
+<!-- Title and Subtitle -->
+  <div class="contenant can-grow all-left artist bottom-border-artist">
+    <%= image_tag "artist.svg", style: "height: 32px; padding-bottom: 2px" %>
+    <h1 class="section-title" style="font-weight: 400">find artists </h1><h1 class="section-title">> <%= params[:music_type] %></h1>
   </div>
+  <div class="contenant all-left artist">
+    <h4 class="section-substitle">displaying all the artists in this category</h4>
+  </div>
+  <div class="py-4"></div>
+  <div class="md-form form-sm form pl-0">
+<!-- End of Title and Subtitle -->
 
-  <% @category_artists = @artists.filter { |artist| artist.music_type == params[:music_type] }%>
-  <% @category_artists.each do |a| %>
-    <p><%= link_to a.artist_name, user_path(a) %></p>
-    <p><%= a.artist_type %></p>
-    <p><%= a.price %></p>
-    <p><%= a.description %></p>
-  <% end %>
-</body>
+<!-- Filter bars -->
+  <div class="spaced-in-between aligned-centered artist">
+    <%= form_tag(users_path, method: :get) do %>
+      <div class="can-grow">
+        <div class="dropdown" style="width: 100%">
+          <div class="filter">
+            <p class="mb-1">filter by type of artist</p>
+            <%= select_tag "Type_of_venue", options_for_select(User::ARTISTTYPE, params[:music_type]), class: "input-field-light", prompt: "Solo Artist" %>
+          </div>
+          <div class="filter pr-3">
+            <p class="mb-1">filter by price</p>
+            <%= select_tag "Type_of_crowd", options_for_select(User::PRICE, params[:price]), class: "input-field-light", prompt: "50$/hour" %>
+          </div>
+        </div>
+        <%= submit_tag "", id: "search-submit", style: "display: none;" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
