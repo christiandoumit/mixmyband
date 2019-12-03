@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_142412) do
   add_foreign_key "audio_urls", "users"
 
   add_foreign_key "bookings", "users", column: "receiver_id"
-  add_foreign_key "bookings", "users", column: "sender_id
+  add_foreign_key "bookings", "users", column: "sender_id"
   add_foreign_key "favorites", "users"
   add_foreign_key "favorites", "users", column: "other_user_id"
   add_foreign_key "images", "users"
