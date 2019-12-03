@@ -80,6 +80,10 @@ html, body {
     align-items: flex-start;
   }
 
+  &.aligned-end {
+    align-items: flex-end;
+  }
+
   &.general {
     color: #1D73A5;
   }
@@ -113,6 +117,51 @@ html, body {
     margin: 0;
     padding: 0;
     border-bottom: 1px solid #83B594;
+  }
+}
+
+.contenant-notflex {
+  margin: 0;
+  padding: 0;
+
+  &.centered {
+    justify-content: center;
+  }
+
+  &.all-left {
+    justify-content: flex-start;
+  }
+
+  &.all-right {
+    justify-content: flex-end;
+  }
+
+  &.spaced-in-between {
+    justify-content: space-between;
+  }
+
+  &.aligned-centered {
+    align-items: center;
+  }
+
+  &.aligned-started {
+    align-items: flex-start;
+  }
+
+  &.aligned-end {
+    align-items: flex-end;
+  }
+
+  &.general {
+    color: #1D73A5;
+  }
+
+  &.artist {
+    color: #DC5F2F;
+  }
+
+  &.eventer {
+    color: #83B594;
   }
 }
 
