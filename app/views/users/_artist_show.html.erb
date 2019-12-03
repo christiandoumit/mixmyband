@@ -1,21 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="contenant all-left">
+      <img src="<%= @user.images[0].image_src %>" class="artist-profile-img">
+    </div>
+    <div class="contenant can-grow artist all-right">
+      <div style="text-align: right">
+        <h1 class="section-title"><%= @user.artist_name.downcase %></h1>
+        <h5 class="section-light-text"><%= @user.music_type.downcase %> <strong>|</strong> <%= @user.artist_type.downcase %></h5>
+        <% if @user.event_type.present? %>
+          <p class="section-paragraph pt-4">available for <strong><%= @user.event_type %></strong>.</p>
+        <% else %>
+          <p class="section-paragraph pt-4">available for <strong>any event type</strong>.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center pt-2">
+    <div class="contenant artist centered aligned-centered" style="text-align: center; width: 140px ">
+      <%= link_to "", favorites_path(other_user_id: @user.id), method: :post, class: "fas fa-heart fa-lg" %>
+      <a href="#" class="fas fa-share-alt fa-lg pl-2"></a>
+    </div>
+    <div class="contenant can-grow artist all-right">
+      <h6><strong><%= @user.price %> $CAD / hour</strong></h6>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center pt-4">
+    <p class="button-plain artist" style="width:49%">BOOK THIS ARTIST</p>
+    <p class="button-empty-bordered artist" style="width:49%">SEND A MESSAGE</p>
+  </div>
+  <div class="contenant bottom-border-artist pt-2"></div>
+</div>
+
+
+
+
+
 <div class="container" style="text-align: center;">
-  <h1><%= @user.artist_name %></h1>
-  <h2><%= @user.artist_type %></h2>
-
-  <div>
-    <p>Available for <%= @user.event_type.capitalize %></p>
-  </div>
-
-  <p>$<%= @user.price %>/hour</p>
-  <div>
-    <button class="w3-button w3-round-large">Book me</button>
-    <button class="w3-button w3-round-large">Send a message</button>
-  </div>
-
-  <div class="avatar row mt-3">
-    <img src="<%= @user.avatar%>" alt="avatar" style="border-radius: 50%" height="100">
-  </div>
-
 
   <h1 class="title">Audio</h1>
     <% if @user.audio_urls.count > 0 %>
