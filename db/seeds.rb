@@ -16,7 +16,7 @@ puts 'Creating seeds'
 
 # EVENTERS SEEDS
 
-bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", artist_type: "dj", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
+bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
 image = Image.create image_src:"/images/restos/datch.jpg", user: bar_datcha
 
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", event_type: "concert")
@@ -34,7 +34,7 @@ bar_orange = User.create!(first_name: "Muhammad", last_name: "Aziz", type_of_use
 image = Image.create image_src:"/images/restos/orange.jpg", user: bar_orange
 
 
-salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Salon Daome", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 St Laurent Boulevard, Montreal", event_type: "birthday")
+salon_dorme = User.create!(first_name: "Marinella", last_name: "Marcus", type_of_user: "eventer", description: "Great for theme nights.", venue_type: "bar", crowd_type: "elders",eventer_name: "Salon Daome", music_type: "pop", email: "salon_dorme@gmail.com", password: "123456", venue_address: "4465 boulevard Saint Laurent, Montreal", event_type: "birthday")
 image = Image.create image_src:"/images/restos/daome.jpg", user: salon_dorme
 
 
