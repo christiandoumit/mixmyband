@@ -14,10 +14,19 @@
 
   </head>
   <body>
-    <%= render "shared/navbar" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
-    <%= render 'shared/flashes' %>
+    <div id="container">
+      <div id="body">
+        <!-- the if statement means that the navbar won't display if user is on the landing page -->
+        <% if !(controller_name == "pages" && action_name == "home") %>
+          <%= render "shared/navbar" %>
+        <% end %>
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <%= render "shared/footer" %>
+      </div>
+    </div>
+    <%#= render 'shared/flashes' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
