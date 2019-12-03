@@ -12,12 +12,11 @@
 <!-- End of Title and Subtitle -->
 
 <!-- Search Bar -->
-<!--   <div class="input-group-prepend">
+  <div class="input-group-prepend">
     <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-white"
         aria-hidden="true"></i></span>
   </div>
   <input class="form-control my-0 py-1" type="text" placeholder="Search for an artist by name..." aria-label="Search">
-  </div> -->
 <!-- End of Search Bar -->
   <div class="pt-3" style="width: 100%">
     <% User::CATEGORIES.each do |category| %>
@@ -34,18 +33,22 @@
               <!-- carousel item  -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="card-display" style="background-image: url(https://i1.sndcdn.com/artworks-000643306846-uqxfn3-t500x500.jpg); height:265px;" >
-                    <div class="card-display-footer carrousel">
-                      <h4><%= @category_artists.first.artist_name.capitalize %></h4>
-                    </div>
+                  <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + @category_artists.first.images.first.image_src %>); height:265px;" >
+                    <%= link_to user_path(@category_artists.first) do %>
+                      <div class="card-display-footer carrousel">
+                        <h4><%= @category_artists.first.artist_name.capitalize %></h4>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
                 <% @category_artists[1..-1].each do |a| %>
                   <div class="carousel-item">
-                    <div class="card-display" style="background-image: url(https://i1.sndcdn.com/artworks-000643306846-uqxfn3-t500x500.jpg); height:265px;" >
-                      <div class="card-display-footer carrousel">
-                        <h4><%= a.artist_name.capitalize %></h4>
-                      </div>
+                    <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + a.images.first.image_src %>); height:265px;" >
+                      <%= link_to user_path(a) do %>
+                        <div class="card-display-footer carrousel">
+                          <h4><%= a.artist_name.capitalize %></h4>
+                        </div>
+                      <% end %>
                     </div>
                   </div>
                 <% end %>

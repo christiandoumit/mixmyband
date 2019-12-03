@@ -12,16 +12,16 @@
 <!-- End of Title and Subtitle -->
 
 <!-- Filter bars -->
-  <div class="spaced-in-between aligned-centered artist">
+  <div>
     <%= form_tag(users_path, method: :get) do %>
       <div class="can-grow">
         <div class="dropdown" style="width: 100%">
           <div class="filter">
-            <p class="mb-1">filter by type of artist</p>
+            <p class="mb-1"><strong>filter by type of artist</strong></p>
             <%= select_tag "Artist_type", options_for_select(User::ARTISTTYPE, params[:music_type]), class: "input-field-light", prompt: "Solo Artist" %>
           </div>
           <div class="filter pr-3">
-            <p class="mb-1">filter by price</p>
+            <p class="mb-1"><strong>filter by price</strong></p>
             <%= select_tag "Price", options_for_select(User::PRICE, params[:price]), class: "input-field-light", prompt: "50$/hour" %>
           </div>
         </div>
@@ -29,17 +29,23 @@
       </div>
     <% end %>
   </div>
-<% @artists.each do |artist| %>
-    <div class="card-display" style="background-image: "<%= image_url(artist.images.first.image_src) %>"; height:265px;">
-      <div>
-      <h3 class="card-display-intermediate"><%= artist.artist_name %></h3>
-      <div class="card-display-footer general">
-        <h5>Band | <%= artist.price %>$</h5>
-        <p><%= artist.description %></p>
-      </div>
-      </div>
-    </div>
-  <% end %>
+
+  <!-- Artists Cards -->
+  <div class="pt-5">
+    <% @artists.each do |artist| %>
+      <%= link_to user_path(artist) do %>
+        <div class="card-display my-4" style="background-image: url(<%= root_url.delete_suffix("/") + artist.images.first.image_src %>); height:265px;">
+          <div style="width: 100%;">
+            <h3 class="card-display-intermediate"><%= artist.artist_name %></h3>
+            <div class="card-display-footer general">
+              <h5><%= artist.artist_type %> | <%= artist.price %> $CAD/hour</h5>
+              <p><%= artist.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
 </div>
 
