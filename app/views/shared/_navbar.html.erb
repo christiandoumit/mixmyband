@@ -3,13 +3,13 @@
     <div class="mmb-container">
       <div class="collapse" id="navbarToggleExternalContent">
          <div class="p-4">
-            <ul>
+            <ul class="navbar-toggler-elements">
               <% if current_user.type_of_user == "artist"  %>
-                <li><%= link_to 'Display Eventers Index', users_path %></li>
+                <li><%= link_to 'Go to the Eventers Index', users_path %></li>
               <% else current_user.type_of_user == "eventer" %>
-                <li><%= link_to 'Display Artists Index', users_path %>
-              <% end %></li>
-              <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to 'Go to the Artists Index', users_path %></li>
+              <% end %>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
       </div>
@@ -24,15 +24,15 @@
               </button>
             </nav>
           </div>
-          <div><%= image_tag 'mixmyband-logo.svg' %></div>
+          <div><%= image_tag 'mixmyband-logo.png' %></div>
         </div>
 
         <div class="mmb-column">
           <div>
-            <i class="far fa-heart fa-2x" style="color: white"></i>
+            <%= link_to "", favorites_path, class: "far fa-heart fa-2x", style: "color: white" %>
           </div>
           <div>
-            <i class="fas fa-user-circle fa-2x px-3" style="color: white"></i>
+            <%= link_to "", dashboard_path, class: "fas fa-user-circle fa-2x px-3", style: "color: white" %>
           </div>
         </div>
 
@@ -42,37 +42,3 @@
 <% else %>
   <h1>Nothing</h1>
 <% end %>
-
-
-
-
-
-
-<!-- <div class="navbar navbar-expand-sm navbar-light navbar-mmb" style="height: 55px;">
-  <a class="navbar-mmb-brand" href="#">
-    <img src="assets/images/mixmyband-logo.svg" />
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ekipyhjtwrtniwwln3xl.jpg" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
- -->

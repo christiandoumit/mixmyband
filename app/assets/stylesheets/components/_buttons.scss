@@ -65,3 +65,9 @@
   border-color: #1D73A5;
   }
 }
+
+.button-invisible {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+}

@@ -33,4 +33,15 @@
 .navbar-toggler {
   color: white;
   padding: 0;
- }
+}
+
+.navbar-toggler-elements a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-toggler-elements li {
+  list-style-type: none;
+}
+
