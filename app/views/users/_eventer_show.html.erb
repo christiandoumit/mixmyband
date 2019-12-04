@@ -59,88 +59,84 @@
     <h3 class="section-paragraph eventer" style="font-weight: 700;">our next performances</h3>
   </div>
 
-<%= month_calendar do |date| %>
-  <%= date.day %>
-  <div class="d-flex justify-content-center">
-    <% @bookings.where(booking_date: date).first(3).each do |booking| %>
-      <div style="
-        height: 6px;
-        width: 6px;
-        border-radius: 50%;
-        background-color: #0E0000;
-        margin-top: 6px;
-      ">
-      </div>
-      <!-- 
-        <div>
-          <%= booking.sender.artist_name %>
-          <%= booking.sender.eventer_name %>
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+    <div class="d-flex justify-content-center">
+      <% @bookings.where(booking_date: date).first(3).each do |booking| %>
+        <div style="
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: #0E0000;
+          margin-top: 6px;
+        ">
         </div>
-       -->
-    <%end %>
-  </div>
-<% end %>
+        <!-- in case we want 
+          <div>
+            <%= booking.sender.artist_name %>
+            <%= booking.sender.eventer_name %>
+          </div>
+         -->
+      <%end %>
+    </div>
+  <% end %>
 
 
   <!-- reviews -->
   <div class="contenant all-left aligned-centered py-2">
     <h3 class="section-paragraph eventer" style="font-weight: 700;" id="reviews">reviews</h3>
   </div>
-  <div class="row mt-3">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
       <div class="card-scroll-container reviews">
-          <div class="card-review-row">
-            <div class="card-review-row-from">
-              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-            </div>
-            <div>
-              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-            </div>
+        <div class="card-review-row">
+          <div class="card-review-row-from">
+            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
           </div>
-
-          <div class="card-review-row">
-            <div class="card-review-row-from">
-              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-            </div>
-            <div>
-              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-            </div>
+          <div>
+            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
           </div>
+        </div>
 
-          <div class="card-review-row">
-            <div class="card-review-row-from">
-              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-            </div>
-            <div>
-              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-            </div>
+        <div class="card-review-row">
+          <div class="card-review-row-from">
+            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
           </div>
-
-          <div class="card-review-row">
-            <div class="card-review-row-from">
-              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-            </div>
-            <div>
-              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-            </div>
+          <div>
+            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
           </div>
+        </div>
 
-          <div class="card-review-row">
-            <div class="card-review-row-from">
-              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-            </div>
-            <div>
-              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-            </div>
+        <div class="card-review-row">
+          <div class="card-review-row-from">
+            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+          </div>
+          <div>
+            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+          </div>
+        </div>
+
+        <div class="card-review-row">
+          <div class="card-review-row-from">
+            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+          </div>
+          <div>
+            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+          </div>
+        </div>
+
+        <div class="card-review-row">
+          <div class="card-review-row-from">
+            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+          </div>
+          <div>
+            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
 
   <!-- button add review -->
-  <div class="contenant can-grow eventer all-right pr-2">
+  <div class="contenant can-grow eventer all-right my-3 pr-2">
     <%= link_to "+ Add a Review", "#", class: "button-submit review" %>
   </div>
+</div>
 
