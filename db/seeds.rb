@@ -16,15 +16,17 @@ puts 'Creating seeds'
 
 # EVENTERS SEEDS
 
-bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Russian Nights", music_type: "electro", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
+bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Datcha Bar", music_type: "electro", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
 image = Image.create image_src:"/images/restos/datch.jpg", user: bar_datcha
 
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/lashop.jpg", user: bar_lashop
 
-foufoune_electrique = User.create!(first_name: "Mikael", last_name: "Bisson", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Rock It", music_type: "rock", email: "foufsele@gmail.com", password: "123456", venue_address: "87 Saintt Catherine Street East, Montreal", event_type: "concert")
+foufoune_electrique = User.create!(first_name: "Antonio", last_name: "Pellegrini", type_of_user: "eventer", description: "Low-lit bar with a punk rock vibe & exposed-brick walls offering frequent concerts & pool tables.", venue_type: "club", crowd_type: "elders",eventer_name: "Foufune Electrique", music_type: "rock", email: "antonio@gmail.com", password: "123456", venue_address: "87 Saintt Catherine Street Est, Montreal", event_type: "concert", avatar: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiw-tbox5zmAhXnSt8KHbNxAFQQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F443604632038116658%2F&psig=AOvVaw0u0Xv1akUHgMjYIkfz7GDZ&ust=1575568398761788")
 image = Image.create image_src:"/images/restos/fouf.jpg", user: foufoune_electrique
-
+image = Image.create image_src:"/images/fouf.jpg", user: foufoune_electrique
+image = Image.create image_src:"/images/fouf2.jpeg", user: foufoune_electrique
+image = Image.create image_src:"/images/fouf3.jpg", user: foufoune_electrique
 
 bar_stereo = User.create!(first_name: "Johnny", last_name: "Chow", type_of_user: "eventer", description: "Sleek nightclub featuring DJs, dancing & a high-end sound system, with frequent events.", venue_type: "club", crowd_type: "teens",eventer_name: "Bar Stereo", music_type: "electro", email: "barstereo@gmail.com", password: "123456", venue_address: "858 Saint Catherine Street East, Montreal",event_type: "dj set")
 image = Image.create image_src:"/images/restos/stereo.jpg", user: bar_stereo
@@ -140,13 +142,13 @@ image = Image.create image_src:"/images/party_withc.jpg", user: paty_withclass
 
 
 virginia_tangvald = User.create!(first_name: "Virginia", last_name: "Tangvald", type_of_user: "artist", artist_name: "Virginia", music_type: "pop", artist_type: "solo musician", price: "100", email: "vitang@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Virginia-Tangvald-349882821691630/?eid=ARBNxAx4Ou4Erf0GGkmzlV0NEII_tYp5XpKjHjrJnox5zVd8KbrujcGByH60rA9uagiuxRPi6B4mUfS4", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/girl_singer.jpg", user:virginia_tangvald
+image = Image.create image_src:"/images/virginie.jpg", user:virginia_tangvald
 
 last_assassins = User.create!(first_name: "Maria", last_name: "Anastoov", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "brokeee@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thelastassassins/?eid=ARAPzZ5HvHFhIhwJysN0gfEzXT5Y0Z4msKmzRjuJrIXIMCh4U30456N5b31qtIEXZyWXxfIMUKqQ599H", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/rnb.jpg", user: last_assassins
 
 renard_blanc = User.create!(first_name: "Renaud", last_name: "Vespignani", type_of_user: "artist", artist_name: "Renard Blanc", music_type: "jazz", artist_type: "band", price: "150", email: "renard@mixmyband.com", password: "123456", fb_url: "hhttps://www.facebook.com/lacollectivitedurenardblanc/?eid=ARAeN9vmq0-pG_5IjcSTiGQlyuN2nVjZP0Eezq9eCydV8YWwfZEr8342St7j_gwtp-Sch0epzNCcvPyu", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/jazz_band.jpg", user: renard_blanc
+image = Image.create image_src:"/images/jazz3.jpeg", user: renard_blanc
 
 fudge = User.create!(first_name: "Markus", last_name: "Johnson", type_of_user: "artist", artist_name: "Fuudge", music_type: "indie", artist_type: "band", price: "100", email: "fuudge@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fuudgeband/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/artist_7.jpg", user: fudge
@@ -154,7 +156,7 @@ image = Image.create image_src:"/images/artist_7.jpg", user: fudge
 # ARTISTS : Batch number 2 for all the genres
 
 klaus = User.create!(first_name: "Klaus", last_name: "Iohannis", type_of_user: "artist", artist_name: "Klaus", music_type: "folk", artist_type: "band", price: "to be discussed", email: "klaus@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/klausbandmtl/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/acoustic.jpg", user: klaus
+image = Image.create image_src:"/images/band1.jpg", user: klaus
 
 zouz = User.create!(first_name: "Martin", last_name: "Mariano", type_of_user: "artist", artist_name: "Zouz", music_type: "blues", artist_type: "band", price: "150", email: "zouz@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/GroupeGalaxie/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/artist_3.jpg", user: zouz
@@ -167,26 +169,38 @@ mooch = User.create!(first_name: "Benji", last_name: "Tremblay", type_of_user: "
 image = Image.create image_src:"/images/artist_4.jpg", user: mooch
 
 dj_robertino= User.create!(first_name: "Roberto", last_name: "Melasco", type_of_user: "artist", artist_name: "Dj Robertino", music_type: "electro", artist_type: "dj", price: "350", email: "djrobertino@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/DjRobertinoCosentini/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/dj_1.jpg", user: dj_robertino
+image = Image.create image_src:"/images/another_dj.jpg", user: dj_robertino
 
- guster = User.create!(first_name: "Valeria", last_name: "Moreno", type_of_user: "artist", artist_name: "Guster", music_type: "pop", artist_type: "solo musician", price: "free", email: "viddtanga@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/gutserdepmetal/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/solo_artist.jpg", user: guster)
+ doumit = User.create!(first_name: "Christian", last_name: "Doumit", type_of_user: "artist", artist_name: "Christian Doumit", music_type: "pop", artist_type: "solo musician", price: "350", email: "christian@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/ChristianDoumitOfficiel", description: "Passionate and amazing singer looking to play music live and warm everyone's heart.", avatar: "https://scontent.fyxk1-1.fna.fbcdn.net/v/t1.0-9/12872_10153038105183901_46594724452924895_n.jpg?_nc_cat=111&_nc_ohc=KL44nWN34oYAQkQjulYdW5OPNibaHOS8SqwQquX6qyBozT96ST7jzYAKQ&_nc_ht=scontent.fyxk1-1.fna&oh=3869cb948f6241df13e4c6b8f391008c&oe=5E40C026")
+ audio_url_1 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/95579563&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: doumit
+audio_url_2 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/95578848&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: doumit
+audio_url_3 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/43119277&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: doumit
+audio_url_4 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/108316605&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: doumit
+youtube_url_1 = YoutubeUrl.create! url: "https://www.youtube.com/embed/4OVv_edXKX0", user: doumit
+youtube_url_2 = YoutubeUrl.create! url: "https://www.youtube.com/embed/4rtJ2_BEJmw", user: doumit
+youtube_url_3 = YoutubeUrl.create! url: "https://www.youtube.com/embed/d_BnKY0pFQc", user: doumit
+youtube_url_4 = YoutubeUrl.create! url: "https://www.youtube.com/embed/0GgiHakjH28", user: doumit
+image_1 = Image.create image_src:"/images/doumit1.jpeg", user: doumit
+image_2 = Image.create image_src:"/images/doumit2.jpeg", user: doumit
+image_3 = Image.create image_src:"/images/doumit3.jpg", user: doumit
+image_4 = Image.create image_src:"/images/doumit4.jpg", user: doumit
+
 
 sunset_drip = User.create!(first_name: "Janique", last_name: "Alexandre", type_of_user: "artist", artist_name: "The Sunset Drip", music_type: "rnb", artist_type: "band", price: "150", email: "drip@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/TheSunsetDrip/?eid=ARAiGkUsJC0Z7D7yLnFUqWBbbgxNOwc53zsy9lKGJCti2NmNs47PSXxXTbH-sLjYdXrsxjuyqfNgqjmP", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/rnb_2.jpg", user: sunset_drip
 
 the_fats = User.create!(first_name: "Rene", last_name: "Vilanueva", type_of_user: "artist", artist_name: "The Fats", music_type: "jazz", artist_type: "band", price: "150", email: "fats@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/fatsMTL/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/solo_indie.jpg", user: the_fats
+image = Image.create image_src:"/images/jazz_band_2.jpg", user: the_fats
 
 brie_face = User.create!(first_name: "Mark", last_name: "Johnson", type_of_user: "artist", artist_name: "The Brie Face", music_type: "indie", artist_type: "band", price: "150", email: "brieface@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebrieface/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/solo_indie.jpg", user: brie_face
+image = Image.create image_src:"/images/band2.jpg", user: brie_face
 
 
 # ARTISTS : Batch number 3 for all genres
 
 
 big_vein = User.create!(first_name: "ALexandre", last_name: "Tulip", type_of_user: "artist", artist_name: "Big Vein", music_type: "folk", artist_type: "singer-songwriter", price: "100", email: "bigvein@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/bigvein/?eid=ARB3swHmH_pgL4nDdw14g7y95VdoLHZahChgIv076mhmaqDqGBtfXw0Wtye_glZ3-KTlTO0s6rbVndWb", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/artist_5.jpg", user: big_vein
+image = Image.create image_src:"/images/artist_5.jpeg", user: big_vein
 
 
 leftovers = User.create!(first_name: "Mark", last_name: "Marino", type_of_user: "artist", artist_name: "The Leftovers", music_type: "blues", artist_type: "band", price: "100", email: "leftovers@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/GroupeGalaxie/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
@@ -198,26 +212,26 @@ image = Image.create image_src:"/images/last_assassins.jpg", user: screaming_dea
 
 
 to_the_bone = User.create!(first_name: "Janique", last_name: "Bedard", type_of_user: "artist", artist_name: "To The Bone", music_type: "funk", artist_type: "band", price: "250", email: "cormierdshad@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/tothebonegang/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/galaxie.jpg", user: to_the_bone
+image = Image.create image_src:"/images/band8.jpg", user: to_the_bone
 
 
 dj_dany = User.create!(first_name: "Dani", last_name: "Marin", type_of_user: "artist", artist_name: "Dj Dany", music_type: "electro", artist_type: "dj", price: "350", email: "partywiiiithclass@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/partywithclass/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/dj_2.jpg", user: dj_dany
 
 
-banista = User.create!(first_name: "Veronique", last_name: "Kimpo", type_of_user: "artist", artist_name: "Virginia", music_type: "pop", artist_type: "band", price: "150", email: "kimpo@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/banitsa.musique/?ref=py_c", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
+banista = User.create!(first_name: "Veronique", last_name: "Kimpo", type_of_user: "artist", artist_name: "Banista", music_type: "pop", artist_type: "band", price: "150", email: "kimpo@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/banitsa.musique/?ref=py_c", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/bernard.jpg", user: banista
 
 
 scrap_matou = User.create!(first_name: "Marianne", last_name: "Martin", type_of_user: "artist", artist_name: "The Last Assassins", music_type: "rnb", artist_type: "band", price: "100", email: "scrap@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/ScrapMatou/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/rnb_3.jpg", user: scrap_matou
+image = Image.create image_src:"/images/rnb2.jpg", user: scrap_matou
 
 
 el_balcon = User.create!(first_name: "Ramsey", last_name: "Allah", type_of_user: "artist", artist_name: "El Balcon", music_type: "jazz", artist_type: "band", price: "150", email: "reersshnard@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/elsondelbalcon/?eid=ARDZWoukB8i8asA_N0keqyDwvAHWQfwLjaysAkvCPznuAUawaAigg_D5Mzp2cFTvur5pNc4EqzKH2Dzg", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/after.jpg", user: el_balcon
 
 son = User.create!(first_name: "Mike", last_name: "Johnson", type_of_user: "artist", artist_name: "Son Jarocho Montréal", music_type: "indie", artist_type: "solo musician", price: "100", email: "son@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/sonjarochomtl/?eid=ARBAqj_Kr73v0EPHEWB5VPoTQ9_igKRq-Kj8eR103wZG35jJbsIYyToHWEI38A5J4sS0MaoFSHmxv3yl", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/solo_indie.jpg", user: son
+image = Image.create image_src:"/images/solo_indie.jpeg", user: son
 
 # ARTISTS : Batch number 4 for all genres
 
@@ -226,17 +240,29 @@ image = Image.create image_src:"/images/solo_project.jpg", user: primitive_blue
 
 
 take_a_moment = User.create!(first_name: "Mike", last_name: "Martin", type_of_user: "artist", artist_name: "Take A Moment", music_type: "blues", artist_type: "band", price: "100", email: "tam@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/takeamomentband/?eid=ARDCU1KGz82R0LJBdO42pXbvVb511HcEwBAKVwL_XXI1FNQ8Y_Tl-Cjkmu5EMQ_ZhIa1il5T7lHXIb7y", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/solo_indie.jpg", user: take_a_moment
+image = Image.create image_src:"/images/band7.jpg", user: take_a_moment
 
 
-nicotines = User.create!(first_name: "Davide", last_name: "Spinato", type_of_user: "artist", artist_name: "The Nicotines", music_type: "metal", artist_type: "band", price: "350", email: "nicotines@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thenicotinesband/?ref=bookmarks", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/solo_indie.jpg", user: nicotines)
+nicotines = User.create!(first_name: "Davide", last_name: "Spinato", type_of_user: "artist", artist_name: "The Nicotines", music_type: "metal", artist_type: "band", price: "350", email: "nicotines@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thenicotinesband/?ref=bookmarks", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.", avatar: "https://scontent.fyxk1-1.fna.fbcdn.net/v/t1.0-9/46517210_2099807293372753_7891200256832962560_n.jpg?_nc_cat=101&_nc_ohc=HB4SCIKVdU0AQnl6NbziFNLWUzHLKL9UKfyIjLu08Byy_ks9ZN6WYuTzQ&_nc_ht=scontent.fyxk1-1.fna&oh=56bc3a55cd9c53be21206b9725b4ee4c&oe=5E7DEAEC")
+image = Image.create!(image_src:"/images/nicotines.jpeg", user: nicotines)
+audio_url_1 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/366060206&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: nicotines
+audio_url_2 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/366060194&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: nicotines
+audio_url_3 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/366060191&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: nicotines
+audio_url_4 = AudioUrl.create! url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/366060176&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", user: nicotines
+youtube_url_1 = YoutubeUrl.create! url: "https://www.youtube.com/embed/0aCWkTRMU7E", user: nicotines
+youtube_url_2 = YoutubeUrl.create! url: "https://www.youtube.com/embed/5V2oq4sv0pU", user: nicotines
+youtube_url_3 = YoutubeUrl.create! url: "https://www.youtube.com/embed/9-iCPoWHexU", user: nicotines
+youtube_url_4 = YoutubeUrl.create! url: "https://www.youtube.com/embed/yj-5z0OF7jA", user: nicotines
+image_1 = Image.create image_src:"/images/nicotines1.jpg", user: nicotines
+image_2 = Image.create image_src:"/images/nicotines2.jpg", user: nicotines
+image_3 = Image.create image_src:"/images/nicotines3.jpg", user: nicotines
+image_4 = Image.create image_src:"/images/nicotines4.jpg", user: nicotines
 
 orange_gecko = User.create!(first_name: "Jacquline", last_name: "Cormier", type_of_user: "artist", artist_name: "Orange Gecko", music_type: "funk", artist_type: "band", price: "150", email: "gecko@mixmyband.com", password: "123456", fb_url: "hhttps://www.facebook.com/OrangeGeck0/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/solo_dude_piano.jpg", user: orange_gecko)
+image = Image.create!(image_src:"/images/solo_dude_piano.jpeg", user: orange_gecko)
 
 dj_mario = User.create!(first_name: "Mario", last_name: "Titelus", type_of_user: "artist", artist_name: "DJ Mario", music_type: "electro", artist_type: "dj", price: "250", email: "mario@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Djmariotrad/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/dj_mario.jpg", user: dj_mario)
+image = Image.create!(image_src:"/images/dj_mario.jpeg", user: dj_mario)
 
 
 naomie_lafortune = User.create!(first_name: "Naomie" , last_name: "Lafortune", type_of_user: "artist", artist_name: "Noemie Lafortune", music_type: "pop", artist_type: "solo musician", price: "100", email: "naomie@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Nomelamome/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
@@ -246,7 +272,7 @@ grenade = User.create!(first_name: "Maria", last_name: "Piquette", type_of_user:
 image = Image.create!(image_src:"/images/rnb_4.jpg", user: grenade)
 
 pockethead = User.create!(first_name: "Richard", last_name: "Moore", type_of_user: "artist", artist_name: "Pockethead", music_type: "jazz", artist_type: "band", price: "150", email: "pocket@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/pocketheadofficial/?eid=ARAqBZOIh33wbArK4DGQDT3GuJn_HP8HUBLPaTQ4T-Is92rXNAx_V1jDZBOTel5k-YDggjIPbUN4sXvm", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/jazz_band.jpg", user: pockethead)
+image = Image.create!(image_src:"/images/jazz.jpg", user: pockethead)
 
 solarium = User.create!(first_name: "Alexey", last_name: "John", type_of_user: "artist", artist_name: "Solarium", music_type: "indie", artist_type: "band", price: "150", email: "fsolarium@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/solariummusique/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create!(image_src:"/images/solo_musician_2.jpg", user: solarium)
@@ -260,26 +286,26 @@ nuage = User.create!(first_name: "Michelle", last_name: "Marino", type_of_user: 
 image = Image.create!(image_src:"/images/solo_artist.jpg", user: nuage)
 
 barber_queen = User.create!(first_name: "Dan", last_name: "Keer", type_of_user: "artist", artist_name: "Barber For The Queen", music_type: "metal", artist_type: "band", price: "150", email: "psstendddtckh@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/barberforthequeen/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create image_src:"/images/blues_band.jpg", user: barber_queen
+image = Image.create image_src:"/images/band10.jpg", user: barber_queen
 
 efy_hecks = User.create!(first_name: "Mark", last_name: "Alexandre", type_of_user: "artist", artist_name: "Efy Hecks", music_type: "funk", artist_type: "band", price: "250", email: "efy@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/efyhecks/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create image_src:"/images/galaxie.jpg", user: efy_hecks
 
 dj_shane = User.create!(first_name: "Shane", last_name: "Oliveira", type_of_user: "artist", artist_name: "DJ Shane Oliveira", music_type: "electro", artist_type: "dj", price: "250", email: "djshane@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/DJShaneOliveira/", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/dj_5.jpg", user: dj_shane)
+image = Image.create!(image_src:"/images/dj_4.jpg", user: dj_shane)
 
 
 blood = User.create!(first_name: "Viki", last_name: "Tangerine", type_of_user: "artist", artist_name: "Blood Skin Atopic", music_type: "pop", artist_type: "solo musician", price: "150", email: "vitawsadnguy@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/Bloodskinatopic/?eid=ARA3kNz-5RecYLWLL60v5qThNZz2yBvd-2qOetll5-U5ZJ3-fDuN1TTtexolitiBxKY1i_Sk5dgh5-fM", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create!(image_src:"/images/pop.jpg", user: blood)
 
 distorstion = User.create!(first_name: "Bob", last_name: "Aurier", type_of_user: "artist", artist_name: "Distorsion", music_type: "rnb", artist_type: "band", price: "100", email: "distorstion@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/distorsionpsychfest/?ref=py_c&eid=ARB5IKs7J7zbDTC3WD4ynJhVub-Uz9fF8HnO-3ANNHsfGZvyzaziuiIhOtDZtk4lQ0FZiIxeqoX2_Fin", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/rnb_5.jpg", user: distorstion)
+image = Image.create!(image_src:"/images/rnb_5.jpeg", user: distorstion)
 
 mothland = User.create!(first_name: "Marcel", last_name: "Robert", type_of_user: "artist", artist_name: "Mothland", music_type: "jazz", artist_type: "band", price: "150", email: "mothland@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/mothland/?eid=ARDW1V-e_E2aHPEAVlChpnt5EKiW4Tx6gr1UEpC0HRqM1wocpWqgcZoGEx8nRQRnyCKMIIeQdM0crD6e", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/jazz_band.jpg", user: mothland)
+image = Image.create!(image_src:"/images/jazz2.jpg", user: mothland)
 
 the_bog = User.create!(first_name: "John", last_name: "Mayer", type_of_user: "artist", artist_name: "The Bog", music_type: "indie", artist_type: "band", price: "100", email: "thebog@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebogmtl/?eid=ARAgOASqf8_mdudYYLTYBqLvbHXobMsY_Ah9vHwAqkhOBo7_vJrBPclrK036xDEZLt6gbsyBgu5Nt3lp", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
-image = Image.create!(image_src:"/images/solo_project.jpg", user: the_bog)
+image = Image.create!(image_src:"/images/band3.jpg", user: the_bog)
 
 # FAKER
 
