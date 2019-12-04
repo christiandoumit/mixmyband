@@ -1,29 +1,117 @@
 <div class="container">
 
 
-<!-- eventer infos -->
-<div class="row mt-3">
-    <div class="eventer-cover-img" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https:www.onholdinc.com/mohblog/wp-content/uploads/2018/03/restaurant.jpg)">
+  <!-- eventer infos -->
+  <div class="row mt-3">
+      <div class="eventer-cover-img" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https:www.onholdinc.com/mohblog/wp-content/uploads/2018/03/restaurant.jpg)">
+        <div>
+          <div class="eventer-cover-row">
+            <h1><%= @user.eventer_name %></h1>
+            <h5><%= @user.venue_address%></h5>
+          </div>
+          <div class="eventer-cover-row">
+            <p><strong><%= @user.venue_type%></strong></p>
+            <p><%= @user.crowd_type%></p>
+          </div>
+          <div class="eventer-cover-row">
+            <p><%= @user.description%></p>
+          </div>
+          <div class="eventer-cover-footer">
+            <div>
+              <%= link_to "", favorites_path(other_user_id: @user.id), method: :post, class: "fas fa-heart fa-lg" %>
+              <a href="#" class="fas fa-share-alt fa-lg" style="color: #83B594"></a> -->
+            </div>
+            <div>
+              <!-- changed the p for a to have the link allowed -->
+              <a class="button-submit review" href="#reviews">VIEW REVIEWS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- buttons BOOK THIS VENUE SEND A MESSAGE -->
+    <div class="d-flex justify-content-center" style="width: 100vw">
+          <div><%= link_to "BOOK THIS VENUE", new_user_booking_path(params[:id]), { class: "button-plain eventer" } %></div>
+          <div class="pl-1"><%= link_to "SEND A MESSAGE", "#", { class: "button-empty-bordered artist" } %></div>
+    </div>
+
+  <!-- map -->
+  <h3 style="font-weight: 700;">find us</h3>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <!-- calendar -->
+  <h3 style="font-weight: 700;">our next performances</h3>
+
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+    <% @bookings.where(booking_date: date).each do |booking| %>
       <div>
-        <div class="eventer-cover-row">
-          <h1><%= @user.eventer_name %></h1>
-          <h5><%= @user.venue_address%></h5>
-        </div>
-        <div class="eventer-cover-row">
-          <p><strong><%= @user.venue_type%></strong></p>
-          <p><%= @user.crowd_type%></p>
-        </div>
-        <div class="eventer-cover-row">
-          <p><%= @user.description%></p>
-        </div>
-        <div class="eventer-cover-footer">
-          <div>
-            <%= link_to "", favorites_path(other_user_id: @user.id), method: :post, class: "fas fa-heart fa-lg" %>
-            <a href="#" class="fas fa-share-alt fa-lg" style="color: #83B594"></a> -->
+        <%= booking.sender.artist_name %>
+        <%= booking.sender.eventer_name %>
+      </div>
+    <%end %>
+  <% end %>
+
+
+
+
+  <!-- reviews -->
+  <h3 style="font-weight: 700;" id="reviews">reviews</h3>
+
+  <div class="row mt-3">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
+      <div class="card-scroll-container reviews">
+          <div class="card-review-row">
+            <div class="card-review-row-from">
+              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+            </div>
+            <div>
+              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+            </div>
           </div>
-          <div>
-            <!-- changed the p for a to have the link allowed -->
-            <a class="button-submit review" href="#reviews">VIEW REVIEWS</a>
+
+          <div class="card-review-row">
+            <div class="card-review-row-from">
+              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+            </div>
+            <div>
+              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+            </div>
+          </div>
+
+          <div class="card-review-row">
+            <div class="card-review-row-from">
+              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+            </div>
+            <div>
+              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+            </div>
+          </div>
+
+          <div class="card-review-row">
+            <div class="card-review-row-from">
+              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+            </div>
+            <div>
+              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+            </div>
+          </div>
+
+          <div class="card-review-row">
+            <div class="card-review-row-from">
+              <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
+            </div>
+            <div>
+              <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -31,95 +119,7 @@
   </div>
 
 
-<!-- buttons BOOK THIS VENUE SEND A MESSAGE -->
-  <div class="d-flex justify-content-center" style="width: 100vw">
-        <div><%= link_to "BOOK THIS VENUE", new_user_booking_path(params[:id]), { class: "button-plain eventer" } %></div>
-        <div class="pl-1"><%= link_to "SEND A MESSAGE", "#", { class: "button-empty-bordered artist" } %></div>
+  <!-- button add review -->
+  <div>
+  <%= link_to "+ Add a Review", "#", class: "button-submit review" %>
   </div>
-
-<!-- map -->
-<h3 style="font-weight: 700;">find us</h3>
-<div
-  id="map"
-  style="width: 100%;
-  height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-<!-- calendar -->
-<h3 style="font-weight: 700;">our next performances</h3>
-
-<%= month_calendar do |date| %>
-  <%= date.day %>
-  <% @bookings.where(booking_date: date).each do |booking| %>
-    <div>
-      <%= booking.sender.artist_name %>
-      <%= booking.sender.eventer_name %>
-    </div>
-  <%end %>
-<% end %>
-
-
-
-
-<!-- reviews -->
-<h3 style="font-weight: 700;" id="reviews">reviews</h3>
-
-<div class="row mt-3">
-  <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
-    <div class="card-scroll-container reviews">
-        <div class="card-review-row">
-          <div class="card-review-row-from">
-            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-          </div>
-          <div>
-            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-          </div>
-        </div>
-
-        <div class="card-review-row">
-          <div class="card-review-row-from">
-            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-          </div>
-          <div>
-            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-          </div>
-        </div>
-
-        <div class="card-review-row">
-          <div class="card-review-row-from">
-            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-          </div>
-          <div>
-            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-          </div>
-        </div>
-
-        <div class="card-review-row">
-          <div class="card-review-row-from">
-            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-          </div>
-          <div>
-            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-          </div>
-        </div>
-
-        <div class="card-review-row">
-          <div class="card-review-row-from">
-            <h5><strong>Vi</strong> wrote on 26/11/2019</h5>
-          </div>
-          <div>
-            <p>This venue is fabulous. I love it! Every time I visit this place, I hear very good music! I really recommend passing by if you’re in the neighborhood.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- button add review -->
-<div>
-<%= link_to "+ Add a Review", "#", class: "button-submit review" %>
-</div>
