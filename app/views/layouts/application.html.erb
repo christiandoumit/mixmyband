@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="container">
-      <div id="body">
+      <div id="<%= (controller_name == "pages" && action_name == "home") ? 'body-home' : 'body' %>">
         <!-- the if statement means that the navbar won't display if user is on the landing page -->
         <% if !(controller_name == "pages" && action_name == "home") %>
           <%= render "shared/navbar" %>
