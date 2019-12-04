@@ -23,12 +23,12 @@
 
   <!-- manage booking title -->
   <div class="d-flex justify-content-between align-items-start pb-4" style="width: 100%">
-    <h3  style="color: #1D73A5; font-weight: 700;">manage bookings</h3>
+    <h3  class="section-title general">manage bookings</h3>
   </div>
 
   <!-- booking title 1/2 - all requests -->
-  <div class="pb-3">
-    <h4  style="color: #1D73A5; font-weight: 700;"> 
+  <div class="mb-3">
+    <h4  class="section-title general" style="font-style: italic;"> 
       all 
       <% if current_user.type_of_user == "artist" %>
         <%= "eventers' " %>
@@ -42,12 +42,12 @@
   <!-- booking list RECEIVED-->
   <!-- 1. pending received -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; pending</p>
+    <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
   </div>
   
   <div class="align-items-start pb-5" style="width: 100%">
     <% if @pending_received.empty? %>
-      <h5 style="font-weight: 700; padding-top: 20px">You have no pending requests for now.</h5>
+      <h6 class="section-substitle">You have no pending requests for now.</h6>
     <% else %>  
       <% @pending_received.reverse_each do |booking| %>
           <div class="card-a-row booking">

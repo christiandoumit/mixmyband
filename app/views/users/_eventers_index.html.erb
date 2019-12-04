@@ -1,20 +1,19 @@
 <div class="container">
 
   <!-- Title and Subtitle -->
-    <div class="contenant can-grow all-left eventer bottom-border-eventer">
-      <%= image_tag "eventer.svg", style: "height: 32px; padding-bottom: 2px" %>
-      <h1 class="section-title">find eventers</h1>
-    </div>
-    <div class="contenant all-left eventer">
-      <h4 class="section-substitle">find the eventer that fits your style</h4>
-    </div>
-    <div class="contenant py-4"></div>
-    <div class="input-group md-form form-sm form pl-0"></div>
+  <div class="contenant can-grow all-left eventer bottom-border-eventer">
+    <%= image_tag "eventer.svg", style: "height: 32px; padding-bottom: 2px" %>
+    <h1 class="section-title">find eventers</h1>
+  </div>
+  <div class="contenant all-left eventer">
+    <h4 class="section-substitle">find the eventer that fits your style</h4>
+  </div>
+  <div class="contenant py-4"></div>
+  <div class="input-group md-form form-sm form pl-0"></div>
   <!-- End of Title and Subtitle -->
 
 
   <!-- map -->
-
   <div
     id="map"
     style="width: 100%;
@@ -25,7 +24,6 @@
 
 
   <!-- filters -->
-
   <div class="flex-fill py-3" style="width: 100%">
     <%= form_tag(users_path, method: :get) do %>
       <div class="dropdown" style="width: 100%">
@@ -50,7 +48,6 @@
   <div class="flex-grow">
     <% @eventers.each do |e| %>
       <div class="mb-3">
-        <!-- <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6"> -->
           <%=  link_to user_path(e) do %>
             <div class="card-display" style="background-image: url(https:www.onholdinc.com/mohblog/wp-content/uploads/2018/03/restaurant.jpg); height: 265px;">
               <div class="card-display-footer general">
@@ -64,7 +61,6 @@
               </div>
             </div>
           <% end %>
-        <!-- </div> -->
       </div>
     <% end %>
   </div>
