@@ -53,7 +53,7 @@ image = Image.create image_src:"/images/restos/saint_hurbain.jpg", user: le_sain
 
 
 hoogan_beaufort = User.create!(first_name: "Jacquline", last_name: "Bourette", type_of_user: "eventer", description: "Best local food and the best rock show you can ever see.", venue_type: "restaurant", crowd_type: "connoisseurs",eventer_name: "Hoogan Beaufort", music_type: "rock", artist_type: "band", email: "restaurantee@gmail.com", password: "123456", venue_address: "4095 Rue Molson, Montreal", event_type: "concert")
-image = Image.create image_src:"/images/restos/hoog.jpg", user: hoogan_beaufort
+image = Image.create image_src:"/images/restos/hoog.jpeg", user: hoogan_beaufort
 
 
 moccione = User.create!(first_name: "Bob", last_name: "Robertson", type_of_user: "eventer", description: "Pizza and some pop hits everynight of the week.", venue_type: "restaurant", crowd_type: "teens",eventer_name: "Moccione", music_type: "pop", artist_type: "solo musician", email: "restaurantmocci@gmail.com", password: "123456", venue_address: "380 Rue Villeray, Montreal", event_type: "other")
