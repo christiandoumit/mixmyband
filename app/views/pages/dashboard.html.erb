@@ -1,14 +1,17 @@
 <div class="container">
-
-
   <div class="contenant general all-left aligned-centered pb-2">
     <i class="fas fa-angle-left fa-lg pr-2"></i>
     <h5 class="m-0"><%= link_to "back", :back, style: "align-items: center"%></h5>
   </div>
   <div class="d-flex justify-content-between align-items-start" style="width: 100%">
     <!-- welcome user -->
-    <div class="contenant general all-left bottom-border-general can-grow aligned-started">
-      <h1>hi, <strong><%= current_user.first_name.capitalize %></strong></h1>
+    <div class="flex-grow-1">
+      <div class="contenant all-left general bottom-border-general aligned-started">
+        <h1>hi, <strong><%= current_user.first_name.capitalize %></strong></h1>
+      </div>
+      <div class="contenant all-left general pt-1">
+        <h4 class="section-substitle" style="padding-top: 2px">this is your personal dashboard</h4>
+      </div>
     </div>
     <!-- avatar -->
     <div class="contenant all-left aligned-started">
@@ -22,33 +25,32 @@
   </div>
 
   <!-- manage booking title -->
-  <div class="d-flex justify-content-between align-items-start pb-4" style="width: 100%">
-    <h3  class="section-title general">manage bookings</h3>
+  <div class="contenant general all-left aligned-started bottom-border-general pb-1 mb-4" style="width: 100%">
+    <h3  class="section-title">manage bookings</h3>
   </div>
 
-  <!-- booking title 1/2 - all requests -->
+  <!-- booking title 1/2 - incoming requests -->
   <div class="mb-3">
-    <h4  class="section-title general" style="font-style: italic;"> 
-      all 
+    <h5  class="section-title general">
+      INCOMING REQUESTS FROM
       <% if current_user.type_of_user == "artist" %>
-        <%= "eventers' " %>
+        <%= "EVENTERS" %>
       <% else %>
-        <%= "artists' " %>
+        <%= "ARTISTS" %>
       <% end %>
-      requests
-    </h4>
+    </h5>
   </div>
 
-  <!-- booking list RECEIVED-->
+  <!-- INCOMING booking list-->
   <!-- 1. pending received -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
   </div>
-  
+
   <div class="align-items-start pb-5" style="width: 100%">
     <% if @pending_received.empty? %>
-      <h6 class="section-substitle">You have no pending requests for now.</h6>
-    <% else %>  
+      <p class="section-substitle">Sorry, you have no pending requests for now.</p>
+    <% else %>
       <% @pending_received.reverse_each do |booking| %>
           <div class="card-a-row booking">
             <h5 class="date"><%= booking.booking_date %></h5>
@@ -76,17 +78,17 @@
         <% end %>
     <% end %>
   </div>
- 
+
 
   <!-- 2. confirmed received -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900; margin: 0;">>&nbsp;&nbsp; confirmed</p>
+    <h5 class="section-title general">>&nbsp;&nbsp; confirmed</h5>
   </div>
 
   <div class="align-items-start pb-5" style="width: 100%">
     <% if @confirmed_received.empty? %>
-      <h5 style="font-weight: 700; padding-top: 20px">You have no confirmed requests for now.</h5>
-    <% else %>  
+      <p class="section-substitle">Sorry, you have no confirmations for now.</p>
+    <% else %>
       <% @confirmed_received.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
@@ -106,23 +108,23 @@
         </div>
       <% end %>
     <% end %>
-  </div> 
+  </div>
 
 <!-- booking title 2/2 - my requested bookings -->
-  <div class="d-flex justify-content-between align-items-start pb-3">
-    <h4 style="color: #1D73A5; font-weight: 700;">my booking requests</h4>
+  <div class="d-flex justify-content-between align-items-start py-3">
+    <h5 class="section-title general">YOUR BOOKING REQUESTS</h5>
   </div>
 
   <!-- booking list SENT-->
   <!-- 3. pending sent -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; pending sent</p>
+    <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
   </div>
-  
+
   <div class="align-items-start pb-5" style="width: 100%">
     <% if @pending_sent.empty? %>
-      <h5 style="font-weight: 700; padding-top: 20px">You have no pending requests for now.</h5>
-    <% else %>  
+      <p class="section-substitle">Sorry, you have no bookings in pending mode.</p>
+    <% else %>
       <% @pending_sent.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
@@ -149,17 +151,17 @@
         </div>
       <% end %>
     <% end %>
-  </div> 
+  </div>
 
 <!-- 4. confirmed sent -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; confirmed sent</p>
+    <h5 class="section-title general">>&nbsp;&nbsp; confirmed</h5>
   </div>
 
   <div class="align-items-start pb-5" style="width: 100%">
     <% if @confirmed_sent.empty? %>
-      <h5 style="font-weight: 700; padding-top: 0; margin: 0;">You have no confirmed requests for now.</h5>
-    <% else %>  
+      <p class="section-substitle">Sorry, no confirmed bookings for now.</p>
+    <% else %>
       <% @confirmed_sent.reverse_each do |booking| %>
         <div class="card-a-row booking">
           <h5 class="date"><%= booking.booking_date %></h5>
@@ -180,4 +182,4 @@
       <% end %>
     <% end %>
   </div>
-</div> 
+</div>
