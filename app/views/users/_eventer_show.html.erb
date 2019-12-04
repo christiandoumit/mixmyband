@@ -68,10 +68,10 @@
           width: 6px;
           border-radius: 50%;
           background-color: #0E0000;
-          margin-top: 6px;
+          margin: 6px 1px;
         ">
         </div>
-        <!-- in case we want 
+        <!-- Vi - kept in case we want to use the logic
           <div>
             <%= booking.sender.artist_name %>
             <%= booking.sender.eventer_name %>
@@ -81,9 +81,23 @@
     </div>
   <% end %>
 
+  <!-- list of upcoming bookings -->
+  <div class="card-scroll-container cal-book">
+    <% @bookings.reverse_each do |booking| %>
+      <div class="card-a-row calendar">
+        <h5 class="date"><%= booking.booking_date %></h5>
+        <h5 class="name"><%= booking.sender.artist_name %></h5>
+        <div class="booking-icons">
+          <!-- message icon -->
+          <button type="button" class="button-invisible booking-icons-item far fa-clock fa-lg" style="color: #83B594" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 
   <!-- reviews -->
-  <div class="contenant all-left aligned-centered py-2">
+  <div class="contenant all-left aligned-centered mt-3 py-2">
     <h3 class="section-paragraph eventer" style="font-weight: 700;" id="reviews">reviews</h3>
   </div>
       <div class="card-scroll-container reviews">

@@ -44,12 +44,91 @@
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
   </div>
+
+  <div class="card-scroll-container cal-book">
+    <div class="align-items-start pb-5" style="width: 100%">
+      <% if @pending_received.empty? %>
+        <h6 class="section-substitle">You have no pending requests for now.</h6>
+      <% else %>  
+        <% @pending_received.reverse_each do |booking| %>
+            <div class="card-a-row booking">
+              <h5 class="date"><%= booking.booking_date %></h5>
+              <h5 class="name"><%= booking.sender.name %></h5>
+              <div class="booking-icons">
+                <!-- message icon -->
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+
+                <!-- confirm icon -->
+                <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
+                  <button type="submit" class="button-invisible">
+                    <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #D3D3D3"></i>
+                  </button>
+                <% end %>
+                <!-- decline icon -->
+                <%= simple_form_for(booking)  do |f|  %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                  <button type="submit" class="button-invisible">
+                    <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+                  </button>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+ 
+
+  <!-- 2. confirmed received -->
+  <div class="d-flex justify-content-between align-items-start pb-2">
+    <p style="color: #1D73A5; font-weight: 900; margin: 0;">>&nbsp;&nbsp; confirmed</p>
+  </div>
+
+  <div class="card-scroll-container cal-book">
+    <div class="align-items-start pb-5" style="width: 100%">
+      <% if @confirmed_received.empty? %>
+        <h5 style="font-weight: 700; padding-top: 20px">You have no confirmed requests for now.</h5>
+      <% else %>  
+        <% @confirmed_received.reverse_each do |booking| %>
+          <div class="card-a-row booking">
+            <h5 class="date"><%= booking.booking_date %></h5>
+            <h5 class="name"><%= booking.sender.name %></h5>
+            <div class="booking-icons">
+              <!-- message icon -->
+              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+
+              <!-- decline icon -->
+              <%= simple_form_for(booking)  do |f|  %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                <button type="submit" class="button-invisible">
+                  <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+                </button>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div> 
+  </div>
+
+<!-- booking title 2/2 - my requested bookings -->
+  <div class="d-flex justify-content-between align-items-start pb-3">
+    <h4 style="color: #1D73A5; font-weight: 700;">my booking requests</h4>
+  </div>
+
+  <!-- booking list SENT-->
+  <!-- 3. pending sent -->
+  <div class="d-flex justify-content-between align-items-start pb-2">
+    <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; pending sent</p>
+  </div>
   
-  <div class="align-items-start pb-5" style="width: 100%">
-    <% if @pending_received.empty? %>
-      <h6 class="section-substitle">You have no pending requests for now.</h6>
-    <% else %>  
-      <% @pending_received.reverse_each do |booking| %>
+  <div class="card-scroll-container cal-book">
+    <div class="align-items-start pb-5" style="width: 100%">
+      <% if @pending_sent.empty? %>
+        <h5 style="font-weight: 700; padding-top: 20px">You have no pending requests for now.</h5>
+      <% else %>  
+        <% @pending_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
             <h5 class="date"><%= booking.booking_date %></h5>
             <h5 class="name"><%= booking.sender.name %></h5>
@@ -74,110 +153,40 @@
             </div>
           </div>
         <% end %>
-    <% end %>
-  </div>
- 
-
-  <!-- 2. confirmed received -->
-  <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900; margin: 0;">>&nbsp;&nbsp; confirmed</p>
-  </div>
-
-  <div class="align-items-start pb-5" style="width: 100%">
-    <% if @confirmed_received.empty? %>
-      <h5 style="font-weight: 700; padding-top: 20px">You have no confirmed requests for now.</h5>
-    <% else %>  
-      <% @confirmed_received.reverse_each do |booking| %>
-        <div class="card-a-row booking">
-          <h5 class="date"><%= booking.booking_date %></h5>
-          <h5 class="name"><%= booking.sender.name %></h5>
-          <div class="booking-icons">
-            <!-- message icon -->
-            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
-
-            <!-- decline icon -->
-            <%= simple_form_for(booking)  do |f|  %>
-              <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="button-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
-              </button>
-            <% end %>
-          </div>
-        </div>
       <% end %>
-    <% end %>
-  </div> 
-
-<!-- booking title 2/2 - my requested bookings -->
-  <div class="d-flex justify-content-between align-items-start pb-3">
-    <h4 style="color: #1D73A5; font-weight: 700;">my booking requests</h4>
+    </div> 
   </div>
-
-  <!-- booking list SENT-->
-  <!-- 3. pending sent -->
-  <div class="d-flex justify-content-between align-items-start pb-2">
-    <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; pending sent</p>
-  </div>
-  
-  <div class="align-items-start pb-5" style="width: 100%">
-    <% if @pending_sent.empty? %>
-      <h5 style="font-weight: 700; padding-top: 20px">You have no pending requests for now.</h5>
-    <% else %>  
-      <% @pending_sent.reverse_each do |booking| %>
-        <div class="card-a-row booking">
-          <h5 class="date"><%= booking.booking_date %></h5>
-          <h5 class="name"><%= booking.sender.name %></h5>
-          <div class="booking-icons">
-            <!-- message icon -->
-            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
-
-            <!-- confirm icon -->
-            <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
-              <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
-              <button type="submit" class="button-invisible">
-                <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #D3D3D3"></i>
-              </button>
-            <% end %>
-            <!-- decline icon -->
-            <%= simple_form_for(booking)  do |f|  %>
-              <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="button-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
-              </button>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div> 
 
 <!-- 4. confirmed sent -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <p style="color: #1D73A5; font-weight: 900;">>&nbsp;&nbsp; confirmed sent</p>
   </div>
+  
+  <div class="card-scroll-container cal-book">
+    <div class="align-items-start pb-5" style="width: 100%">
+      <% if @confirmed_sent.empty? %>
+        <h5 style="font-weight: 700; padding-top: 0; margin: 0;">You have no confirmed requests for now.</h5>
+      <% else %>  
+        <% @confirmed_sent.reverse_each do |booking| %>
+          <div class="card-a-row booking">
+            <h5 class="date"><%= booking.booking_date %></h5>
+            <h5 class="name"><%= booking.sender.name %></h5>
+            <div class="booking-icons">
+              <!-- message icon -->
+              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
 
-  <div class="align-items-start pb-5" style="width: 100%">
-    <% if @confirmed_sent.empty? %>
-      <h5 style="font-weight: 700; padding-top: 0; margin: 0;">You have no confirmed requests for now.</h5>
-    <% else %>  
-      <% @confirmed_sent.reverse_each do |booking| %>
-        <div class="card-a-row booking">
-          <h5 class="date"><%= booking.booking_date %></h5>
-          <h5 class="name"><%= booking.sender.name %></h5>
-          <div class="booking-icons">
-            <!-- message icon -->
-            <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
-
-            <!-- decline icon -->
-            <%= simple_form_for(booking)  do |f|  %>
-              <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-              <button type="submit" class="button-invisible">
-                <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
-              </button>
-            <% end %>
+              <!-- decline icon -->
+              <%= simple_form_for(booking)  do |f|  %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                <button type="submit" class="button-invisible">
+                  <i class="booking-icons-item far fa-times-circle fa-lg" style="color: #D3D3D3"></i>
+                </button>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div> 
+
