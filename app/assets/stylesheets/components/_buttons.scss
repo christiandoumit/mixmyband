@@ -32,7 +32,7 @@
   font-weight: 400;
   text-align: center;
   cursor: pointer;
-
+  
   &.artist {
     background-color: #DC5F2F;
   }
@@ -40,6 +40,10 @@
   &.eventer {
     background-color: #83B594;
   }
+}
+
+.button-plain:hover {
+  color: white;
 }
 
 .button-empty-bordered {
