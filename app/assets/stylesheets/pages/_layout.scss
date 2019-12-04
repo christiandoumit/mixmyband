@@ -170,3 +170,8 @@ html, body {
     padding: 3vw 20vw !important;
   }
 }
+
+.carousel-control-next, .carousel-control-prev {
+  top: 40%;
+  bottom: 40%;
+}
