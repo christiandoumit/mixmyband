@@ -34,10 +34,10 @@
 
   <!-- buttons BOOK THIS VENUE SEND A MESSAGE -->
   <div class="d-flex mt-2 mb-2 justify-content-between">
-    <%= link_to new_user_booking_path(params[:id]), { class: "button-plain eventer" } do %>
+    <%= link_to new_user_booking_path(params[:id]), { class: "button-plain eventer", style: "flex: 0 0 49%" } do %>
       <div>BOOK THIS VENUE</div>
     <% end %>
-    <%= link_to "#", { class: "button-empty-bordered eventer" } do %>
+    <%= link_to "#", { class: "button-empty-bordered eventer", style: "flex: 0 0 49%" } do %>
       <div class="pl-1">SEND A MESSAGE</div>
     <% end %>
   </div>
@@ -56,13 +56,13 @@
 
   <!-- calendar -->
   <div class="contenant all-left aligned-centered mt-3 py-2">
-    <h3 class="section-paragraph eventer" style="font-weight: 700;">our next performances</h3>
+    <h3 class="section-paragraph eventer" style="font-weight: 700;">upcoming performances</h3>
   </div>
 
   <%= month_calendar do |date| %>
     <%= date.day %>
     <div class="d-flex justify-content-center">
-      <% @bookings.where(booking_date: date).first(3).each do |booking| %>
+      <% @bookings.where(booking_date: date, status: "Confirmed").first(3).each do |booking| %>
         <div style="
           height: 6px;
           width: 6px;
@@ -82,8 +82,10 @@
   <% end %>
 
   <!-- list of upcoming bookings -->
+  <!-- for dates >= today -->
   <div class="card-scroll-container cal-book">
-    <% @bookings.reverse_each do |booking| %>
+
+    <% @bookings.where("status = ? AND booking_date >= ?", "Confirmed", DateTime.now).reverse_each do |booking| %>
       <div class="card-a-row calendar">
         <h5 class="date"><%= booking.booking_date %></h5>
         <h5 class="name"><%= booking.sender.artist_name %></h5>
