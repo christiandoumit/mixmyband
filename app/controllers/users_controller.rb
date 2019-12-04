@@ -29,5 +29,9 @@ class UsersController < ApplicationController
     ]
 
     @bookings = Booking.all
+    @pending_received = current_user.received_bookings.where(status: "Pending")
+    @pending_sent = current_user.sent_bookings.where(status: "Pending")
+    @confirmed_received = current_user.received_bookings.where(status: "Confirmed")
+    @confirmed_sent = current_user.sent_bookings.where(status: "Confirmed")
   end
 end
