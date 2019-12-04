@@ -5,10 +5,11 @@
          <div class="p-4">
             <ul class="navbar-toggler-elements">
               <% if current_user.type_of_user == "artist"  %>
-                <li><%= link_to 'Go to the Eventers Index', users_path %></li>
+                <li><%= link_to 'List all Eventers', users_path %></li>
               <% else current_user.type_of_user == "eventer" %>
-                <li><%= link_to 'Go to the Artists Index', users_path %></li>
+                <li><%= link_to 'List all Artists', users_path %></li>
               <% end %>
+              <li><%= link_to 'Home Page', root_path %></li>
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
