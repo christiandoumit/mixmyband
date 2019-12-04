@@ -4,11 +4,11 @@
     <%= image_tag 'mixmyband-land.png', style: "width: 240px" %>
   </div>
   <!-- Displaying the SignUp button -->
-  <div class="contenant general aligned-centered centered mt-2">
+  <div class="contenant general aligned-centered centered mt-3">
     <a href="<%= new_user_registration_path %>" class="button-submit signup">SIGN UP</a>
   </div>
   <!-- Displaying the "i am an artist circle" -->
-  <div class="contenant general aligned-centered centered">
+  <div class="contenant general aligned-centered centered mt-3">
     <%= link_to users_path do %>
       <div class="user-circle artist">
         <div>
@@ -51,5 +51,89 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <!-- Displaying Featured Artist -->
+  <div class="mt-5">
+    <div class="contenant all-left aligned-centered artist bottom-border-artist mt-5 mr-5">
+      <h1 class="section-paragraph">featured <strong>artists</strong></h1>
+    </div>
+    <!-- Displaying a carousel of 5 featured artists -->
+    <div class="mt-2">
+      <% @f_artists = @artists.sample(5) %>
+      <% if @f_artists.length > 0 %>
+        <div id="carousel-featured-artists" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- carousel item  -->
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + @f_artists.first.images.first.image_src %>); height:265px;" >
+                <div class="card-display-footer carrousel">
+                  <h4><%= @f_artists.first.artist_name.downcase %></h4>
+                </div>
+              </div>
+            </div>
+            <% @f_artists[1..-1].each do |a| %>
+              <div class="carousel-item">
+                <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + a.images.first.image_src %>); height:265px;" >
+                  <div class="card-display-footer carrousel">
+                    <h4><%= a.artist_name.downcase %></h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <a class="carousel-control-prev" href="#carousel-featured-artists" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-featured-artists" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  <!-- Displaying Featured Eventers -->
+  <div class="mt-4">
+    <div class="contenant all-left aligned-centered eventer bottom-border-eventer mr-5">
+      <h1 class="section-paragraph">featured <strong>eventers</strong></h1>
+    </div>
+    <div class="mt-2">
+      <% @f_eventers = @eventers.sample(5) %>
+      <% if @f_eventers.length > 0 %>
+        <div id="carousel-featured-eventers" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- carousel item  -->
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + @f_eventers.first.images.first.image_src %>); height:265px;" >
+                <div class="card-display-footer carrousel">
+                  <h4><%= @f_eventers.first.eventer_name.downcase %></h4>
+                </div>
+              </div>
+            </div>
+            <% @f_eventers[1..-1].each do |e| %>
+              <div class="carousel-item">
+                <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + e.images.first.image_src %>); height:265px;" >
+                  <div class="card-display-footer carrousel">
+                    <h4><%= e.eventer_name.downcase %></h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <a class="carousel-control-prev" href="#carousel-featured-eventers" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-featured-eventers" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
