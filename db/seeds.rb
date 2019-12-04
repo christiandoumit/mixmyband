@@ -327,5 +327,4 @@ image = Image.create!(image_src:"/images/band3.jpg", user: the_bog)
 #     password: "123456"
 #     )
 # end
-
 puts "Done!"
