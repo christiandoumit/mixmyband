@@ -17,7 +17,7 @@ puts 'Creating seeds'
 # EVENTERS SEEDS
 
 bar_datcha = User.create!(first_name: "Jack", last_name: "Kimmer", type_of_user: "eventer", description: "Hip, low-lit cocktail bar with a Russian theme.", venue_type: "club", crowd_type: "other",eventer_name: "Datcha Bar", music_type: "electro", email: "bardatch@gmail.com", password: "123456", venue_address: "98 Avenue Laurier Ouest, Montreal", event_type: "dj set")
-image = Image.create image_src:"/images/restos/datch.jpg", user: bar_datcha
+image = Image.create image_src:"/images/restos/datcha.jpg", user: bar_datcha
 
 bar_lashop = User.create!(first_name: "Michelle", last_name: "Bourette", type_of_user: "eventer", description: "Casual hangout with a bar, a dance floor, billiards & live shows in an unpretentious setting.", venue_type: "club", crowd_type: "teens",eventer_name: "Shoppers", music_type: "folk", email: "barlashop@gmail.com", password: "123456", venue_address: "4177 Rue Saint-Denis, Montreal", event_type: "concert")
 image = Image.create image_src:"/images/restos/lashop.jpg", user: bar_lashop
