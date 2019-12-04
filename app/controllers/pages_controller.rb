@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :css_design]
 
+  def home
+    @artists = User.where(type_of_user: "artist")
+    @eventers = User.where(type_of_user: "eventer")
+  end
+
   def dashboard
     @pending_received = current_user.received_bookings.where(status: "Pending")
     @pending_sent = current_user.sent_bookings.where(status: "Pending")
