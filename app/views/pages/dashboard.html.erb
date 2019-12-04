@@ -24,12 +24,12 @@
   </div>
   <!-- manage booking title -->
   <div class="contenant general all-left aligned-started bottom-border-general pb-1 mb-4" style="width: 100%">
-    <h3  class="section-title">manage bookings</h3>
+    <h3  class="section-title">manage your mixes</h3>
   </div>
   <!-- booking title 1/2 - incoming requests -->
   <div class="mb-3">
     <h5  class="section-title general">
-      INCOMING REQUESTS FROM
+      INCOMING MIXES FROM
       <% if current_user.type_of_user == "artist" %>
         <%= "EVENTERS" %>
       <% else %>
@@ -108,7 +108,7 @@
 
 <!-- booking title 2/2 - upgoing bookings -->
   <div class="d-flex justify-content-between align-items-start py-3">
-    <h5 class="section-title general">YOUR BOOKING REQUESTS</h5>
+    <h5 class="section-title general">YOUR OUTGOING MIXES</h5>
   </div>
   <!-- booking list SENT-->
   <!-- 3. pending sent -->
@@ -119,7 +119,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @pending_sent.empty? %>
-        <p class="section-substitle">Sorry, no bookings for now.</p>
+        <p class="section-substitle">Sorry, no mixes for now.</p>
       <% else %>
         <% @pending_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
@@ -149,7 +149,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @confirmed_sent.empty? %>
-        <p class="section-substitle">Sorry, no confirmed bookings for now.</p>
+        <p class="section-substitle">Sorry, no confirmed mixes for now.</p>
       <% else %>
         <% @confirmed_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
