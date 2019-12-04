@@ -1,3 +1,10 @@
-<h5><strong><%= user.eventer_name %></strong></h5>
-<p><%= user.venue_address %></p>
-<p><%= user.venue_type %></p>
+<% if user.type_of_user == 'eventer' %>
+  <div class="contenant bottom-border-eventer">
+    <h5 class="section-title eventer"><%= user.eventer_name.downcase %></h5>
+  </div>
+  <div class="contenant-not-flex all-left centered p-1">
+    <p class="section-light-text">type of venue: <strong><%= user.venue_type.downcase %></strong></p>
+    <p class="section-light-text pb-3">type of crowd: <strong><%= user.crowd_type %></strong></p>
+    <h6 class="section-paragraph"><%= user.venue_address %></h6>
+  </div>
+<% end %>

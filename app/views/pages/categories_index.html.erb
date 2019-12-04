@@ -32,7 +32,11 @@
   </div>
 
   <!-- Artists Cards -->
-  <div class="pt-5">
+  <div class="pt-5" style="width: 100%">
+    <h3 class="section-title artist">listed artists</h3>
+  </div>
+
+  <div class="pt-1">
     <% @artists.each do |artist| %>
       <%= link_to user_path(artist) do %>
         <div class="card-display my-4" style="background-image: url(<%= root_url.delete_suffix("/") + artist.images.first.image_src %>); height:265px;">
