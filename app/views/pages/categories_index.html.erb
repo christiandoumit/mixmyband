@@ -2,10 +2,10 @@
 <!-- Title and Subtitle -->
   <div class="contenant can-grow all-left artist bottom-border-artist">
     <%= image_tag "artist.svg", style: "height: 32px; padding-bottom: 2px" %>
-    <h1 class="section-title" style="font-weight: 400">find artists </h1><h1 class="section-title">> <%= params[:music_type] %></h1>
+    <h1 class="section-title" style="font-weight: 400; padding-left: 5px">find artists </h1><h1 class="section-title">> <%= params[:music_type] %></h1>
   </div>
   <div class="contenant all-left artist">
-    <h4 class="section-substitle">displaying all the artists in this category</h4>
+    <h4 class="section-substitle" style="padding-top: 2px">displaying all the artists in this category</h4>
   </div>
   <div class="py-4"></div>
   <div class="md-form form-sm form pl-0">
@@ -13,16 +13,17 @@
 
 <!-- Filter bars -->
   <div>
-    <%= form_tag(users_path, method: :get) do %>
+    <%= form_tag(categories_path, method: :get) do %>
+      <%= hidden_field_tag :music_type, params[:music_type]%>
       <div class="can-grow">
         <div class="dropdown" style="width: 100%">
           <div class="filter">
             <p class="mb-1"><strong>filter by type of artist</strong></p>
-            <%= select_tag "Artist_type", options_for_select(User::ARTISTTYPE, params[:music_type]), class: "input-field-light", prompt: "Solo Artist" %>
+            <%= select_tag "Artist_type", options_for_select(User::ARTISTTYPE, params[:Artist_type]), class: "input-field-light", prompt: "choose a type" %>
           </div>
-          <div class="filter pr-3">
-            <p class="mb-1"><strong>filter by price</strong></p>
-            <%= select_tag "Price", options_for_select(User::PRICE, params[:price]), class: "input-field-light", prompt: "50$/hour" %>
+          <div class="filter">
+            <p class="mb-1"><strong>filter by price in $CAD</strong></p>
+            <%= select_tag "Price", options_for_select(User::PRICE, params[:Price]), class: "input-field-light", prompt: "choose a price" %>
           </div>
         </div>
         <%= submit_tag "submit", id: "search-submit", style: "display: none;" %>
@@ -36,7 +37,7 @@
       <%= link_to user_path(artist) do %>
         <div class="card-display my-4" style="background-image: url(<%= root_url.delete_suffix("/") + artist.images.first.image_src %>); height:265px;">
           <div style="width: 100%;">
-            <h3 class="card-display-intermediate"><%= artist.artist_name %></h3>
+            <h3 class="card-display-intermediate"><%= artist.artist_name.downcase %></h3>
             <div class="card-display-footer general">
               <h5><%= artist.artist_type %> | <%= artist.price %> $CAD/hour</h5>
               <p><%= artist.description %></p>
@@ -48,5 +49,3 @@
   </div>
 
 </div>
-
-

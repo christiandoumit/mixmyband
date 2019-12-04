@@ -9,9 +9,10 @@ class PagesController < ApplicationController
   end
 
   def categories_index
-    all_users = User.all
-    # @eventers = all_users.filter { |user| user.type_of_user == 'eventer' }
-    @artists = all_users.filter { |user| user.type_of_user == 'artist' }
+    @artists = User.where(type_of_user: "artist", music_type: params[:music_type])
+
+    @artists = @artists.where(price: params[:Price]) if params[:Price].present?
+    @artists = @artists.where(artist_type: params[:Artist_type]) if params[:Artist_type].present?
   end
 
   def css_design

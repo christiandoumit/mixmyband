@@ -6,8 +6,23 @@ const filterEvents = () => {
     venue.addEventListener("input", () => {
       submitForm();
     })
-    
+
     crowd.addEventListener("input", () => {
+      submitForm();
+    })
+  }
+}
+
+const filterArtists = () => {
+  const artist_type = document.querySelector("#Artist_type");
+  const price = document.querySelector("#Price");
+
+  if (artist_type) {
+    artist_type.addEventListener("input", () => {
+      submitForm();
+    })
+
+    price.addEventListener("input", () => {
       submitForm();
     })
   }
@@ -16,7 +31,6 @@ const filterEvents = () => {
 const submitForm = () => {
   const submit = document.querySelector("#search-submit");
   submit.click();
-
 }
 
-export { filterEvents }
+export { filterEvents, filterArtists }
