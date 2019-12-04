@@ -2,10 +2,10 @@
 <!-- Title and Subtitle -->
   <div class="contenant can-grow all-left artist bottom-border-artist">
     <%= image_tag "artist.svg", style: "height: 32px; padding-bottom: 2px" %>
-    <h1 class="section-title">find artists</h1>
+    <h1 class="section-title" style="padding-left: 5px">find artists</h1>
   </div>
   <div class="contenant all-left artist">
-    <h4 class="section-substitle">find the artist that fits your style</h4>
+    <h4 class="section-substitle" style="padding-top: 2px">find the artist that fits your style</h4>
   </div>
   <div class="contenant py-4"></div>
   <div class="input-group md-form form-sm form pl-0">
@@ -18,6 +18,7 @@
   </div>
   <input class="form-control my-0 py-1" type="text" placeholder="Search for an artist by name..." aria-label="Search">
 <!-- End of Search Bar -->
+
   <div class="pt-3" style="width: 100%">
     <% User::CATEGORIES.each do |category| %>
       <div class="contenant all-left aligned-centered py-2">
@@ -36,7 +37,7 @@
                   <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + @category_artists.first.images.first.image_src %>); height:265px;" >
                     <%= link_to user_path(@category_artists.first) do %>
                       <div class="card-display-footer carrousel">
-                        <h4><%= @category_artists.first.artist_name.capitalize %></h4>
+                        <h4><%= @category_artists.first.artist_name.downcase %></h4>
                       </div>
                     <% end %>
                   </div>
@@ -46,7 +47,7 @@
                     <div class="card-display" style="background-image: url(<%= root_url.delete_suffix("/") + a.images.first.image_src %>); height:265px;" >
                       <%= link_to user_path(a) do %>
                         <div class="card-display-footer carrousel">
-                          <h4><%= a.artist_name.capitalize %></h4>
+                          <h4><%= a.artist_name.downcase %></h4>
                         </div>
                       <% end %>
                     </div>

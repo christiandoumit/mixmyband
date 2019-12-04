@@ -1,15 +1,10 @@
 class UsersController < ApplicationController
-
   def index
     @users = User.geocoded
 
-    if params[:Type_of_crowd].present?
-      @users = @users.where(crowd_type: params[:Type_of_crowd])
-    end
+    @users = @users.where(crowd_type: params[:Type_of_crowd]) if params[:Type_of_crowd].present?
 
-    if params[:Type_of_venue].present?
-      @users = @users.where(venue_type: params[:Type_of_venue])
-    end
+    @users = @users.where(venue_type: params[:Type_of_venue]) if params[:Type_of_venue].present?
 
     @eventers = @users.filter { |user| user.type_of_user == 'eventer' }
     @artists = User.where(type_of_user: 'artist')
@@ -22,7 +17,7 @@ class UsersController < ApplicationController
       }
     end
   end
-    
+
   def show
     @user = User.find(params[:id])
     @markers = [
@@ -30,7 +25,9 @@ class UsersController < ApplicationController
         lat: @user.latitude,
         lng: @user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { user: @user })
-      }]
+      }
+    ]
+
     @bookings = Booking.all
   end
 end
