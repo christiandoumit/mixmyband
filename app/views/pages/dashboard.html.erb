@@ -5,7 +5,7 @@
     <h5 class="m-0"><%= link_to "back", :back, style: "align-items: center"%></h5>
   </div>
   <div class="d-flex justify-content-between align-items-start" style="width: 100%">
-    <!-- welcome user -->
+    <!-- welcoming the current user -->
     <div class="flex-grow-1">
       <div class="contenant all-left general bottom-border-general aligned-started">
         <h1>hi, <strong><%= current_user.first_name.capitalize %></strong></h1>
@@ -14,20 +14,21 @@
         <h4 class="section-substitle" style="padding-top: 2px">this is your personal dashboard</h4>
       </div>
     </div>
-    <!-- avatar -->
+    <!-- current user avatar -->
     <div class="contenant all-left aligned-started">
       <img src="<%= current_user.avatar %>" alt="" class='dashboard-avatar'>
     </div>
   </div>
-  <!-- edit your profile button -->
+  <!-- edit profile button -->
   <div class="d-flex justify-content-center align-items-center pt-3 pb-5">
     <%= link_to "EDIT YOUR PROFILE", nil, {class: "button-empty-bordered general flex-grow-1"} %>
   </div>
-  <!-- manage booking title -->
+  <!-- manage mixes title -->
   <div class="contenant general all-left aligned-started bottom-border-general pb-1 mb-4" style="width: 100%">
     <h3  class="section-title">manage your mixes</h3>
   </div>
-  <!-- booking title 1/2 - incoming requests -->
+
+  <!-- MIXES TITLE 1/2 - INCOMING MIXES -->
   <div class="mb-3">
     <h5  class="section-title general">
       INCOMING MIXES REQUESTS FROM
@@ -38,8 +39,8 @@
       <% end %>
     </h5>
   </div>
-  <!-- INCOMING booking list-->
-  <!-- 1. pending received -->
+  <!-- MIXES LIST - INCOMING-->
+  <!-- 1. INCOMING - PENDING -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; pending requests</h5>
   </div>
@@ -55,8 +56,8 @@
                 <h5 class="name"><%= booking.sender.name %></h5>
               <% end %>
               <div class="booking-icons">
-                <!-- message icon -->
-                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+                <!-- message icon trigger modal -->
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendingIncomingModal<%= booking.id%>">
                 <!-- confirm icon -->
                 <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
                   <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
@@ -73,12 +74,32 @@
                 <% end %>
               </div>
             </div>
+            <!-- Modal Pop-Up Message -->
+            <div class="modal fade" id="pendingIncomingModal<%= booking.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="section-light-text" id="exampleModalLongTitle">From:&nbsp;</p>
+                    <p class="section-title"><%= booking.sender.first_name.capitalize %></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="section-paragraph general p-3">
+                    <%= booking.message %>
+                  </div>
+                  <div class="modal-footer">
+                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date %></strong> at <strong>HOUR</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           <% end %>
       <% end %>
     </div>
   </div>
 
-  <!-- 2. confirmed received -->
+  <!-- 2. INCOMING - CONFIRMED -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; confirmed requests</h5>
   </div>
@@ -96,7 +117,7 @@
             <% end %>
             <div class="booking-icons">
               <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedIncomingModal<%= booking.id%>">
               <!-- decline icon -->
               <%= simple_form_for(booking)  do |f|  %>
                 <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
@@ -106,17 +127,37 @@
               <% end %>
             </div>
           </div>
+          <!-- Modal Pop-Up Message-->
+            <div class="modal fade" id="confirmedIncomingModal<%= booking.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="section-light-text" id="exampleModalLongTitle">From:&nbsp;</p>
+                    <p class="section-title"><%= booking.sender.first_name.capitalize %></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="section-paragraph general p-3">
+                    <%= booking.message %>
+                  </div>
+                  <div class="modal-footer">
+                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date %></strong> at <strong>HOUR</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
   </div>
 
-<!-- booking title 2/2 - upgoing bookings -->
+<!-- MIXES TITLE 2/2 - OUTGOING MIXES -->
   <div class="d-flex justify-content-between align-items-start py-3">
     <h5 class="section-title general">YOUR OUTGOING MIXES</h5>
   </div>
-  <!-- booking list SENT-->
-  <!-- 3. pending sent -->
+  <!-- MIXES LIST - OUTGOING-->
+  <!-- 3. OUTGOING - PENDING -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; your pending requests</h5>
   </div>
@@ -134,21 +175,41 @@
             <% end %>
             <div class="booking-icons">
               <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendindOutgoingModal<%= booking.id%>">
               <!-- decline icon -->
               <%= simple_form_for(booking)  do |f|  %>
                 <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
                 <button type="submit" class="button-invisible">
-                  <i class="booking-icons-item far fas fa-trash fa-lg" style="color: #D3D3D3"></i>
+                  <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
                 </button>
               <% end %>
             </div>
           </div>
+          <!-- Modal Pop-Up Message-->
+            <div class="modal fade" id="pendindOutgoingModal<%= booking.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="section-light-text" id="exampleModalLongTitle">To:&nbsp;</p>
+                    <p class="section-title"><%= booking.receiver.first_name.capitalize %></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="section-paragraph general p-3">
+                    <%= booking.message %>
+                  </div>
+                  <div class="modal-footer">
+                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date %></strong> at <strong>HOUR</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
   </div>
-<!-- 4. confirmed sent -->
+<!-- 4. OUTGOING - CONFIRMED -->
   <div class="d-flex justify-content-between align-items-start pb-2">
     <h5 class="section-title general">>&nbsp;&nbsp; your confirmed requests</h5>
   </div>
@@ -166,16 +227,35 @@
             <% end %>
             <div class="booking-icons">
               <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
-              <!-- decline icon -->
+              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedOutgoingModal<%= booking.id%>">              <!-- decline icon -->
               <%= simple_form_for(booking)  do |f|  %>
                 <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
                 <button type="submit" class="button-invisible">
-                  <i class="booking-icons-item far fas fa-trash fa-lg" style="color: #D3D3D3"></i>
+                  <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
                 </button>
               <% end %>
             </div>
           </div>
+          <!-- Modal Pop-Up Message-->
+            <div class="modal fade" id="confirmedOutgoingModal<%= booking.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="section-light-text" id="exampleModalLongTitle">To:&nbsp;</p>
+                    <p class="section-title"><%= booking.receiver.first_name.capitalize %></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="section-paragraph general p-3">
+                    <%= booking.message %>
+                  </div>
+                  <div class="modal-footer">
+                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date %></strong> at <strong>HOUR</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
