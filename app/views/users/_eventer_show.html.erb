@@ -2,7 +2,7 @@
 
 <!-- eventer infos -->
 <div class="mt-3">
-  <div class="eventer-cover-img" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https:www.onholdinc.com/mohblog/wp-content/uploads/2018/03/restaurant.jpg)">
+  <div class="eventer-cover-img" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= root_url.delete_suffix("/") + @user.images.first.image_src %>)">
     <div style="width: 100%">
       <div class="eventer-cover-row">
         <h1><%= @user.eventer_name %></h1>
