@@ -22,7 +22,7 @@
   <div class="pt-3" style="width: 100%">
     <% User::CATEGORIES.each do |category| %>
       <div class="contenant all-left aligned-centered pt-4 pb-2">
-        <h3 class="section-title artist"><%= link_to "> #{category.capitalize}", categories_path(music_type: category) %>
+        <h3 class="section-title artist"><%= link_to category.capitalize, categories_path(music_type: category) %>
         </h3>
       </div>
 

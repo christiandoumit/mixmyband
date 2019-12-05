@@ -46,7 +46,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @pending_received.empty? %>
-        <p class="section-substitle">Sorry, you have no pending requests for now.</p>
+        <p class="section-substitle">No mixes requests waiting for your confirmation yet.</p>
       <% else %>
         <% @pending_received.reverse_each do |booking| %>
             <div class="card-a-row booking">
@@ -86,7 +86,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @confirmed_received.empty? %>
-         <p class="section-substitle">Sorry, you have no confirmations for now.</p>
+         <p class="section-substitle">You haven't confirmed any mix request.</p>
       <% else %>
         <% @confirmed_received.reverse_each do |booking| %>
           <div class="card-a-row booking">
@@ -124,7 +124,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @pending_sent.empty? %>
-        <p class="section-substitle">Sorry, no mixes for now.</p>
+        <p class="section-substitle">No mix request awaiting a confirmation.</p>
       <% else %>
         <% @pending_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
@@ -156,7 +156,7 @@
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
       <% if @confirmed_sent.empty? %>
-        <p class="section-substitle">Sorry, no confirmed mixes for now.</p>
+        <p class="section-substitle">You have no confirmation for a mix request you made.</p>
       <% else %>
         <% @confirmed_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
