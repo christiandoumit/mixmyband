@@ -83,27 +83,31 @@
 
   <!-- list of upcoming bookings -->
   <!-- for dates >= today -->
-  <div class="card-scroll-container cal-book">
+  <% if @bookings.present? %>
 
-    <% @bookings.where("status = ? AND booking_date >= ?", "Confirmed", DateTime.now).reverse_each do |booking| %>
-      <div class="card-a-row calendar" style="display: flex; justify-content: flex-end;">
-        <div style="width:33%">
-          <p class="date"><%= booking.booking_date %></p>
-        </div>
-        <div style="width:33%">
-          <p class="name"><%= booking.sender.name %></p>
-        </div>
-        <!-- clock icon -->
-        <div style="display: flex; justify-content: flex-end; width:33%">
-          <div class="booking-icons">
-            <button type="button" class="button-invisible booking-icons-item far fa-clock fa-lg" style="color: #83B594; margin-bottom: auto; margin-top: auto; padding-top: 2px;" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+    <div class="card-scroll-container cal-book">
+
+      <% @bookings.where("status = ? AND booking_date >= ?", "Confirmed", DateTime.now).reverse_each do |booking| %>
+        <div class="card-a-row calendar" style="display: flex; justify-content: flex-end;">
+          <div style="width:33%">
+            <p class="date"><%= booking.booking_date %></p>
           </div>
-          <p class="time"><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></p>
+          <div style="width:33%">
+            <p class="name"><%= booking.sender.name %></p>
+          </div>
+          <!-- clock icon -->
+          <div style="display: flex; justify-content: flex-end; width:33%">
+            <div class="booking-icons">
+              <button type="button" class="button-invisible booking-icons-item far fa-clock fa-lg" style="color: #83B594; margin-bottom: auto; margin-top: auto; padding-top: 2px;" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+            </div>
+            <p class="time"><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
+      <% end %>
+    </div>
+  <% else %>
+    <p>No upcoming performance to show right now.</p>
+  <% end %>
 
   <!-- reviews -->
   <div class="contenant all-left aligned-centered mt-3 py-2" id="reviews">
