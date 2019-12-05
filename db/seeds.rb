@@ -307,6 +307,23 @@ image = Image.create!(image_src:"/images/jazz2.jpg", user: mothland)
 the_bog = User.create!(first_name: "John", last_name: "Mayer", type_of_user: "artist", artist_name: "The Bog", music_type: "indie", artist_type: "band", price: "100", email: "thebog@mixmyband.com", password: "123456", fb_url: "https://www.facebook.com/thebogmtl/?eid=ARAgOASqf8_mdudYYLTYBqLvbHXobMsY_Ah9vHwAqkhOBo7_vJrBPclrK036xDEZLt6gbsyBgu5Nt3lp", description: "I am looking for a place to perform my new music, enjoy some beers and socialize with people interested in my genre.")
 image = Image.create!(image_src:"/images/band3.jpg", user: the_bog)
 
+
+
+
+# BOOKINGS
+virginia_booking_daome = Booking.create!(booking_date: "Sat, 7 Dec 2019", booking_time:"Sat, 7 Dec 2019 20:30:00 UTC +00:00" , message: "Hello Marcus, as discussed, what do you think about this saturday? Cheers! Virginia", sender_id: User.find_by(artist_name: "Virginia").id, receiver_id: User.find_by(eventer_name: "Salon Daome").id, status: "Confirmed")
+brainflower_booking_daome = Booking.create!(booking_date: "Sat, 7 Dec 2019", booking_time:"Sat, 7 Dec 2019 22:30:00 UTC +00:00" , message: "Hi Marcus! we would love to perform at the Salon Daome this saturday late evening!", sender_id: User.find_by(artist_name: "Brain Flower").id, receiver_id: User.find_by(eventer_name: "Salon Daome").id, status: "Confirmed")
+tireloup_booking_daome = Booking.create!(booking_date: "Thu, 19 Dec 2019", booking_time:"Thu, 19 Dec 2019 19:00:00 UTC +00:00" , message: "Marcus, what do you think about a gig at 7pm?", sender_id: User.find_by(artist_name: "Tire Le Coyote").id, receiver_id: User.find_by(eventer_name: "Salon Daome").id, status: "Confirmed")
+danyplacard_booking_daome = Booking.create!(booking_date: "Fri, 27 Dec 2019", booking_time:"Fri, 27 Dec 2019 21:00:00 UTC +00:00" , message: "Hey Marcus, friday 27th fits perfectly! See you! Dany", sender_id: User.find_by(artist_name: "Dany Placard").id, receiver_id: User.find_by(eventer_name: "Salon Daome").id, status: "Confirmed")
+brooke_booking_foufounes = Booking.create!(booking_date: "Sat, 21 Dec 2019", booking_time:"Sat, 21 Dec 2019 20:30:00 UTC +00:00" , message: "Hey Tonio, let me know if this date works for you! Cheers, Todd", sender_id: User.find_by(artist_name: "Brooks").id, receiver_id: User.find_by(eventer_name: "Foufounes Electriques").id, status: "Confirmed")
+nicotines_booking_foufounes = Booking.create!(booking_date: "Fri, 20 Dec 2019", booking_time:"Fri, 20 Dec 2019 22:30:00 UTC +00:00" , message: "Hey Tonio! If friday 20 does not fit, sat is good too!", sender_id: User.find_by(artist_name: "The Nicotines").id, receiver_id: User.find_by(eventer_name: "Foufounes Electriques").id, status: "Confirmed")
+christian_booking_datcha = Booking.create!(booking_date: "Thu, 19 Dec 2019", booking_time:"Sat, 01 Jan 2000 21:30:00 UTC +00:00" , message: "Hello Jack, I really like your place, I would be interested by performing at the Bar Datcha", sender_id: User.find_by(artist_name: "Christian Doumit").id, receiver_id: User.find_by(eventer_name: "Datcha Bar").id, status: "Confirmed")
+christian_booking_orange = Booking.create!(booking_date: "Fri, 27 Dec 2019", booking_time:"Fri, 27 Dec 2019 20:00:00 UTC +00:00" , message: "Hello Aziz, I really like your place, I would be interested by performing at the Bar Orange!", sender_id: User.find_by(artist_name: "Christian Doumit").id, receiver_id: User.find_by(eventer_name: "Bar Orange").id, status: "Confirmed")
+moccione_booking_christian = Booking.create!(booking_date: "Sat, 21 Dec 2019", booking_time:"Sat, 21 Dec 2019 20:30:00 UTC +00:00" , message: "Hello Christian, we would love to have you performing again!", sender_id: User.find_by(eventer_name: "Moccione").id, receiver_id: User.find_by(artist_name: "Christian Doumit").id, status: "Confirmed")
+lesainthurbain_booking_christian = Booking.create!(booking_date: "Fri, 20 Dec 2019", booking_time:"Fri, 20 Dec 2019 19:30:00 UTC +00:00" , message: "Hey Christian, what do you we would love to have you performing again!", sender_id: User.find_by(eventer_name: "Le Saint Urbain").id, receiver_id: User.find_by(artist_name: "Christian Doumit").id, status: "Confirmed")
+
+
+
 # FAKER
 
 # new_booking = Booking.create!( artist: brain_flower, eventer:live_jazz, message: "play at my bar")
