@@ -11,8 +11,8 @@ filterArtists();
 
 
 initSweetalert('.booking-icons-item.fas.fa-check-circle.fa-lg', {
-  title: "It's a mix!",
-  text: "Your confirmation has been sent.",
+  title: "it's a mix!",
+  text: "your confirmation has been sent",
   icon: "success"
 }, (value) => {
   window.location.reload(true);
