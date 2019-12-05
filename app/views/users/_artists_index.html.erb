@@ -5,7 +5,7 @@
     <h1 class="section-title" style="padding-left: 5px">find artists</h1>
   </div>
   <div class="contenant all-left artist">
-    <h4 class="section-substitle" style="padding-top: 2px">find the artist that fits your style</h4>
+    <h4 class="section-substitle" style="padding-top: 2px">find the category / artist that fits your style</h4>
   </div>
 <!-- End of Title and Subtitle -->
 
@@ -21,8 +21,8 @@
 
   <div class="pt-3" style="width: 100%">
     <% User::CATEGORIES.each do |category| %>
-      <div class="contenant all-left aligned-centered py-2">
-        <h3 class="section-paragraph artist"><%= link_to category.capitalize, categories_path(music_type: category) %>
+      <div class="contenant all-left aligned-centered pt-4 pb-2">
+        <h3 class="section-title artist"><%= link_to "> #{category.capitalize}", categories_path(music_type: category) %>
         </h3>
       </div>
 

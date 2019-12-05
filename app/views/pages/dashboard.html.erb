@@ -29,7 +29,7 @@
   <!-- booking title 1/2 - incoming requests -->
   <div class="mb-3">
     <h5  class="section-title general">
-      INCOMING MIXES FROM
+      INCOMING MIXES REQUESTS FROM
       <% if current_user.type_of_user == "artist" %>
         <%= "EVENTERS" %>
       <% else %>
@@ -40,7 +40,7 @@
   <!-- INCOMING booking list-->
   <!-- 1. pending received -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
+    <h5 class="section-title general">>&nbsp;&nbsp; pending requests</h5>
   </div>
   <div class="card-scroll-container cal-book">
     <div class="align-items-start pb-5" style="width: 100%">
@@ -77,7 +77,7 @@
 
   <!-- 2. confirmed received -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <h5 class="section-title general">>&nbsp;&nbsp; confirmed</h5>
+    <h5 class="section-title general">>&nbsp;&nbsp; confirmed requests</h5>
   </div>
 
   <div class="card-scroll-container cal-book">
@@ -113,7 +113,7 @@
   <!-- booking list SENT-->
   <!-- 3. pending sent -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <h5 class="section-title general">>&nbsp;&nbsp; pending</h5>
+    <h5 class="section-title general">>&nbsp;&nbsp; your pending requests</h5>
   </div>
 
   <div class="card-scroll-container cal-book">
@@ -143,7 +143,7 @@
   </div>
 <!-- 4. confirmed sent -->
   <div class="d-flex justify-content-between align-items-start pb-2">
-    <h5 class="section-title general">>&nbsp;&nbsp; confirmed</h5>
+    <h5 class="section-title general">>&nbsp;&nbsp; your confirmed requests</h5>
   </div>
 
   <div class="card-scroll-container cal-book">
