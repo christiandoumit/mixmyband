@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_142412) do
+ActiveRecord::Schema.define(version: 2019_12_05_145333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_142412) do
     t.datetime "updated_at", null: false
     t.bigint "receiver_id"
     t.bigint "sender_id"
+    t.time "booking_time"
     t.index ["receiver_id"], name: "index_bookings_on_receiver_id"
     t.index ["sender_id"], name: "index_bookings_on_sender_id"
   end

@@ -33,6 +33,7 @@
   <div class="contenant-notflex all-left aligned-started" style="width: 100%">
     <%= simple_form_for [@user, @booking] do |f| %>
     <%= f.input :booking_date, required: true, as: :date, html5: true, label: "Choose a date for your mix" %>
+    <%= f.input :booking_time, required: true, as: :select, collection: @hours_range, html5: true, label: "Choose a time for your mix" %>
     <%= f.input :message, required: true, placeholder: "Write an argumented message to make the perfect mix...", label: "Message", input_html: { rows: 5 } %>
     <%= f.submit "SEND THE MIX REQUEST", class: "button-submit form" %>
     <% end %>
