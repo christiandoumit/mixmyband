@@ -90,17 +90,19 @@
       <% @bookings.where("status = ? AND booking_date >= ?", "Confirmed", DateTime.now).reverse_each do |booking| %>
         <div class="card-a-row calendar" style="display: flex; justify-content: flex-end;">
           <div style="width:33%">
-            <p class="date"><%= booking.booking_date %></p>
+            <p class="date"><%= booking.booking_date.strftime("%m/%d/%Y") %></p>
           </div>
           <div style="width:33%">
-            <p class="name"><%= booking.sender.name %></p>
+            <%= link_to "/users/#{booking.sender_id}" do %>
+              <p class="name"><%= booking.sender.name %></p>
+            <% end %>
           </div>
           <!-- clock icon -->
           <div style="display: flex; justify-content: flex-end; width:33%">
             <div class="booking-icons">
               <button type="button" class="button-invisible booking-icons-item far fa-clock fa-lg" style="color: #83B594; margin-bottom: auto; margin-top: auto; padding-top: 2px;" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
             </div>
-            <p class="time"><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></p>
+            <p class="time"><%= booking.booking_time.strftime("%H:%M") %></p>
           </div>
         </div>
       <% end %>
