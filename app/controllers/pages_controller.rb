@@ -15,12 +15,8 @@ class PagesController < ApplicationController
 
   def categories_index
     @artists = User.where(type_of_user: "artist", music_type: params[:music_type])
-
     @artists = @artists.where(price: params[:Price]) if params[:Price].present?
     @artists = @artists.where(artist_type: params[:Artist_type]) if params[:Artist_type].present?
-  end
-
-  def css_design
   end
 
   def show_category
