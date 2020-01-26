@@ -50,19 +50,23 @@
         <p class="section-substitle">No mixes requests waiting for your confirmation yet.</p>
       <% else %>
         <% @pending_received.reverse_each do |booking| %>
-            <div class="card-a-row booking">
-              <h5 class="date"><%= booking.booking_date %></h5>
+          <div class="card-a-row booking">
+            <div style="padding-left: 10px">
+              <p class="date"><%= booking.booking_date.strftime("%m/%d/%Y") %></p>
+              <p class="date"><%= booking.booking_time.strftime("%H:%M") %> </p>
+            </div>
+            <div class="right-side-card">
               <%= link_to "/users/#{booking.sender_id}" do %>
-                <h5 class="name"><%= booking.sender.name %></h5>
+                <p class="name"><%= booking.sender.name %></p>
               <% end %>
               <div class="booking-icons">
                 <!-- message icon trigger modal -->
-                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendingIncomingModal<%= booking.id%>">
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendingIncomingModal<%= booking.id%>"></button>
                 <!-- confirm icon -->
                 <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
-                  <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
+                  <%= f.input :status, as: :hidden, style: "margin-top: 0px;", input_html: { value: "Confirmed" } %>
                   <button type="submit" class="button-invisible">
-                    <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #D3D3D3"></i>
+                    <i class="booking-icons-item fas fa-check-circle fa-lg" style="color: #1D73A5"></i>
                   </button>
                 <% end %>
                 <!-- decline icon -->
@@ -74,6 +78,7 @@
                 <% end %>
               </div>
             </div>
+          </div>
             <!-- Modal Pop-Up Message -->
             <div class="modal fade" id="pendingIncomingModal<%= booking.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
@@ -89,7 +94,7 @@
                     <%= booking.message %>
                   </div>
                   <div class="modal-footer">
-                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date %></strong> at <strong><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></strong></p>
+                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date.strftime("%m/%d/%Y") %></strong> at <strong><%= booking.booking_time.strftime("%H:%M") %></strong></p>
                   </div>
                 </div>
               </div>
@@ -111,20 +116,25 @@
       <% else %>
         <% @confirmed_received.reverse_each do |booking| %>
           <div class="card-a-row booking">
-            <h5 class="date"><%= booking.booking_date %></h5>
-            <%= link_to "/users/#{booking.sender_id}" do %>
-              <h5 class="name"><%= booking.sender.name %></h5>
-            <% end %>
-            <div class="booking-icons">
-              <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedIncomingModal<%= booking.id%>">
-              <!-- decline icon -->
-              <%= simple_form_for(booking)  do |f|  %>
-                <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-                <button type="submit" class="button-invisible">
-                  <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
-                </button>
+            <div style="padding-left: 10px">
+              <p class="date"><%= booking.booking_date.strftime("%m/%d/%Y") %></p>
+              <p class="date"><%= booking.booking_time.strftime("%H:%M") %> </p>
+            </div>
+            <div class="right-side-card">
+              <%= link_to "/users/#{booking.sender_id}" do %>
+                <p class="name"><%= booking.sender.name %></p>
               <% end %>
+              <div class="booking-icons">
+                <!-- message icon trigger modal -->
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedIncomingModal<%= booking.id%>"></button>
+                <!-- decline icon -->
+                <%= simple_form_for(booking)  do |f|  %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                  <button type="submit" class="button-invisible">
+                    <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3; font-size: 1.2em;"></i>
+                  </button>
+                <% end %>
+              </div>
             </div>
           </div>
           <!-- Modal Pop-Up Message-->
@@ -142,7 +152,7 @@
                     <%= booking.message %>
                   </div>
                   <div class="modal-footer">
-                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date %></strong> at <strong><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></strong></p>
+                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date.strftime("%m/%d/%Y") %></strong> at <strong><%= booking.booking_time.strftime("%H:%M") %></strong></p>
                   </div>
                 </div>
               </div>
@@ -169,20 +179,25 @@
       <% else %>
         <% @pending_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
-            <h5 class="date"><%= booking.booking_date %></h5>
-            <%= link_to "/users/#{booking.receiver_id}" do %>
-              <h5 class="name"><%= booking.receiver.name %></h5>
-            <% end %>
-            <div class="booking-icons">
-              <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendindOutgoingModal<%= booking.id%>">
-              <!-- decline icon -->
-              <%= simple_form_for(booking)  do |f|  %>
-                <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-                <button type="submit" class="button-invisible">
-                  <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
-                </button>
+            <div style="padding-left: 10px">
+              <p class="date"><%= booking.booking_date.strftime("%m/%d/%Y") %></p>
+              <p class="date"><%= booking.booking_time.strftime("%H:%M") %> </p>
+            </div>
+            <div class="right-side-card">
+              <%= link_to "/users/#{booking.receiver_id}" do %>
+                <p class="name"><%= booking.receiver.name %></p>
               <% end %>
+              <div class="booking-icons">
+                <!-- message icon -->
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#pendindOutgoingModal<%= booking.id%>"></button>
+                <!-- decline icon -->
+                <%= simple_form_for(booking)  do |f|  %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                  <button type="submit" class="button-invisible">
+                    <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3; font-size: 1.2em;"></i>
+                  </button>
+                <% end %>
+              </div>
             </div>
           </div>
           <!-- Modal Pop-Up Message-->
@@ -200,7 +215,7 @@
                     <%= booking.message %>
                   </div>
                   <div class="modal-footer">
-                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date %></strong> at <strong><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></strong></p>
+                    <p class="section-light-text" id="exampleModalLongTitle">mix requested for <strong><%= booking.booking_date.strftime("%m/%d/%Y") %></strong> at <strong><%= booking.booking_time.strftime("%H:%M") %></strong></p>
                   </div>
                 </div>
               </div>
@@ -221,19 +236,25 @@
       <% else %>
         <% @confirmed_sent.reverse_each do |booking| %>
           <div class="card-a-row booking">
-            <h5 class="date"><%= booking.booking_date %></h5>
-            <%= link_to "/users/#{booking.receiver_id}" do %>
-              <h5 class="name"><%= booking.receiver.name %></h5>
-            <% end %>
-            <div class="booking-icons">
-              <!-- message icon -->
-              <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedOutgoingModal<%= booking.id%>">              <!-- decline icon -->
-              <%= simple_form_for(booking)  do |f|  %>
-                <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-                <button type="submit" class="button-invisible">
-                  <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3"></i>
-                </button>
+            <div style="padding-left: 10px">
+              <p class="date"><%= booking.booking_date.strftime("%m/%d/%Y") %></p>
+              <p class="date"><%= booking.booking_time.strftime("%H:%M") %> </p>
+            </div>
+            <div class="right-side-card">
+              <%= link_to "/users/#{booking.receiver_id}" do %>
+                <p class="name"><%= booking.receiver.name %></p>
               <% end %>
+              <div class="booking-icons">
+                <!-- message icon -->
+                <button type="button" class="button-invisible booking-icons-item far fa-comments fa-lg" style="color: #1D73A5" data-toggle="modal" data-target="#confirmedOutgoingModal<%= booking.id%>"></button>             <!-- decline icon -->
+                <!-- declined icon -->
+                <%= simple_form_for(booking)  do |f|  %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                  <button type="submit" class="button-invisible">
+                    <i class="booking-icons-item fas fa-trash fa-lg" style="color: #D3D3D3; font-size: 1.2em;"></i>
+                  </button>
+                <% end %>
+              </div>
             </div>
           </div>
           <!-- Modal Pop-Up Message-->
@@ -251,7 +272,7 @@
                     <%= booking.message %>
                   </div>
                   <div class="modal-footer">
-                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date %></strong> at <strong><%= booking.booking_time.hour %>:<%= booking.booking_time.min %></strong></p>
+                    <p class="section-light-text" id="exampleModalLongTitle">mix performance planned on <strong><%= booking.booking_date.strftime("%m/%d/%Y") %></strong> at <strong><%= booking.booking_time.strftime("%H:%M") %></strong></p>
                   </div>
                 </div>
               </div>

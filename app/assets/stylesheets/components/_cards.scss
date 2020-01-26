@@ -71,7 +71,7 @@ a:hover {
   overflow-y: scroll;
 
   &.cal-book {
-    height: 120px;
+    height: 180px;
   }
 
   &.reviews {
@@ -80,7 +80,7 @@ a:hover {
 }
 
 .card-a-row {
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -121,16 +121,46 @@ a:hover {
   }
 }
 
+.card-a-row h5 {
+  font-size: 16px;
+  margin: 0;
+  color: #151515;
+
+  &.date {
+    font-weight: 700;
+  }
+
+  &.name {
+    font-weight: 400;
+  }
+
+  &.time {
+    padding-left: 6px;
+    font-weight: 700;
+  }
+}
+
 .card-a-row .booking-icons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   // added by Vi and Benjamin to make all the icons aligned even using the simple_form
   align-items: baseline;
+  margin: 0;
+
+  .form-group {
+    margin-bottom: 0px;
+  }
 }
 
 .card-a-row .booking-icons-item {
   padding-right: 6px;
 
+}
+
+.card-a-row .right-side-card {
+  flex: 1;
+  padding: 0px 10px;
+  text-align: right;
 }
 
 .card-review-row {

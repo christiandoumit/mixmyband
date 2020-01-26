@@ -16,10 +16,9 @@
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+
     <meta name="twitter:title" content="<%= meta_title %>">
     <meta name="twitter:description" content="<%= meta_description %>">
-    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
 
@@ -41,6 +40,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <%= favicon_link_tag %>
+
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">

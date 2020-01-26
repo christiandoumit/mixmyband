@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :audio_urls, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :youtube_urls, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :sent_bookings, class_name: "Booking", foreign_key: :sender_id, dependent: :destroy
   has_many :received_bookings, class_name: "Booking", foreign_key: :receiver_id, dependent: :destroy
 
