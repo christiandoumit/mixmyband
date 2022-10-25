@@ -4,7 +4,7 @@ ruby '2.6.3'
 gem "simple_calendar", "~> 2.0"
 gem 'geocoder'
 gem 'faker'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'cloudinary', '~> 1.9.1'
 gem 'pundit'
 gem 'devise'
