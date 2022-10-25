@@ -8,8 +8,8 @@ MixMyBand is an app for every music lover, helping an Artist to mix his music wi
 * BootStap - CSS framework used
 
 ## Authors
-* Christian Doumit
 * Quan Nguyen
+* Christian Doumit
 * Vi Pannetier
 * Costin Dumitrescu
 
